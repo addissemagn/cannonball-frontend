@@ -114,6 +114,7 @@ a:visited {
 .content .title-holder h1 {
   font-weight: bold;
   font-size: 4em;
+  margin: 0;
   /* margin-bottom: 12px; */
 }
 

@@ -70,22 +70,22 @@ const Countdown = ({ finalDate }) => {
   return (
     <div className="Countdown">
       <div className="Countdown-col">
-        <h1>{addLeadingZeros(countdown.days)}</h1>
+        <div>{addLeadingZeros(countdown.days)}</div>
         <span>{countdown.days === 1 ? "Day" : "Days"}</span>
       </div>
 
       <div className="Countdown-col">
-        <h1>{addLeadingZeros(countdown.hours)}</h1>
+        <div>{addLeadingZeros(countdown.hours)}</div>
         <span>Hours</span>
       </div>
 
       <div className="Countdown-col">
-        <h1>{addLeadingZeros(countdown.min)}</h1>
+        <div>{addLeadingZeros(countdown.min)}</div>
         <span>Min</span>
       </div>
 
       <div className="Countdown-col">
-        <h1>{addLeadingZeros(countdown.sec)}</h1>
+        <div>{addLeadingZeros(countdown.sec)}</div>
         <span>Sec</span>
       </div>
     </div>
