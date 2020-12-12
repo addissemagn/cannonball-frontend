@@ -12,3 +12,9 @@
 .Countdown-col div {
     font-size: 35px;
 }
+
+@media screen and (max-width: 768px) {
+    .Countdown-col div {
+        font-size: 30px;
+    }
+}

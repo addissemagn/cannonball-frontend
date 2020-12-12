@@ -120,20 +120,6 @@ a:visited {
   /* margin-bottom: 12px; */
 }
 
-@media screen and (max-width: 768px) {
-  .content .title-holder {
-    max-width: 80%;
-  }
-
-  .header {
-    padding: 48px 30px;
-  }
-
-  .content .title-holder h1 {
-    font-size: 3.5em;
-  }
-}
-
 .content .button {
   min-width: 64px;
   padding: 16px 24px;
@@ -166,4 +152,22 @@ a:visited {
 
 a.underlined:hover {
   border-bottom: 1px dotted #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .content .title-holder {
+    max-width: 80%;
+  }
+
+  .header {
+    padding: 48px 30px 0px 30px;
+  }
+
+  .content .title-holder h1 {
+    font-size: 3em;
+  }
+
+  .content .button {
+    font-size: 0.9em;
+  }
 }
