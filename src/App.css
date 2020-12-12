@@ -104,7 +104,8 @@ a:visited {
     border-radius: 0;
     box-shadow: none;
     background: url(./assets/icons/background-mobile.svg);
-    background-size: auto 100%;
+    background-size: cover;
+    background-position: right bottom;
   }
 }
 
@@ -115,12 +116,13 @@ a:visited {
   align-items: center;
 }
 
-.logo {
-  transition: opacity 0.05s ease;
+.header a:hover {
+  transform: translateY(-1px);
+  opacity: 0.8;
 }
 
-.logo:hover {
-  opacity: 0.75;
+.logo {
+  transition: opacity 0.05s ease;
 }
 
 .social {
