@@ -1,0 +1,8 @@
+{
+  "short_name": "Cannonball 2T1",
+  "name": "Cannonball 2T1",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
