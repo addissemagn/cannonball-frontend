@@ -58,8 +58,9 @@ a:visited {
   max-width: 1800px;
   margin: auto;
   min-height: 512px;
-  background: url(./assets/icons/background.png);
+  background: url(./assets/icons/background-lower.png);
   background-size: auto 100%;
+  background-position: left bottom;
   /* box-shadow: 0px 35px 70px 0px var(--gradient-lighter), 0px 30px 40px -10px var(--gradient-darker); */
   border-radius: 10px;
   display: flex;
@@ -117,12 +118,8 @@ a:visited {
 }
 
 .header a:hover {
-  transform: translateY(-1px);
-  opacity: 0.8;
-}
-
-.logo {
-  transition: opacity 0.05s ease;
+  transform: translateY(-2px);
+  /* opacity: 0.8; */
 }
 
 .social {
@@ -137,10 +134,6 @@ a:visited {
 
 .social a:last-child {
   margin-right: 0;
-}
-
-.social a:hover {
-  opacity: 0.75;
 }
 
 .social .icon {
