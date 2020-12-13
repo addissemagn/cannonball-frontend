@@ -8,7 +8,6 @@ import "./App.css";
 import Button from './components/Button';
 
 
-
 const App = () => {
   const [loading, setLoading] = useState(false); // TODO: set back to true
   const [day, setDay] = useState(true);
@@ -53,9 +52,7 @@ const App = () => {
         </div>
       )}
       {step === 'signUp' && (
-        <>
-          <ShowSignUp />
-        </>
+        <ShowSignUp />
       )}
       <div className="footer">
         <span>Questions? Well, we've got answers at <a className="underlined" href="mailto:cannonball@skule.ca" target="_blank" rel="noopener noreferrer">cannonball@skule.ca</a>.</span>
@@ -112,9 +109,9 @@ const ShowSignUp = () => {
     const updatedParams = { ...userParams, [name]: value };
     setUserParams(updatedParams);
 
-    // update errors for this field
-    const errs = validateUserParams(updatedParams);
-    setFieldErrors({...fieldErrors, [name]: errs[name] });
+    // // update errors for this field
+    // const errs = validateUserParams(updatedParams);
+    // setFieldErrors({...fieldErrors, [name]: errs[name] });
   };
 
   const handleSubmit = (event) => {
@@ -125,8 +122,29 @@ const ShowSignUp = () => {
     return;
   }
 
+  const rafflePrizes = [
+    { label: "$200 Donation (your choice of charity)", name: "donation" },
+    { label: "$100 Steam Gift Card", name: "steam" },
+    { label: "$100 Amazon Gift Card", name: "etsy" },
+    { label: "$100 Etsy Gift Card", name: "amazon" },
+  ];
+
+  const raffleInitialState = {};
+  rafflePrizes.forEach((prize) => (raffleInitialState[prize.name] = false));
+
+  const [raffleParams, setRaffleParams] = useState(raffleInitialState);
+
+  const handleRaffleChange = (event) => {
+    const updateRaffle = {
+      ...raffleParams,
+      [event.target.name]: event.target.checked,
+    };
+    setRaffleParams(updateRaffle);
+    handleInputChange({ target: { name: "raffle", value: updateRaffle } });
+  };
+
   return (
-    <SignUp user={userParams} fieldErrors={fieldErrors} handleInputChange={handleInputChange} handleSubmit={handleSubmit} />
+    <SignUp user={userParams} raffleParams={raffleParams} rafflePrizes={rafflePrizes} fieldErrors={fieldErrors} handleInputChange={handleInputChange} handleRaffleChange={handleRaffleChange} handleSubmit={handleSubmit} />
   );
 };
 

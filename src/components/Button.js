@@ -7,10 +7,11 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Aclonica',
     fontSize: '1em',
     minWidth: '64px',
-    padding: '16px 24px',
+    width: (props) => props.fullWidth ? '100%': 'auto',
+    padding: '15px 24px',
+    borderRadius: '10px',
     background: '#fff',
     color: 'black',
-    borderRadius: '50px',
     cursor: 'pointer',
     textAlign: 'center',
     fontWeight: 'bold',
@@ -18,6 +19,13 @@ const useStyles = makeStyles((theme) => ({
     margin: 0,
     boxShadow: '0px 10px 30px 0px rgba(0, 0, 0, 0.1)',
     transition: 'box-shadow 0.3s cubic-bezier(0.25, 0.25, 0.315, 1.35), transform 0.1s linear',
+    '& svg': {
+      height: '1.25em',
+      width: 'auto',
+      padding: 0,
+      paddingRight: '10px',
+      margin: 0,
+    },
     '&:hover': {
       background: '#fff',
       tranform: 'translateY(-1px)',
@@ -29,11 +37,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Button = ({ text, onClick }) => {
-  const classes = useStyles();
+const Button = ({ text, onClick, fullWidth, icon }) => {
+  const classes = useStyles({ fullWidth });
 
   return (
     <MaterialUiButton className={classes.button} onClick={onClick}>
+      {icon && (icon)}
       {text}
     </MaterialUiButton>
   );

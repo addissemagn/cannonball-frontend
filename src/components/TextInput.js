@@ -12,6 +12,7 @@ const TextInput = ({ name, label, required, value, onChange }) => (
     value={value}
     onChange={onChange}
     autoComplete="off"
+    key={name}
   />
 );
 

@@ -4,6 +4,8 @@ const style = {
       red: '#CF0323',
       white: '#FFF',
       black: '#000',
+      darkPurple: '#291125',
+      lightPurple: '#5B4065',
       // not used
       beige: '#FDF9ED',
       blue: '#323D7B',
