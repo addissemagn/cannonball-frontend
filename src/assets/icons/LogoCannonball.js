@@ -9,24 +9,24 @@ const Logo = ({ width }) => (
   >
     <g filter="url(#filter0_i)">
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M88.6944 14H47.104V26.288C46.9656 26.2865 46.827 26.2858 46.6882 26.2858C28.0827 26.2858 13 39.487 13 55.7715C13 72.056 28.0827 85.2572 46.6882 85.2572C46.827 85.2572 46.9656 85.2565 47.104 85.255V100H88.6944V85.2571H665.137V100H706.727V86.8932C725.141 86.6984 740 73.5728 740 57.4097C740 41.2465 725.141 28.1209 706.727 27.9261V14H665.137V29.5619H88.6944V14Z"
         fill="#CACACA"
       />
     </g>
     <g filter="url(#filter1_i)">
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M105 23C105 22.4477 105.448 22 106 22H225C225.552 22 226 22.4477 226 23V106C226 106.552 226.448 107 227 107H528C528.552 107 529 106.552 529 106V23C529 22.4477 529.448 22 530 22H649C649.552 22 650 22.4477 650 23V107V458.411C650 458.736 649.736 459 649.411 459C649.282 459 649.156 459.043 649.053 459.121L378.108 666.535C377.749 666.809 377.251 666.809 376.892 666.535L105.947 459.121C105.844 459.043 105.718 459 105.589 459C105.264 459 105 458.736 105 458.411V107V23Z"
         fill="#CF0323"
       />
     </g>
     <g filter="url(#filter2_i)">
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M106 22C105.448 22 105 22.4477 105 23V107V458.411C105 458.736 105.264 459 105.589 459C105.718 459 105.844 459.043 105.947 459.121L376.892 666.535C377.251 666.809 377.749 666.809 378.108 666.535L649.053 459.121C649.156 459.043 649.282 459 649.411 459C649.736 459 650 458.736 650 458.411V107V23C650 22.4477 649.552 22 649 22H530C529.448 22 529 22.4477 529 23V106C529 106.552 528.552 107 528 107H227C226.448 107 226 106.552 226 106V23C226 22.4477 225.552 22 225 22H106ZM132 54H198V145H558V54H624V450.581C624.151 451.283 623.94 452.067 623.248 452.59L379.705 636.59C378.992 637.128 378.008 637.129 377.295 636.59L132.775 452.103C132.374 451.801 132.135 451.411 132.033 451H132V450.838C131.967 450.629 131.968 450.418 132 450.211V54Z"
         fill="#FFC600"
       />
@@ -45,9 +45,9 @@ const Logo = ({ width }) => (
         width="737"
         height="106"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -76,9 +76,9 @@ const Logo = ({ width }) => (
         width="565"
         height="664.741"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -107,9 +107,9 @@ const Logo = ({ width }) => (
         width="565"
         height="664.741"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -138,9 +138,9 @@ const Logo = ({ width }) => (
         width="632.402"
         height="265.373"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"

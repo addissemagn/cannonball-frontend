@@ -1,1 +1,3 @@
-- [ ] Deploy from `master`
+- [x] Deploy from `master`
+- [ ] Add night time to mobile
+    - Should the backgrounds change on page change or have a day/night mode
