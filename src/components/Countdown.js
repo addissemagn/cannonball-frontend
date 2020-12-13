@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Countdown.css";
 
-const Countdown = ({ finalDate }) => {
+const Countdown = ({ finalDate, day }) => {
   const [countdown, setCountdown] = useState({
     days: 0,
     hours: 0,
@@ -68,7 +68,7 @@ const Countdown = ({ finalDate }) => {
   }
 
   return (
-    <div className="Countdown">
+    <div className={day ? "Countdown black" : "Countdown white"}>
       <div className="Countdown-col">
         <div>{addLeadingZeros(countdown.days)}</div>
         <span>{countdown.days === 1 ? "Day" : "Days"}</span>

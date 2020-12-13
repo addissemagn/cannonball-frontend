@@ -1,0 +1,19 @@
+.title {
+  text-align: center;
+}
+
+.title h1 {
+  font-weight: bold;
+  font-size: 4em;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    max-width: 80%;
+  }
+
+  .title h1 {
+    font-size: 3em;
+  }
+}

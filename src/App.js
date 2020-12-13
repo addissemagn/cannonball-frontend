@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { ReactComponent as IconFacebook } from './assets/icons/facebook.svg';
-import { ReactComponent as IconInstagram } from './assets/icons/instagram.svg';
 import LogoCannonball from './assets/icons/LogoCannonball';
 import Countdown from './components/Countdown';
+import Header from './components/Header';
+import Button from './components/Button';
+import Title from './components/Title';
 import "./App.css";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
+  const [day, setDay] = useState(true);
 
-  // "load" for 3s
+  // simulates loading for 3s
   setTimeout(function(){
     setLoading(false);
   }, 1500);
@@ -16,36 +18,18 @@ const App = () => {
   if (loading) {
     return (
       <div className="loading-card">
-        <LogoCannonball width="120" className="loading-icon" />
+        <LogoCannonball width="120" />
       </div>
     )
   }
 
   return (
-    <div className="card">
-      <div className="header">
-        <div className="logo">
-          <a href="/" title="Cannonball Logo">
-            <LogoCannonball width="120" className="icon" />
-          </a>
-        </div>
-        <div className="social">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <IconInstagram className="icon" />
-          </a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <IconFacebook className="icon" />
-          </a>
-        </div>
-      </div>
+    <div className={day ? "card day" : "card night"}>
+      <Header toggleDay={() => setDay(!day)} day={day}/>
       <div className="content">
-        <div className="title-holder">
-          <h1>Coming Soon</h1>
-        </div>
-        <Countdown finalDate="2021-01-16" />
-        <a href="https://instagram.com">
-          <div className="button">Find out more on Instagram</div>
-        </a>
+        <Title text="Coming Soon" day={day}/>
+        <Countdown finalDate="2021-01-16" day={day}/>
+        <Button text="Find out more on Instagram" link="https://instagram.com" />
       </div>
       <div className="footer">
         <span>Questions? Well, we've got answers at <a className="underlined" href="mailto:cannonball@skule.ca" target="_blank" rel="noopener noreferrer">cannonball@skule.ca</a>.</span>
