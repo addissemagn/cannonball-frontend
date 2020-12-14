@@ -1,7 +1,31 @@
 import React, { useState } from "react";
-import "./Countdown.css";
+import { makeStyles } from '@material-ui/core/styles';
+import style from '../styles/theme';
 
-const Countdown = ({ finalDate }) => {
+const useStyles = makeStyles((theme) => ({
+  countdown: {
+    display: 'flex',
+    margin: '24px 0px',
+    color: (props) => props.day ? style.colors.black : style.colors.white,
+  },
+  time: {
+    display: 'block',
+    textAlign: 'center',
+    padding: '0px 10px',
+    '& div': {
+      fontSize: '40px',
+    },
+    ['@media (max-width:768px)']: { // eslint-disable-line no-useless-computed-key
+      '& div': {
+        fontSize: '30px',
+      },
+    },
+  }
+}));
+
+const Countdown = ({ finalDate, day }) => {
+  const classes = useStyles({ day });
+
   const [countdown, setCountdown] = useState({
     days: 0,
     hours: 0,
@@ -68,25 +92,25 @@ const Countdown = ({ finalDate }) => {
   }
 
   return (
-    <div className="Countdown">
-      <div className="Countdown-col">
+    <div className={classes.countdown}>
+      <div className={classes.time}>
         <div>{addLeadingZeros(countdown.days)}</div>
         <span>{countdown.days === 1 ? "Day" : "Days"}</span>
       </div>
 
-      <div className="Countdown-col">
+      <div className={classes.time}>
         <div>{addLeadingZeros(countdown.hours)}</div>
         <span>Hours</span>
       </div>
 
-      <div className="Countdown-col">
+      <div className={classes.time}>
         <div>{addLeadingZeros(countdown.min)}</div>
-        <span>Min</span>
+        <span>Mins</span>
       </div>
 
-      <div className="Countdown-col">
+      <div className={classes.time}>
         <div>{addLeadingZeros(countdown.sec)}</div>
-        <span>Sec</span>
+        <span>Secs</span>
       </div>
     </div>
   );

@@ -6,17 +6,65 @@
   --color-white: #FFF;
   --color-beige: #F4E4BA;
   --color-black: #000;
+  --color-medieval-blue: linear-gradient(180deg, #9ACFFF 0%, #CBE6FF 33.33%), #CBE6FF;
+  --color-nighttime: linear-gradient(180deg, #322336 0%, #64406D 32.29%), #5B4065;
+  --color-dark-purple: #291125;
+  --color-light-purple: #65406e;
   --gradient-lighter: rgba(255, 163, 125, 0.65);
   --gradient-darker: rgba(255, 100, 124, 0.55);
 }
 
-html,
-body {
-  height: 100%;
-  background: var(--color-black);
-  font-family: "IBM Plex Sans", sans-serif;
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.black {
+  color: var(--color-black);
+  fill: var(--color-black);
+}
+
+.white {
+  color: var(--color-white);
+  fill: var(--color-white);
+}
+
+.red {
+  color: var(--color-red);
+  fill: var(--color-red);
+}
+
+/* TODO: change color for light theme */
+html {
   margin: 0;
   padding: 0;
+  height: 100%;
+
+  /* jheeeeez this was an effort, dont come for me css gods */
+  background: var(--color-black);
+  background-image: url(./assets/background/night/dark-purple.svg);
+  background-repeat: repeat-y;
+  background-size: 90% auto;
+  background-position: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 a {
@@ -28,10 +76,15 @@ a:visited {
   color: inherit;
 }
 
+a.underlined:hover {
+  border-bottom: 1px dotted #fff;
+}
+
 #root {
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  background: var(--color-black);
 }
 
 .loading-card {
@@ -47,24 +100,32 @@ a:visited {
 }
 
 @keyframes blinker {
-  50% {
-    opacity: 1;
-  }
+  50% {opacity: 1;}
+}
+
+.day {
+  background: var(--color-medieval-blue);
+  /* fore -> back */
+  background-image:
+    url(./assets/background/day/grass-foreground.svg),
+    url(./assets/background/day/castle.svg),
+    url(./assets/background/day/grass-background.svg),
+    url(./assets/background/day/trees.svg),
+    url(./assets/background/day/clouds.svg);
+  background-size: auto 100%;
+  background-position: left bottom;
 }
 
 .card {
   width: 90%;
-  height: 80%;
+  height: 100%;
+  /* height: 80%; */
   max-width: 1800px;
-  margin: auto;
-  min-height: 512px;
-  background: url(./assets/icons/background-lower.png);
-  background-size: auto 100%;
-  background-position: left bottom;
-  /* box-shadow: 0px 35px 70px 0px var(--gradient-lighter), 0px 30px 40px -10px var(--gradient-darker); */
-  border-radius: 10px;
+  margin: 0px auto;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
+  z-index: 2;
 
   animation: fadeIn ease 3s;
   -webkit-animation: fadeIn ease 3s;
@@ -76,27 +137,27 @@ a:visited {
 @keyframes fadeIn {
   0% {opacity:0;}
   100% {opacity:1;}
-  }
+}
 
-  @-moz-keyframes fadeIn {
+@-moz-keyframes fadeIn {
   0% {opacity:0;}
   100% {opacity:1;}
-  }
+}
 
-  @-webkit-keyframes fadeIn {
+@-webkit-keyframes fadeIn {
   0% {opacity:0;}
   100% {opacity:1;}
-  }
+}
 
-  @-o-keyframes fadeIn {
+@-o-keyframes fadeIn {
   0% {opacity:0;}
   100% {opacity:1;}
-  }
+}
 
-  @-ms-keyframes fadeIn {
+@-ms-keyframes fadeIn {
   0% {opacity:0;}
   100% {opacity:1;}
-  }
+}
 
 @media screen and (max-width: 512px) {
   .card {
@@ -104,41 +165,23 @@ a:visited {
     height: 100%;
     border-radius: 0;
     box-shadow: none;
-    background: url(./assets/icons/background-mobile.svg);
+  }
+
+  .day {
+    background: url(./assets/background/day/mobile.svg);
     background-size: cover;
     background-position: right bottom;
   }
-}
 
-.header {
-  display: flex;
-  padding: 48px;
-  justify-content: space-between;
-  align-items: center;
-}
+  .night {
+    background: url(./assets/background/night/mobile.svg);
+    background-size: cover;
+    background-position: right bottom;
+  }
 
-.header a:hover {
-  transform: translateY(-2px);
-  /* opacity: 0.8; */
-}
-
-.social {
-  display: flex;
-}
-
-.social a {
-  display: inline-block;
-  margin-right: 15px;
-  transition: opacity 0.05s ease;
-}
-
-.social a:last-child {
-  margin-right: 0;
-}
-
-.social .icon {
-  width: 30px;
-  fill: var(--color-red);
+  html {
+    background-size: auto auto;
+  }
 }
 
 .content {
@@ -151,38 +194,6 @@ a:visited {
   align-items: center;
 }
 
-.content .title-holder {
-  color: var(--color-red);
-  text-align: center;
-  /* margin-bottom: 24px; */
-}
-
-.content .title-holder h1 {
-  font-weight: bold;
-  font-size: 4em;
-  margin: 0;
-  /* margin-bottom: 12px; */
-}
-
-.content .button {
-  min-width: 64px;
-  padding: 16px 24px;
-  background: #fff;
-  border-radius: 50px;
-  cursor: pointer;
-  text-align: center;
-  font-size: 1em;
-  font-weight: bold;
-  transform: none;
-  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s cubic-bezier(0.25, 0.25, 0.315, 1.35), transform 0.1s linear;
-}
-
-.content .button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.3);
-}
-
 .footer {
   display: flex;
   flex-direction: row;
@@ -192,26 +203,4 @@ a:visited {
   font-size: 14px;
   font-weight: 500;
   text-align: center;
-}
-
-a.underlined:hover {
-  border-bottom: 1px dotted #fff;
-}
-
-@media screen and (max-width: 768px) {
-  .content .title-holder {
-    max-width: 80%;
-  }
-
-  .header {
-    padding: 48px 30px 0px 30px;
-  }
-
-  .content .title-holder h1 {
-    font-size: 3em;
-  }
-
-  .content .button {
-    font-size: 0.9em;
-  }
 }
