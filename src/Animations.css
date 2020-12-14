@@ -38,9 +38,11 @@
   left:0;
   right:0;
   bottom:0;
-  width:100%;
-  height:100%;
   z-index:-2;
+  width: 90%;
+  height: 100%;
+  max-width: 1800px;
+  margin: auto;
 }
 
 .castle {
@@ -49,13 +51,25 @@
     url(./assets/background/night/grass-foreground.svg),
     url(./assets/background/night/castle.svg),
     url(./assets/background/night/grass-background.svg);
-    /* url(http://www.script-tutorials.com/demos/360/images/stars.png); */
   background-size: auto 100%;
   background-position: left bottom;
 }
 
+@media screen and (max-width: 512px) {
+  .castle {
+    background: url(./assets/background/night/mobile.svg);
+    background-size: auto 100%;
+    background-position: right bottom;
+  }
+
+    .stars, .twinkling, .castle {
+      width: 100%;
+      height: 100%;
+    }
+}
+
 .stars {
-  background:var(--color-light-purple) url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+  background:var(--color-light-purple) url('./assets/stars/stars.png') repeat top center;
 }
 
 .twinkling{

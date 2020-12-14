@@ -116,23 +116,6 @@ a.underlined:hover {
   background-position: left bottom;
 }
 
-.night {
-  /* background: var(--color-dark-purple); */
-  /* fore -> back */
-  /* z-index:3; */
-  /* background-color: var(--color-dark-purple); */
-  position: relative;
-  background-image:
-    url(./assets/background/night/moon.svg),
-    url(./assets/background/night/grass-foreground.svg),
-    url(./assets/background/night/castle.svg),
-    url(./assets/background/night/grass-background.svg);
-    /* url(http://www.script-tutorials.com/demos/360/images/stars.png); */
-  background-size: auto 100%;
-  background-position: left bottom;
-  z-index: 1;
-}
-
 .card {
   width: 90%;
   height: 100%;
