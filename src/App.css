@@ -175,7 +175,16 @@ a.underlined:hover {
     height: 100%;
     border-radius: 0;
     box-shadow: none;
-    background: url(./assets/icons/background-mobile.svg);
+  }
+
+  .day {
+    background: url(./assets/background/day/mobile.svg);
+    background-size: cover;
+    background-position: right bottom;
+  }
+
+  .night {
+    background: url(./assets/background/night/mobile.svg);
     background-size: cover;
     background-position: right bottom;
   }

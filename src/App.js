@@ -7,11 +7,13 @@ import SignUp from './views/SignUp';
 import "./App.css";
 import Button from './components/Button';
 
+import { loadStripe } from "@stripe/stripe-js";
+const stripePromise = loadStripe("pk_test_51Hy2Q4CnQUzeeHwZsET84TUMgurCpxC1X3DyiruYj3RhEC8Se1HORNI5E8jbOGaJXsULXTW8OnOUNRV4k9xDPNj300kucZsGJ9");
 
 const App = () => {
-  const [loading, setLoading] = useState(false); // TODO: set back to true
+  const [loading, setLoading] = useState(true);
   const [day, setDay] = useState(true);
-  const [step, setStep] = useState('signUp'); // TODO: set back to landing
+  const [step, setStep] = useState('landing'); // TODO: set back to landing
 
   // Simulates loading for 3s
   setTimeout(function(){
@@ -96,7 +98,14 @@ const ShowSignUp = () => {
     })
     errs.raffle = countRaffle !== 3 ? 'Must choose 3 items.' : '';
 
-    return errs;
+    let noErrs = true;
+    Object.keys(errs).forEach((key) => {
+      if(errs[key] !== '') {
+        noErrs = false;
+      }
+    })
+
+    return noErrs ? null : errs;
   };
 
   const handleInputChange = (event) => {
@@ -114,12 +123,56 @@ const ShowSignUp = () => {
     // setFieldErrors({...fieldErrors, [name]: errs[name] });
   };
 
-  const handleSubmit = (event) => {
+  const stripeHandler = async() => {
+    // STRIPE
+    console.log('hello')
+    const stripe = await stripePromise;
+    const response = await fetch("http://localhost:5000/create-stripe-session", {
+        method: "POST",
+      }
+    );
+    const session = await response.json();
+    // redirect user to checkout
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
+    if (result.error) {
+      console.log(result.error.message);
+    }
+  }
+
+  const registrationHandler = async() => {
+    // REGISTER
+    try {
+      const res = await fetch("http://localhost:5000/register", {
+        method: "POST",
+        body: JSON.stringify(userParams),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (res.status >= 200 && res.status < 300) {
+        console.log(res);
+        // window.location.reload();
+      } else {
+        console.log("Something went wrong");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const errs = validateUserParams(userParams);
-    setFieldErrors(errs);
-    console.log(userParams);
-    return;
+
+    if (errs) {
+      setFieldErrors(errs);
+    } else {
+      await stripeHandler();
+      await registrationHandler();
+    }
   }
 
   const rafflePrizes = [

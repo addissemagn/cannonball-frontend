@@ -37,8 +37,9 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     // boxShadow: "0px 10px 40px 0px rgba(0, 0, 0, 0.1)",
     ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
-      background: "none",
-      padding: "0px",
+      background: "rgba(41, 17, 37, 0.5)",
+      marginTop: "40px",
+      padding: '30px',
       boxShadow: "none",
     },
   },
@@ -52,6 +53,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontFamily: "Aclonica",
     fontSize: "30px",
+    textAlign: 'center',
+    ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
+      fontSize: "25px",
+    },
   },
   button: {
     textAlign: 'center',
@@ -127,7 +132,7 @@ const SignUp = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaf
               </Grid>
               {/* GIFT CARD */}
               <Grid item xs={12}>
-                <InputLabel>Gift Card</InputLabel>
+                <InputLabel>Gift Card *</InputLabel>
                 <Select
                   variant="outlined"
                   required
