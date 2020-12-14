@@ -86,8 +86,7 @@ const SignUp = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaf
           <Typography component="h1" variant="h5" className={classes.title}>
             Purchase Ticket
           </Typography>
-          <form className={classes.form} noValidate name="users" data-netlify="true">
-            <input type="hidden" name="users" value="users" />
+          <form className={classes.form} noValidate name="users">
             <Grid container spacing={2}>
               <Grid item xs={12} sm={12}>
                 <TextInput
