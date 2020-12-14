@@ -59,7 +59,7 @@ const Header = ({ onClickHome, onClickSignUp, day }) => {
         </span>
       </div>
       <div className={classes.social}>
-        <span onClick={() => onClickSignUp()}>Sign Up</span>
+        {/* <span onClick={() => onClickSignUp()}>Sign Up</span> */}
         <a
           href="https://instagram.com"
           target="_blank"

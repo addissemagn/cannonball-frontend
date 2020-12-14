@@ -32,7 +32,7 @@
   to {background-position:10000px 0;}
 }
 
-.stars, .twinkling, .castle {
+.stars, .twinkling, .castle, .moon {
   position: absolute;
   top:0;
   left:0;
@@ -47,7 +47,6 @@
 
 .castle {
   background-image:
-    url(./assets/background/night/moon.svg),
     url(./assets/background/night/grass-foreground.svg),
     url(./assets/background/night/castle.svg),
     url(./assets/background/night/grass-background.svg);
@@ -55,17 +54,10 @@
   background-position: left bottom;
 }
 
-@media screen and (max-width: 512px) {
-  .castle {
-    background: url(./assets/background/night/mobile.svg);
-    background-size: auto 100%;
-    background-position: right bottom;
-  }
-
-    .stars, .twinkling, .castle {
-      width: 100%;
-      height: 100%;
-    }
+.moon {
+  background-image: url(./assets/background/night/moon.svg);
+  background-size: auto 100%;
+  background-position: left bottom;
 }
 
 .stars {
@@ -79,4 +71,17 @@
   -o-animation:move-twink-back 200s linear infinite;
   -webkit-animation:move-twink-back 200s linear infinite;
   animation:move-twink-back 200s linear infinite;
+}
+
+@media screen and (max-width: 512px) {
+  .castle {
+    background: url(./assets/background/night/mobile.svg);
+    background-size: auto 100%;
+    background-position: right bottom;
+  }
+
+  .stars, .twinkling, .castle {
+    width: 100%;
+    height: 100%;
+  }
 }

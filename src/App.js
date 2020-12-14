@@ -46,6 +46,7 @@ const App = () => {
         <>
           <div className="stars"></div>
           <div className="twinkling"></div>
+          <div className="moon"></div>
           <div className="castle"></div>
         </>
       )}
