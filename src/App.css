@@ -9,6 +9,7 @@
   --color-medieval-blue: linear-gradient(180deg, #9ACFFF 0%, #CBE6FF 33.33%), #CBE6FF;
   --color-nighttime: linear-gradient(180deg, #322336 0%, #64406D 32.29%), #5B4065;
   --color-dark-purple: #291125;
+  --color-light-purple: #65406e;
   --gradient-lighter: rgba(255, 163, 125, 0.65);
   --gradient-darker: rgba(255, 100, 124, 0.55);
 }
@@ -116,15 +117,20 @@ a.underlined:hover {
 }
 
 .night {
-  background: var(--color-nighttime);
+  /* background: var(--color-dark-purple); */
   /* fore -> back */
+  /* z-index:3; */
+  /* background-color: var(--color-dark-purple); */
+  position: relative;
   background-image:
     url(./assets/background/night/moon.svg),
     url(./assets/background/night/grass-foreground.svg),
     url(./assets/background/night/castle.svg),
     url(./assets/background/night/grass-background.svg);
+    /* url(http://www.script-tutorials.com/demos/360/images/stars.png); */
   background-size: auto 100%;
   background-position: left bottom;
+  z-index: 1;
 }
 
 .card {
@@ -136,6 +142,7 @@ a.underlined:hover {
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
+  z-index: 2;
 
   animation: fadeIn ease 3s;
   -webkit-animation: fadeIn ease 3s;

@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Title from './components/Title';
 import SignUp from './views/SignUp';
 import "./App.css";
+import "./Animations.css";
 import Button from './components/Button';
 
 import { loadStripe } from "@stripe/stripe-js";
@@ -13,7 +14,7 @@ const stripePromise = loadStripe("pk_test_51Hy2Q4CnQUzeeHwZsET84TUMgurCpxC1X3Dyi
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [day, setDay] = useState(true);
-  const [step, setStep] = useState('landing'); // TODO: set back to landing
+  const [step, setStep] = useState('landing');
 
   // Simulates loading for 3s
   setTimeout(function(){
@@ -41,6 +42,13 @@ const App = () => {
 
   return (
     <div className={day ? "card day" : "card night"}>
+      {!day && (
+        <>
+          <div className="stars"></div>
+          <div className="twinkling"></div>
+          <div className="castle"></div>
+        </>
+      )}
       <div className="background"></div>
       <Header
         onClickSignUp={() => setStep('signUp')}

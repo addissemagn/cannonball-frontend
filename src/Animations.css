@@ -1,0 +1,68 @@
+@keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+  from {background-position:0 0;}
+  to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+  from {background-position:0 0;}
+  to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+  from {background-position:0 0;}
+  to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+  from {background-position: 0;}
+  to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .castle {
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  z-index:-2;
+}
+
+.castle {
+  background-image:
+    url(./assets/background/night/moon.svg),
+    url(./assets/background/night/grass-foreground.svg),
+    url(./assets/background/night/castle.svg),
+    url(./assets/background/night/grass-background.svg);
+    /* url(http://www.script-tutorials.com/demos/360/images/stars.png); */
+  background-size: auto 100%;
+  background-position: left bottom;
+}
+
+.stars {
+  background:var(--color-light-purple) url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+}
+
+.twinkling{
+  background:transparent url('./assets/stars/twinkling-light.png') repeat top center;
+  -moz-animation:move-twink-back 200s linear infinite;
+  -ms-animation:move-twink-back 200s linear infinite;
+  -o-animation:move-twink-back 200s linear infinite;
+  -webkit-animation:move-twink-back 200s linear infinite;
+  animation:move-twink-back 200s linear infinite;
+}
