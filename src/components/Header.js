@@ -32,8 +32,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '16px',
     lineHeight: '30px',
     cursor: 'pointer',
-    color: (props) => props.day ? style.colors.red : style.colors.white,
-    fill: (props) => props.day ? style.colors.red : style.colors.white,
+    color: (props) => props.isLightTheme ? style.colors.red : style.colors.white,
+    fill: (props) => props.isLightTheme ? style.colors.red : style.colors.white,
     '& a, span' :{
       display: 'inline-block',
       marginRight: '15px',
@@ -47,8 +47,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Header = ({ togglePage, day }) => {
-  const classes = useStyles({ day });
+const Header = ({ isLightTheme, togglePage }) => {
+  const classes = useStyles({ isLightTheme });
 
   return (
     <div className={classes.header}>

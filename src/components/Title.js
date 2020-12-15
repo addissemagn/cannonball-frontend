@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Title = ({ text, day }) => {
+const Title = ({ text }) => {
   const classes = useStyles();
 
   return (

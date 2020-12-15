@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
   countdown: {
     display: 'flex',
     margin: '24px 0px',
-    color: (props) => props.day ? style.colors.black : style.colors.white,
+    color: (props) => props.isLightTheme ? style.colors.black : style.colors.white,
   },
   time: {
     display: 'block',
@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Countdown = ({ finalDate, day }) => {
-  const classes = useStyles({ day });
+const Countdown = ({ isLightTheme, finalDate }) => {
+  const classes = useStyles({ isLightTheme });
 
   const [countdown, setCountdown] = useState({
     days: 0,

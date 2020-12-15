@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Snowfall from 'react-snowfall'
 import LogoCannonball from './assets/icons/LogoCannonball';
 import Countdown from './components/Countdown';
@@ -15,24 +15,12 @@ const stripePromise = loadStripe("pk_test_51Hy2Q4CnQUzeeHwZsET84TUMgurCpxC1X3Dyi
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const [day, setDay] = useState(true);
   const [step, setStep] = useState('faq');
 
   // Simulates loading for 3s
   setTimeout(function(){
     setLoading(false);
   }, 1500);
-
-  useEffect(()=>{
-    const daySteps = ['landing, faq'];
-    const nightSteps = ['signUp'];
-
-    if (daySteps.includes(step)) {
-      setDay(true);
-    } else if (nightSteps.includes(step)){
-      setDay(false)
-    }
-  }, [step])
 
   if (loading) {
     return (
@@ -41,6 +29,8 @@ const App = () => {
       </div>
     )
   }
+
+  const lightThemeSteps = ['landing', 'faq']
 
   return (
     <div className={`card bg-${step}`}>
@@ -59,11 +49,11 @@ const App = () => {
         />
       )}
       <div className="background"></div>
-      <Header togglePage={setStep} day={day} />
+      <Header step={step} togglePage={setStep} isLightTheme={lightThemeSteps.includes(step)} />
       {step === "landing" && (
         <div className="content">
-          <Title text="Coming Soon" day={day} />
-          <Countdown finalDate="2021-01-16" day={day} />
+          <Title text="Coming Soon" isLightTheme={lightThemeSteps.includes(step)} />
+          <Countdown finalDate="2021-01-16" isLightTheme={lightThemeSteps.includes(step)} />
           <Button
             text="Find out more on Instagram"
             link="https://instagram.com"
