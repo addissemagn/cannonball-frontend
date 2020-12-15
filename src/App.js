@@ -1,21 +1,28 @@
 import React, { useState } from 'react';
-import Snowfall from 'react-snowfall'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import { loadStripe } from "@stripe/stripe-js";
+
 import LogoCannonball from './assets/icons/LogoCannonball';
+
+import Button from './components/Button';
 import Countdown from './components/Countdown';
-import Header from './components/Header';
 import Title from './components/Title';
+
+import PageLayout from './views/PageLayout';
 import SignUp from './views/SignUp';
 import Faq from './views/Faq';
+
 import "./App.css"; // TODO: move from .css to material ui css
 import "./Animations.css";
-import Button from './components/Button';
 
-import { loadStripe } from "@stripe/stripe-js";
 const stripePromise = loadStripe("pk_test_51Hy2Q4CnQUzeeHwZsET84TUMgurCpxC1X3DyiruYj3RhEC8Se1HORNI5E8jbOGaJXsULXTW8OnOUNRV4k9xDPNj300kucZsGJ9");
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const [step, setStep] = useState('faq');
 
   // Simulates loading for 3s
   setTimeout(function(){
@@ -30,54 +37,40 @@ const App = () => {
     )
   }
 
-  const lightThemeSteps = ['landing', 'faq']
-
   return (
-    <div className={`card bg-${step}`}>
-      {step === "signUp" && (
-        <>
-          <div className="stars"></div>
-          <div className="twinkling"></div>
-          <div className="moon"></div>
-          <div className="castle"></div>
-        </>
-      )}
-      {step === "faq" && (
-        <Snowfall
-          color="white"
-          snowflakeCount={250}
-        />
-      )}
-      <div className="background"></div>
-      <Header step={step} togglePage={setStep} isLightTheme={lightThemeSteps.includes(step)} />
-      {step === "landing" && (
-        <div className="content">
-          <Title text="Coming Soon" isLightTheme={lightThemeSteps.includes(step)} />
-          <Countdown finalDate="2021-01-16" isLightTheme={lightThemeSteps.includes(step)} />
-          <Button
-            text="Find out more on Instagram"
-            link="https://instagram.com"
-          />
-        </div>
-      )}
-      {step === "faq" && <ShowFaq />}
-      {step === "signUp" && <ShowSignUp />}
-      <div className="footer">
-        <span className={step === 'faq' ? "black" : "" }>
-          Questions? Well, we've got answers at{" "}
-          <a
-            className="underlined"
-            href="mailto:cannonball@skule.ca"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            cannonball@skule.ca
-          </a>
-          .
-        </span>
-      </div>
-    </div>
+    <Router>
+        <Switch>
+          <Route exact path="/">
+            <PageLayout step="landing" isLightTheme>
+              <ShowComingSoon isLightTheme />
+            </PageLayout>
+          </Route>
+          <Route exact path="/sign-up">
+            <PageLayout step="signUp">
+              <ShowSignUp />
+            </PageLayout>
+          </Route>
+          <Route exact path="/faq">
+            <PageLayout step="faq" isLightTheme>
+              <ShowFaq />
+            </PageLayout>
+          </Route>
+        </Switch>
+    </Router>
   );
+}
+
+const ShowComingSoon = ({ isLightTheme }) => {
+  return (
+    <div className="content">
+      <Title text="Coming Soon" isLightTheme={isLightTheme} />
+      <Countdown finalDate="2021-01-16" isLightTheme={isLightTheme} />
+      <Button
+        text="Find out more on Instagram"
+        link="https://instagram.com"
+      />
+    </div>
+  )
 }
 
 // Handles all sign up and returns form

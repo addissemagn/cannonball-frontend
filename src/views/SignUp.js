@@ -132,12 +132,12 @@ const SignUp = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaf
               </Grid>
               {/* GIFT CARD */}
               <Grid item xs={12}>
-                <InputLabel>Select 25$ Gift Card *</InputLabel>
+                <InputLabel>Select $25 Gift Card *</InputLabel>
                 <Select
                   variant="outlined"
                   required
                   fullWidth
-                  label="Choose 25$ Gift Card"
+                  label="Choose $25 Gift Card"
                   name="gift"
                   value={user.gift}
                   onChange={handleInputChange}

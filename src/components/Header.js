@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import { ReactComponent as IconFacebook } from '../assets/icons/facebook.svg';
 import { ReactComponent as IconInstagram } from '../assets/icons/instagram.svg';
@@ -47,19 +48,23 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Header = ({ isLightTheme, togglePage }) => {
+const Header = ({ isLightTheme }) => {
   const classes = useStyles({ isLightTheme });
 
   return (
     <div className={classes.header}>
       <div className={classes.logo}>
-        <span onClick={() => togglePage('landing')}>
+        <Link to="/">
           <LogoCannonball width="120" />
-        </span>
+        </Link>
       </div>
       <div className={classes.social}>
-        <span onClick={() => togglePage('signUp')}>Sign Up</span>
-        <span onClick={() => togglePage('faq')}>FAQ</span>
+        <Link to="/sign-up">
+          <span>Sign Up</span>
+        </Link>
+        <Link to="/faq">
+          <span>FAQ</span>
+        </Link>
         <a
           href="https://instagram.com"
           target="_blank"
