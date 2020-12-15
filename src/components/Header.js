@@ -4,7 +4,6 @@ import { ReactComponent as IconFacebook } from '../assets/icons/facebook.svg';
 import { ReactComponent as IconInstagram } from '../assets/icons/instagram.svg';
 import LogoCannonball from '../assets/icons/LogoCannonball';
 import style from '../styles/theme';
-
 import "../App.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -48,18 +47,19 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Header = ({ onClickHome, onClickSignUp, day }) => {
+const Header = ({ togglePage, day }) => {
   const classes = useStyles({ day });
 
   return (
     <div className={classes.header}>
       <div className={classes.logo}>
-        <span onClick={() => onClickHome()}>
+        <span onClick={() => togglePage('landing')}>
           <LogoCannonball width="120" />
         </span>
       </div>
       <div className={classes.social}>
-        <span onClick={() => onClickSignUp()}>Sign Up</span>
+        <span onClick={() => togglePage('signUp')}>Sign Up</span>
+        <span onClick={() => togglePage('faq')}>FAQ</span>
         <a
           href="https://instagram.com"
           target="_blank"

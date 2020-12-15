@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import Snowfall from 'react-snowfall'
 import LogoCannonball from './assets/icons/LogoCannonball';
 import Countdown from './components/Countdown';
 import Header from './components/Header';
 import Title from './components/Title';
 import SignUp from './views/SignUp';
-import "./App.css";
+import Faq from './views/Faq';
+import "./App.css"; // TODO: move from .css to material ui css
 import "./Animations.css";
 import Button from './components/Button';
 
@@ -14,7 +16,7 @@ const stripePromise = loadStripe("pk_test_51Hy2Q4CnQUzeeHwZsET84TUMgurCpxC1X3Dyi
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [day, setDay] = useState(true);
-  const [step, setStep] = useState('landing');
+  const [step, setStep] = useState('faq');
 
   // Simulates loading for 3s
   setTimeout(function(){
@@ -22,7 +24,7 @@ const App = () => {
   }, 1500);
 
   useEffect(()=>{
-    const daySteps = ['landing'];
+    const daySteps = ['landing, faq'];
     const nightSteps = ['signUp'];
 
     if (daySteps.includes(step)) {
@@ -41,8 +43,8 @@ const App = () => {
   }
 
   return (
-    <div className={day ? "card day" : "card night"}>
-      {!day && (
+    <div className={`card bg-${step}`}>
+      {step === "signUp" && (
         <>
           <div className="stars"></div>
           <div className="twinkling"></div>
@@ -50,23 +52,39 @@ const App = () => {
           <div className="castle"></div>
         </>
       )}
+      {step === "faq" && (
+        <Snowfall
+          color="white"
+          snowflakeCount={250}
+        />
+      )}
       <div className="background"></div>
-      <Header
-        onClickSignUp={() => setStep('signUp')}
-        onClickHome={() => setStep('landing')}
-        day={day}/>
-      {step === 'landing' && (
+      <Header togglePage={setStep} day={day} />
+      {step === "landing" && (
         <div className="content">
-          <Title text="Coming Soon" day={day}/>
-          <Countdown finalDate="2021-01-16" day={day}/>
-          <Button text="Find out more on Instagram" link="https://instagram.com" />
+          <Title text="Coming Soon" day={day} />
+          <Countdown finalDate="2021-01-16" day={day} />
+          <Button
+            text="Find out more on Instagram"
+            link="https://instagram.com"
+          />
         </div>
       )}
-      {step === 'signUp' && (
-        <ShowSignUp />
-      )}
+      {step === "faq" && <ShowFaq />}
+      {step === "signUp" && <ShowSignUp />}
       <div className="footer">
-        <span>Questions? Well, we've got answers at <a className="underlined" href="mailto:cannonball@skule.ca" target="_blank" rel="noopener noreferrer">cannonball@skule.ca</a>.</span>
+        <span className={step === 'faq' ? "black" : "" }>
+          Questions? Well, we've got answers at{" "}
+          <a
+            className="underlined"
+            href="mailto:cannonball@skule.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            cannonball@skule.ca
+          </a>
+          .
+        </span>
       </div>
     </div>
   );
@@ -134,7 +152,6 @@ const ShowSignUp = () => {
 
   const stripeHandler = async() => {
     // STRIPE
-    console.log('hello')
     const stripe = await stripePromise;
     const response = await fetch("http://localhost:5000/create-stripe-session", {
         method: "POST",
@@ -175,6 +192,7 @@ const ShowSignUp = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const errs = validateUserParams(userParams);
+    console.log(userParams);
 
     if (errs) {
       setFieldErrors(errs);
@@ -184,11 +202,18 @@ const ShowSignUp = () => {
     }
   }
 
+  // to add a prize, just need to add it to this list
   const rafflePrizes = [
-    { label: "$200 Donation (your choice of charity)", name: "donation" },
+    { label: "$200 Donation to Your Choice of Charity", name: "donation" },
+    { label: "2 Tickets to the Illusionarium Exhibit", name: "illusionarium" },
+    { label: "Bike Share Toronto Annual Membership", name: "bikeshare" },
+    { label: "Engineering Stores Mystery Box of $140 value", name: "stores" },
     { label: "$100 Steam Gift Card", name: "steam" },
     { label: "$100 Amazon Gift Card", name: "etsy" },
     { label: "$100 Etsy Gift Card", name: "amazon" },
+    { label: "$100 Indigo Gift Card", name: "indigo" },
+    { label: "$100 Tim Hortons Gift Card", name: "timhortons" },
+    { label: "$100 UofT Bookstore Gift Card", name: "bookstore" },
   ];
 
   const raffleInitialState = {};
@@ -207,6 +232,24 @@ const ShowSignUp = () => {
 
   return (
     <SignUp user={userParams} raffleParams={raffleParams} rafflePrizes={rafflePrizes} fieldErrors={fieldErrors} handleInputChange={handleInputChange} handleRaffleChange={handleRaffleChange} handleSubmit={handleSubmit} />
+  );
+};
+
+const ShowFaq = () => {
+  // to add a faq, just need to add it to this list
+  const faqList = [
+    {
+      q: "What the heck is this?",
+      a: "Idk, you tell me.",
+    },
+    {
+      q: "What the heck is this?",
+      a: "Idk, you tell me.",
+    },
+  ]
+
+  return (
+    <Faq faqList={faqList} />
   );
 };
 

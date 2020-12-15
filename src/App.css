@@ -103,7 +103,7 @@ a.underlined:hover {
   50% {opacity: 1;}
 }
 
-.day {
+.bg-landing {
   background: var(--color-medieval-blue);
   /* fore -> back */
   background-image:
@@ -112,6 +112,15 @@ a.underlined:hover {
     url(./assets/background/day/grass-background.svg),
     url(./assets/background/day/trees.svg),
     url(./assets/background/day/clouds.svg);
+  background-size: auto 100%;
+  background-position: left bottom;
+}
+
+.bg-faq {
+  background: var(--color-medieval-blue);
+  /* fore -> back */
+  background-image:
+    url(./assets/background/snowy/scene.svg);
   background-size: auto 100%;
   background-position: left bottom;
 }
@@ -167,13 +176,13 @@ a.underlined:hover {
     box-shadow: none;
   }
 
-  .day {
+  .bg-landing {
     background: url(./assets/background/day/mobile.svg);
     background-size: cover;
     background-position: right bottom;
   }
 
-  .night {
+  .bg-signUp {
     background: url(./assets/background/night/mobile.svg);
     background-size: cover;
     background-position: right bottom;

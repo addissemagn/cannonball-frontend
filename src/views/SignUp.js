@@ -132,12 +132,12 @@ const SignUp = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaf
               </Grid>
               {/* GIFT CARD */}
               <Grid item xs={12}>
-                <InputLabel>Gift Card *</InputLabel>
+                <InputLabel>Select 25$ Gift Card *</InputLabel>
                 <Select
                   variant="outlined"
                   required
                   fullWidth
-                  label="Gift Card"
+                  label="Choose 25$ Gift Card"
                   name="gift"
                   value={user.gift}
                   onChange={handleInputChange}
@@ -166,7 +166,7 @@ const SignUp = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaf
                   className={classes.formControl}
                 >
                   <FormLabel component="legend">
-                    Choose 3 Raffle Items
+                    Select 3 Raffle Prizes to Enter
                   </FormLabel>
                   <FormGroup>
                     {rafflePrizes.map((prize) => (
@@ -191,25 +191,6 @@ const SignUp = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaf
                     </FormHelperText>
                   )}
                 </FormControl>
-              </Grid>
-              {/* RAFFLE ITEMS */}
-              <Grid item xs={12}>
-                <FormHelperText>
-                  If you want to participate in Instagram giveaways:
-                </FormHelperText>
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      value={user.agreeMedia}
-                      checked={user.agreeMedia}
-                      name="agreeMedia"
-                      onChange={handleInputChange}
-                      key="agreeMedia"
-                    />
-                  }
-                  // TODO: Is this really necessary if people would have to submit them anyway? Plus there could be other people in the photos
-                  label="I grant Cannonball permission to post my images/videos to social media."
-                />
               </Grid>
             </Grid>
             <Grid className={classes.button}>
