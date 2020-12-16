@@ -95,7 +95,7 @@ a.underlined:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: blinker 1.5s linear infinite;
+  animation: blinker 1s linear infinite;
   opacity: 0;
 }
 

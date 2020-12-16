@@ -40,10 +40,18 @@ const useStyles = makeStyles((theme) => ({
     '& a, span' :{
       display: 'inline-block',
       marginRight: '15px',
+      // for menu icon
+      ['@media (max-width:512px)']: { // eslint-disable-line no-useless-computed-key
+        marginRight: '0px',
+      },
     },
     '& svg' :{
       width: '25px',
       marginRight: '15px',
+      // for menu icon
+      ['@media (max-width:512px)']: { // eslint-disable-line no-useless-computed-key
+        marginRight: '0px',
+      },
     },
     '& a:last-child' :{
       marginRight: '0px',
@@ -51,7 +59,8 @@ const useStyles = makeStyles((theme) => ({
   },
   menuIcon: {
     fill: (props) => props.isLightTheme ? style.colors.red : style.colors.white,
-    fontSize: '40px',
+    fontSize: '50px',
+    padding: '0px 10px',
   }
 }));
 
