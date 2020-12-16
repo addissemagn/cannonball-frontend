@@ -189,7 +189,8 @@ a.underlined:hover {
   }
 
   html {
-    background-size: auto auto;
+    background-size: 100% 100%;
+    background: var(--color-dark-purple);
   }
 }
 

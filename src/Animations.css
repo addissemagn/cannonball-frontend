@@ -76,12 +76,12 @@
 
 @media screen and (max-width: 512px) {
   /* TODO: add moon? */
-  /* .castle {
+  .castle {
     margin: 0px auto;
     background: url(./assets/background/night/mobile.svg);
     background-size: auto 100%;
     background-position: right bottom;
-  } */
+  }
 
   .stars, .twinkling, .castle {
     width: 100%;
