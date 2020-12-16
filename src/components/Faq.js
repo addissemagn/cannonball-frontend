@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     // boxShadow: "0px 10px 40px 0px rgba(0, 0, 0, 0.1)",
     ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
+      background: "rgba(255, 255, 255, 0.5)",
       marginTop: "40px",
       padding: '30px',
       boxShadow: "none",

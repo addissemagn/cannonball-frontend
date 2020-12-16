@@ -18,9 +18,6 @@ const useStyles = makeStyles({
     textAlign: 'center',
     alignContent: 'center',
   },
-  fullList: {
-    width: 'auto',
-  },
   links: {
     fontSize: '16px',
     lineHeight: '30px',
