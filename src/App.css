@@ -184,8 +184,8 @@ a.underlined:hover {
 
   .bg-signUp {
     background: url(./assets/background/night/mobile.svg);
-    background-size: cover;
     background-position: right bottom;
+    background-size: auto 100%;
   }
 
   html {

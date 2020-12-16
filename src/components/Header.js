@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
       // for menu icon
       ['@media (max-width:512px)']: { // eslint-disable-line no-useless-computed-key
         marginRight: '0px',
+        width: '50px',
       },
     },
     '& a:last-child' :{
