@@ -84,8 +84,9 @@ const SignUpContainer = () => {
 
   const registrationHandler = async() => {
     // REGISTER
+    const url = "https://cannonball-backend.netlify.app"
     try {
-      const res = await fetch("http://localhost:5000/register", {
+      const res = await fetch(`${url}/register`, {
         method: "POST",
         body: JSON.stringify(userParams),
         headers: {
@@ -112,7 +113,7 @@ const SignUpContainer = () => {
     if (errs) {
       setFieldErrors(errs);
     } else {
-      await stripeHandler();
+      // await stripeHandler();
       await registrationHandler();
     }
   }
