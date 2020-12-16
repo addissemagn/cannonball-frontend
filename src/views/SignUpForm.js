@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const SignUp = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaffleChange, handleSubmit, fieldErrors }) => {
+const SignUpForm = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaffleChange, handleSubmit, fieldErrors }) => {
   const classes = useStyles();
   const theme = createMuiTheme({
     palette: {
@@ -208,4 +208,4 @@ const SignUp = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaf
   );
 };
 
-export default SignUp;
+export default SignUpForm;
