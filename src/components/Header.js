@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     display: 'flex',
-    padding: '48px',
+    margin: '48px',
     paddingBottom: '20px',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
       transform: 'translateY(-2px)',
     },
     ['@media (max-width:768px)']: { // eslint-disable-line no-useless-computed-key
-      padding: '48px 30px 0px 30px',
+      margin: '48px 30px 0px 30px',
     },
   },
   social: {
