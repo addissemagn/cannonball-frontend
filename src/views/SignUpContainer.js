@@ -7,6 +7,7 @@ const stripePromise = loadStripe("pk_test_51Hy2Q4CnQUzeeHwZsET84TUMgurCpxC1X3Dyi
 
 // Handles all sign up and returns form
 const SignUpContainer = () => {
+  console.log(process.env.REACT_APP_API_URL);
   const userFieldsDefault = {
     firstName: '',
     lastName: '',
@@ -84,9 +85,8 @@ const SignUpContainer = () => {
 
   const registrationHandler = async() => {
     // REGISTER
-    const url = "https://cannonball-backend.netlify.app"
     try {
-      const res = await fetch(`${url}/register`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/register`, {
         method: "POST",
         body: JSON.stringify(userParams),
         headers: {
