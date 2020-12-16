@@ -193,6 +193,14 @@ a.underlined:hover {
     background: var(--color-dark-purple);
     background-image: none,
   }
+
+  #root {
+    background: var(--color-dark-purple);
+  }
+
+  body {
+    background: var(--color-dark-purple);
+  }
 }
 
 .content {
