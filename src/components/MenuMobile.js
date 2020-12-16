@@ -8,8 +8,6 @@ import { ReactComponent as IconEmail } from '../assets/icons/email.svg';
 import CloseIcon from '@material-ui/icons/Close';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import style from '../styles/theme';
 
 const useStyles = makeStyles({
@@ -51,7 +49,7 @@ const MenuMobile = ({ direction, menuIcon }) => {
     top: false,
     left: false,
     bottom: false,
-    right: true,
+    right: false,
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
