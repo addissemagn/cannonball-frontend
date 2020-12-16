@@ -10,12 +10,17 @@ const ComingSoonContainer = ({ isLightTheme }) => {
     <div className="content">
       <Title text="Coming Soon" isLightTheme={isLightTheme} />
       <Countdown finalDate="2021-01-16" isLightTheme={isLightTheme} />
-      <Button
-        text="Find out more on Instagram"
-        link="https://instagram.com"
-      />
+      <a
+        href={process.env.REACT_APP_INSTAGRAM}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button
+          text="Find out more on Instagram"
+        />
+      </a>
     </div>
-  )
+  );
 }
 
 export default ComingSoonContainer;
