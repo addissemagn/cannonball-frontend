@@ -36,11 +36,15 @@ const useStyles = makeStyles((theme) => ({
     background: "rgba(41, 17, 37, 1)",
     borderRadius: "15px",
     // boxShadow: "0px 10px 40px 0px rgba(0, 0, 0, 0.1)",
+    // this is def getting hacky :(
     ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
       background: "rgba(41, 17, 37, 0.5)",
       position: 'absolute',
       top: 200,
+      left:0,
+      margin: '10px',
       padding: '30px',
+      paddingBottom: '70px',
       boxShadow: "none",
     },
   },

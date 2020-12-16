@@ -191,6 +191,7 @@ a.underlined:hover {
   html {
     background-size: 100% 100%;
     background: var(--color-dark-purple);
+    background-image: none,
   }
 }
 

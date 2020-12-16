@@ -146,7 +146,15 @@ const SignUpContainer = () => {
   };
 
   return (
-    <SignUpForm user={userParams} raffleParams={raffleParams} rafflePrizes={rafflePrizes} fieldErrors={fieldErrors} handleInputChange={handleInputChange} handleRaffleChange={handleRaffleChange} handleSubmit={handleSubmit} />
+    <SignUpForm
+      user={userParams}
+      raffleParams={raffleParams}
+      rafflePrizes={rafflePrizes}
+      fieldErrors={fieldErrors}
+      handleInputChange={handleInputChange}
+      handleRaffleChange={handleRaffleChange}
+      handleSubmit={handleSubmit}
+    />
   );
 };
 
