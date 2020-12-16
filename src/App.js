@@ -23,7 +23,7 @@ const App = () => {
   // Simulates loading for 3s
   setTimeout(function(){
     setLoading(false);
-  }, 1000);
+  }, 1500);
 
   if (loading) {
     return (

@@ -40,10 +40,6 @@ const useStyles = makeStyles((theme) => ({
     '& a, span' :{
       display: 'inline-block',
       marginRight: '15px',
-      // for menu icon
-      ['@media (max-width:512px)']: { // eslint-disable-line no-useless-computed-key
-        marginRight: '0px',
-      },
     },
     '& svg' :{
       width: '25px',
