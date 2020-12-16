@@ -182,11 +182,11 @@ a.underlined:hover {
     background-position: right bottom;
   }
 
-  /* .bg-signUp {
+  .bg-signUp {
     background: url(./assets/background/night/mobile.svg);
     background-position: right bottom;
-    background-size: auto 100%;
-  } */
+    background-size: 100% 100%;
+  }
 
   html {
     background-size: auto auto;
