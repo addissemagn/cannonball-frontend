@@ -38,7 +38,8 @@ const useStyles = makeStyles((theme) => ({
     // boxShadow: "0px 10px 40px 0px rgba(0, 0, 0, 0.1)",
     ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
       background: "rgba(41, 17, 37, 0.5)",
-      marginTop: "40px",
+      position: 'absolute',
+      top: 200,
       padding: '30px',
       boxShadow: "none",
     },
