@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { ReactComponent as IconFacebook } from '../assets/icons/facebook.svg';
 import { ReactComponent as IconInstagram } from '../assets/icons/instagram.svg';
 import { ReactComponent as IconEmail } from '../assets/icons/email.svg';
+import CloseIcon from '@material-ui/icons/Close';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
@@ -18,6 +19,11 @@ const useStyles = makeStyles({
     fontFamily: 'Aclonica',
     textAlign: 'center',
     alignContent: 'center',
+    display: "flex",
+    flexDirection: "column",
+    '& a' :{
+      marginBottom: '10px',
+    }
   },
   links: {
     fontSize: '16px',
@@ -27,16 +33,15 @@ const useStyles = makeStyles({
     fill: (props) => props.isLightTheme ? style.colors.red : style.colors.white,
   },
   social: {
-    display: 'flex',
-    padding: 0,
-    '& a' :{
-      marginRight: '10px',
-      marginLeft: '0',
-    },
     '& svg' :{
       height: '27px',
-      marginRight: '20px',
+      margin: '10px',
     }
+  },
+  closeIcon: {
+    fill: (props) => props.isLightTheme ? style.colors.red : style.colors.white,
+    marginBottom: '10px',
+    marginTop: '40px',
   }
 });
 
@@ -46,7 +51,7 @@ const MenuMobile = ({ direction, menuIcon }) => {
     top: false,
     left: false,
     bottom: false,
-    right: false,
+    right: true,
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -59,56 +64,40 @@ const MenuMobile = ({ direction, menuIcon }) => {
 
   const list = (anchor) => (
     <div
-      className={clsx(
-        classes.list,
-        classes.links
-      )}
+      className={clsx(classes.list, classes.links)}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        <Link to="/sign-up">
-          <ListItem button key="signup">
-            Sign Up
-          </ListItem>
-        </Link>
-        <Link to="/faq">
-          <ListItem button key="faq">
-            FAQ
-          </ListItem>
-        </Link>
-        <Link to="/quiz">
-          <ListItem button key="quiz">
-            Buzzfeed Quiz
-          </ListItem>
-        </Link>
-      </List>
-      <List className={classes.social}>
-        <ListItem button key="instagram">
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <IconInstagram />
-          </a>
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <IconFacebook />
-          </a>
-          <a
-            href="mailto:cannonball@skule.ca"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <IconEmail />
-          </a>
-        </ListItem>
-      </List>
+      <Button onClick={toggleDrawer(direction, false)}>
+        <CloseIcon className={classes.closeIcon} />
+      </Button>
+      <Link to="/sign-up"><span>Sign Up</span></Link>
+      <Link to="/faq"><span>FAQ</span></Link>
+      <Link to="/quiz"><span>Buzzfeed Quiz</span></Link>
+      <div className={classes.social}>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IconInstagram />
+        </a>
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IconFacebook />
+        </a>
+        <a
+          href="mailto:cannonball@skule.ca"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IconEmail />
+        </a>
+      </div>
     </div>
   );
 
