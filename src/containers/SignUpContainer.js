@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { loadStripe } from "@stripe/stripe-js";
 
-import SignUpForm from './SignUpForm';
+import SignUpForm from '../components/SignUpForm';
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 

@@ -7,10 +7,10 @@ import {
 
 import LogoCannonball from './assets/icons/LogoCannonball';
 
-import PageLayout from './views/PageLayout';
-import SignUpContainer from './views/SignUpContainer';
-import ComingSoonContainer from './views/ComingSoonContainer';
-import FaqContainer from './views/FaqContainer';
+import PageLayout from './containers/PageLayout';
+import SignUpContainer from './containers/SignUpContainer';
+import ComingSoonContainer from './containers/ComingSoonContainer';
+import FaqContainer from './containers/FaqContainer';
 
 // TODO: migrate .css to use material ui makestyles
 import "./App.css";
