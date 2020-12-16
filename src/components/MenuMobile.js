@@ -70,26 +70,36 @@ const MenuMobile = ({ direction, menuIcon }) => {
       <Button onClick={toggleDrawer(direction, false)}>
         <CloseIcon className={classes.closeIcon} />
       </Button>
-      <Link to="/sign-up"><span>Sign Up</span></Link>
-      <Link to="/faq"><span>FAQ</span></Link>
-      <Link to="/quiz"><span>Buzzfeed Quiz</span></Link>
+      <Link to="/sign-up">
+        <span>Sign Up</span>
+      </Link>
+      <Link to="/faq">
+        <span>FAQ</span>
+      </Link>
+      <a
+        href={process.env.REACT_APP_BUZZFEED}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>Buzzfeed Quiz</span>
+      </a>
       <div className={classes.social}>
         <a
-          href="https://instagram.com"
+          href={process.env.REACT_APP_INSTAGRAM}
           target="_blank"
           rel="noopener noreferrer"
         >
           <IconInstagram />
         </a>
         <a
-          href="https://facebook.com"
+          href={process.env.REACT_APP_FACEBOOK}
           target="_blank"
           rel="noopener noreferrer"
         >
           <IconFacebook />
         </a>
         <a
-          href="mailto:cannonball@skule.ca"
+          href={process.env.REACT_APP_EMAIL}
           target="_blank"
           rel="noopener noreferrer"
         >

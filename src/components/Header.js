@@ -89,21 +89,21 @@ const Header = ({ isLightTheme }) => {
                 <span>FAQ</span>
               </Link>
               <a
-                href="https://buzzfeed.com"
+                href={process.env.REACT_APP_BUZZFEED}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <span>Buzzfeed Quiz</span>
               </a>
               <a
-                href="https://instagram.com"
+                href={process.env.REACT_APP_INSTAGRAM}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <IconInstagram />
               </a>
               <a
-                href="https://facebook.com"
+                href={process.env.REACT_APP_FACEBOOK}
                 target="_blank"
                 rel="noopener noreferrer"
               >
