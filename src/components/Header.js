@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuIcon: {
     fill: (props) => props.isLightTheme ? style.colors.red : style.colors.white,
-    fontSize: '50px',
+    fontSize: '25px',
     padding: '0px 10px',
   }
 }));
