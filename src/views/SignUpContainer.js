@@ -70,6 +70,13 @@ const SignUpContainer = () => {
     const stripe = await stripePromise;
     const response = await fetch(`${process.env.REACT_APP_API_URL}/create-checkout-session`, {
         method: "POST",
+        body: JSON.stringify({
+          email: userParams.email,
+          gift: userParams.gift,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
     );
     const session = await response.json();
