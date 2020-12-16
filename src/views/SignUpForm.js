@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
       left:0,
       margin: '10px',
       padding: '30px',
-      paddingBottom: '70px',
+      paddingBottom: '100px',
       boxShadow: "none",
     },
   },

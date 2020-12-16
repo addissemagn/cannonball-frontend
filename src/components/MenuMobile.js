@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import { ReactComponent as IconFacebook } from '../assets/icons/facebook.svg';
 import { ReactComponent as IconInstagram } from '../assets/icons/instagram.svg';
+import { ReactComponent as IconEmail } from '../assets/icons/email.svg';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
@@ -33,7 +34,7 @@ const useStyles = makeStyles({
       marginLeft: '0',
     },
     '& svg' :{
-      width: '27px',
+      height: '27px',
       marginRight: '20px',
     }
   }
@@ -98,6 +99,13 @@ const MenuMobile = ({ direction, menuIcon }) => {
             rel="noopener noreferrer"
           >
             <IconFacebook />
+          </a>
+          <a
+            href="mailto:cannonball@skule.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IconEmail />
           </a>
         </ListItem>
       </List>

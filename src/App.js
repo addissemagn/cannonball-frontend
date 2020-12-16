@@ -28,7 +28,9 @@ const App = () => {
   if (loading) {
     return (
       <div className="loading-card">
-        <LogoCannonball width="120" />
+        <div className="loading-logo">
+          <LogoCannonball width="120" />
+        </div>
       </div>
     )
   }
