@@ -3,11 +3,10 @@ import { loadStripe } from "@stripe/stripe-js";
 
 import SignUpForm from './SignUpForm';
 
-const stripePromise = loadStripe("pk_test_51Hy2Q4CnQUzeeHwZsET84TUMgurCpxC1X3DyiruYj3RhEC8Se1HORNI5E8jbOGaJXsULXTW8OnOUNRV4k9xDPNj300kucZsGJ9");
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 // Handles all sign up and returns form
 const SignUpContainer = () => {
-  console.log(process.env.REACT_APP_API_URL);
   const userFieldsDefault = {
     firstName: '',
     lastName: '',
@@ -69,7 +68,7 @@ const SignUpContainer = () => {
   const stripeHandler = async() => {
     // STRIPE
     const stripe = await stripePromise;
-    const response = await fetch("http://localhost:5000/create-stripe-session", {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/create-checkout-session`, {
         method: "POST",
       }
     );
@@ -113,7 +112,7 @@ const SignUpContainer = () => {
     if (errs) {
       setFieldErrors(errs);
     } else {
-      // await stripeHandler();
+      await stripeHandler();
       await registrationHandler();
     }
   }
