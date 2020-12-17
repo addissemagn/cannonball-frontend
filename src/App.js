@@ -11,6 +11,8 @@ import PageLayout from './containers/PageLayout';
 import SignUpContainer from './containers/SignUpContainer';
 import ComingSoonContainer from './containers/ComingSoonContainer';
 import FaqContainer from './containers/FaqContainer';
+import PaymentSuccessContainer from './containers/PaymentSuccessContainer';
+import AdminDashboardContainer from './containers/AdminDashboardContainer';
 
 // TODO: migrate .css to use material ui makestyles
 import "./App.css";
@@ -51,6 +53,16 @@ const App = () => {
           <Route exact path="/faq">
             <PageLayout step="faq" isLightTheme>
               <FaqContainer />
+            </PageLayout>
+          </Route>
+          <Route exact path="/success">
+            <PageLayout step="success" isLightTheme>
+              <PaymentSuccessContainer />
+            </PageLayout>
+          </Route>
+          <Route exact path="/admin">
+            <PageLayout step="admin">
+              <AdminDashboardContainer />
             </PageLayout>
           </Route>
         </Switch>

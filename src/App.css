@@ -107,7 +107,7 @@ a.underlined:hover {
   50% {opacity: 1;}
 }
 
-.bg-landing {
+.bg-landing, .bg-success {
   background: var(--color-medieval-blue);
   /* fore -> back */
   background-image:
@@ -180,7 +180,7 @@ a.underlined:hover {
     box-shadow: none;
   }
 
-  .bg-landing {
+  .bg-landing, .bg-success {
     background: url(./assets/background/day/mobile.svg);
     background-size: cover;
     background-position: right bottom;

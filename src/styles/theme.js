@@ -6,10 +6,10 @@ const style = {
       black: '#000',
       darkPurple: '#291125',
       lightPurple: '#5B4065',
+      green: '#5FAF8D',
       // not used
       beige: '#FDF9ED',
       blue: '#323D7B',
-      green: '#1DA186',
       pink: '#EA96AD',
       orange: '#EF8F60',
     },

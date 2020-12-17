@@ -14,25 +14,63 @@ const SignUpContainer = () => {
     email: '',
     gift: '',
     raffle: '',
-    agreeMedia: ''
   };
 
   const [userParams, setUserParams] = useState({
     ...userFieldsDefault,
     raffle: {},
-    agreeMedia: false
+    paymentSuccess: false,
   });
   const [fieldErrors, setFieldErrors] = useState(userFieldsDefault);
 
   const isEmpty = (value) => value === '';
   const required = (value) => isEmpty(value) ? 'Required field.' : '';
 
-  const validateUserParams = (params) => {
+
+  const emailFormatValidator = (type, email) => {
+    const validators = {
+      email: /\S+@\S+\.\S+/,
+      emailuoft: /^[^@\s]+@mail.utoronto.ca$/i,
+    }
+
+    const valid = validators[type].test(email);
+
+    if(valid) {
+      return '';
+    }
+
+    switch (type) {
+      case 'email': return 'Invalid email format.';
+      case 'emailuoft': return 'Invalid uToronto email format (@mail.utoronto.ca).';
+      default: return '';
+    }
+  }
+
+  const emailExistsError = async (type, email) => {
+    try {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/user/${type}/${email}`, {
+        method: "GET",
+      });
+
+      const exists = (await res.json()).exists;
+      return exists ? 'Ticket with this email exists. Only one ticket per person.' : '';
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  const validateUserParams = async (params) => {
     const errs = userFieldsDefault;
     errs.firstName = required(params.firstName);
     errs.lastName = required(params.lastName);
-    errs.emailuoft = required(params.emailuoft);
-    errs.email = required(params.email);
+    errs.emailuoft =
+      required(params.emailuoft) ||
+      emailFormatValidator("emailuoft", params.emailuoft) ||
+      (await emailExistsError("emailuoft", params.emailuoft));
+    errs.email =
+      required(params.email) ||
+      emailFormatValidator("email", params.email) ||
+      (await emailExistsError("email", params.email));
     errs.gift = required(params.gift);
     let countRaffle = 0
     Object.keys(params.raffle).forEach((key) => {
@@ -65,21 +103,22 @@ const SignUpContainer = () => {
     // setFieldErrors({...fieldErrors, [name]: errs[name] });
   };
 
-  const stripeHandler = async() => {
+  const paymentHandler = async() => {
     // STRIPE
     const stripe = await stripePromise;
     const response = await fetch(`${process.env.REACT_APP_API_URL}/create-checkout-session`, {
         method: "POST",
-        body: JSON.stringify({
-          email: userParams.email,
-          gift: userParams.gift,
-        }),
+        body: JSON.stringify(userParams),
         headers: {
           "Content-Type": "application/json",
         },
       }
     );
     const session = await response.json();
+    console.log(session);
+
+    await registrationHandler(userParams);
+
     // redirect user to checkout
     const result = await stripe.redirectToCheckout({
       sessionId: session.id,
@@ -89,12 +128,12 @@ const SignUpContainer = () => {
     }
   }
 
-  const registrationHandler = async() => {
+  const registrationHandler = async(user) => {
     // REGISTER
     try {
       const res = await fetch(`${process.env.REACT_APP_API_URL}/register`, {
         method: "POST",
-        body: JSON.stringify(userParams),
+        body: JSON.stringify(user),
         headers: {
           "Content-Type": "application/json",
         },
@@ -113,14 +152,14 @@ const SignUpContainer = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const errs = validateUserParams(userParams);
+    const errs = await validateUserParams(userParams);
     console.log(userParams);
+    console.log(errs);
 
     if (errs) {
       setFieldErrors(errs);
     } else {
-      await stripeHandler();
-      await registrationHandler();
+      await paymentHandler();
     }
   }
 
