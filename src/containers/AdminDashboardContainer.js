@@ -102,6 +102,7 @@ const UserTable = ({ users }) => {
       <Table className={classes.table} aria-label="simple table" >
         <TableHead>
           <TableRow className={classes.header}>
+            <TableCell>#</TableCell>
             <TableCell>First Name</TableCell>
             <TableCell>Last Name</TableCell>
             <TableCell>Preferred Email</TableCell>
@@ -113,8 +114,11 @@ const UserTable = ({ users }) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {users.map((user) => (
+          {users.map((user, index) => (
             <TableRow key={user._id}>
+              <TableCell component="th" scope="row">
+                {index + 1}
+              </TableCell>
               <TableCell component="th" scope="row">
                 {user.firstName}
               </TableCell>
