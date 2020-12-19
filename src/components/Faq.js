@@ -45,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     background: 'none',
     boxShadow: 'none',
+    padding: '3px 0',
   },
   question: {
     fontFamily: "Aclonica",
