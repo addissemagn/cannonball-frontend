@@ -9,7 +9,7 @@ import LogoCannonball from './assets/icons/LogoCannonball';
 
 import PageLayout from './containers/PageLayout';
 import SignUpContainer from './containers/SignUpContainer';
-import ComingSoonContainer from './containers/ComingSoonContainer';
+import FrontpageContainer from './containers/FrontpageContainer';
 import FaqContainer from './containers/FaqContainer';
 import PaymentSuccessContainer from './containers/PaymentSuccessContainer';
 import AdminDashboardContainer from './containers/AdminDashboardContainer';
@@ -42,7 +42,7 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             <PageLayout step="landing" isLightTheme>
-              <ComingSoonContainer isLightTheme />
+              <FrontpageContainer isLightTheme />
             </PageLayout>
           </Route>
           <Route exact path="/sign-up">

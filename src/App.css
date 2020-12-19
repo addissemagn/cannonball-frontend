@@ -6,6 +6,7 @@
   --color-white: #FFF;
   --color-beige: #F4E4BA;
   --color-black: #000;
+  --color-light-green: #85D6B3;
   --color-medieval-blue: linear-gradient(180deg, #9ACFFF 0%, #CBE6FF 33.33%), #CBE6FF;
   --color-nighttime: linear-gradient(180deg, #322336 0%, #64406D 32.29%), #5B4065;
   --color-dark-purple: #291125;
@@ -210,7 +211,7 @@ a.underlined:hover {
 .content {
   font-family: "Aclonica";
   flex: 1 1 auto;
-  min-height: 256px;
+  /* min-height: 256px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
