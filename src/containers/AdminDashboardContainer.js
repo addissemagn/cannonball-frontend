@@ -247,6 +247,9 @@ const AdminDashboardContainer = () => {
           try {
               const res = await fetch(`${process.env.REACT_APP_API_URL}/users`, {
                   method: "GET",
+                  headers: {
+                    "token": getCookie("token"),
+                  },
               });
 
               const users = await res.json();
