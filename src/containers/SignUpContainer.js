@@ -65,7 +65,7 @@ const SignUpContainer = () => {
     errs.lastName = required(params.lastName);
     errs.emailuoft =
       required(params.emailuoft) ||
-      // emailFormatValidator("emailuoft", params.emailuoft) ||
+      emailFormatValidator("emailuoft", params.emailuoft) ||
       (await emailExistsError("emailuoft", params.emailuoft));
     errs.email =
       required(params.email) ||
