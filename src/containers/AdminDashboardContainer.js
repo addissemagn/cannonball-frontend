@@ -213,13 +213,35 @@ const LoginForm = ({ params, handleInputChange, handleSubmit }) => {
 const AdminDashboardContainer = () => {
   const classes = useStyles();
   const [users, setUsers] = useState([]);
-  const [loggedIn, setLoggedIn] = useState(getCookie("token") ? true : false);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [params, setParams] = useState({
     username: '',
     password: '',
   })
 
   useEffect(() => {
+    if (!loggedIn) {
+      const checkLoggedIn = async () => {
+        const token = getCookie("token");
+
+        if (token) {
+          const res = await fetch(`${process.env.REACT_APP_API_URL}/admin`, {
+              method: "GET",
+              headers: {
+                "token": token,
+              },
+            }
+          );
+
+          const admin = await res.json();
+          console.log(admin);
+          if (admin.username === 'admin') setLoggedIn(true);
+        }
+      }
+
+      checkLoggedIn();
+    }
+
     if (loggedIn) {
       const fetchAllUsers = async () => {
           try {
