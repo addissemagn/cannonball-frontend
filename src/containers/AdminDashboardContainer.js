@@ -219,22 +219,23 @@ const AdminDashboardContainer = () => {
     password: '',
   })
 
-  // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    const fetchAllUsers = async () => {
-        try {
-            const res = await fetch(`${process.env.REACT_APP_API_URL}/users`, {
-                method: "GET",
-            });
+    if (loggedIn) {
+      const fetchAllUsers = async () => {
+          try {
+              const res = await fetch(`${process.env.REACT_APP_API_URL}/users`, {
+                  method: "GET",
+              });
 
-            const users = await res.json();
-            setUsers(users);
-        } catch (err) {
-            console.log(err);
-        }
+              const users = await res.json();
+              setUsers(users);
+          } catch (err) {
+              console.log(err);
+          }
+      }
+      fetchAllUsers();
     }
-    fetchAllUsers();
-  }, [setUsers]);
+  }, [setUsers, loggedIn]);
 
   const handleInputChange = (event) => {
     let { name, value } = event.target;
