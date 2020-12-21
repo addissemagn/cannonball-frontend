@@ -22,6 +22,7 @@ import style from '../styles/theme';
 const useStyles = makeStyles((theme) => ({
   paper: {
     padding: '6px 16px',
+    fontFamily: "IBM Plex Sans",
   },
   red: {
     backgroundColor: style.colors.red,
