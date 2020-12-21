@@ -79,7 +79,7 @@ export default function CustomizedTimeline() {
             </Typography>
             <Typography>
               <b>10</b> prizes ranging from $100 gift cards and Bike Share memberships to $200 Charity Donations. <b>3</b> of each up for grabs, <b>$3,000</b> in total value! Check em out{" "}
-              <Link to="/sign-up" className={classes.underlined}>
+              <Link to="/ticket" className={classes.underlined}>
                 here
               </Link>
               !

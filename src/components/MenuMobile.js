@@ -74,8 +74,8 @@ const MenuMobile = ({ direction, menuIcon }) => {
       <Button onClick={toggleDrawer(direction, false)}>
         <CloseIcon className={classes.closeIcon} />
       </Button>
-      <Link to="/sign-up">
-        <span>Sign Up</span>
+      <Link to="/ticket">
+        <span>Buy Ticket</span>
       </Link>
       <Link to="/faq">
         <span>FAQ</span>

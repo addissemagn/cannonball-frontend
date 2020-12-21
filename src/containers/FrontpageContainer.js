@@ -24,7 +24,7 @@ const FrontpageContainer = ({ isLightTheme }) => {
       <Subtitle text="January 16, 2021" isLightTheme={isLightTheme} />
       <Countdown finalDate="2021-01-16" isLightTheme={isLightTheme} />
       <Timeline />
-      <Link to="/sign-up" className={classes.button}>
+      <Link to="/ticket" className={classes.button}>
         <Button
           text="Buy Ticket"
         />

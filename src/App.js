@@ -44,7 +44,7 @@ const App = () => {
               <FrontpageContainer isLightTheme />
             </PageLayout>
           </Route>
-          <Route exact path="/sign-up">
+          <Route exact path="/ticket">
             <PageLayout step="signUp">
               <SignUpContainer />
             </PageLayout>
