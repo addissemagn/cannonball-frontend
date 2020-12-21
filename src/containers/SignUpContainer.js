@@ -29,7 +29,7 @@ const SignUpContainer = () => {
 
   const emailFormatValidator = (type, email) => {
     const validators = {
-      email: /\S+@\S+\.\S+/,
+      email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
       emailuoft: /^[^@\s]+@mail.utoronto.ca$/i,
     }
 
@@ -41,7 +41,7 @@ const SignUpContainer = () => {
 
     switch (type) {
       case 'email': return 'Invalid email format.';
-      case 'emailuoft': return 'Invalid uToronto email format (@mail.utoronto.ca).';
+      case 'emailuoft': return 'Invalid University of Toronto student email.';
       default: return '';
     }
   }

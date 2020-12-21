@@ -48,6 +48,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '18px',
     marginTop: '20px',
     textAlign: 'center',
+  },
+  underlined: {
+    borderBottom: `1px dotted #000`,
   }
 }));
 
@@ -58,17 +61,23 @@ const Success = () => {
     <Container component="main" maxWidth="sm">
       <CssBaseline />
       <div className={classes.paper}>
-        <img  src={CannonImg} height="100px" alt="Cannon"/>
+        <img src={CannonImg} height="100px" alt="Cannon" />
         <Typography component="h1" variant="h5" className={classes.title}>
-            Your payment was successful!
+          Your payment was successful!
         </Typography>
         <Typography component="h1" variant="h5" className={classes.desc}>
-            Thank you for your payment!
-            An automated receipt will be sent to your registered email.
+          Thanks for embarking on this adventure with us! An automated receipt
+          will be sent to your registered preferred email. Don't see it? Check
+          your spam folder or{" "}
+          <a
+            href="mailto:cannonball@skule.ca"
+            rel="noopener noreferrer"
+            className={classes.underlined}
+          >
+            let us know
+          </a>
+          .
         </Typography>
-        {/* <Grid container spacing={2} className={classes.grid}>
-            <span>Hello!</span>
-        </Grid> */}
       </div>
     </Container>
   );
