@@ -20,6 +20,11 @@ import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
 import style from '../styles/theme';
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
+      marginTop: "40px",
+    },
+  },
   paper: {
     padding: '6px 16px',
     fontFamily: "IBM Plex Sans",
@@ -43,7 +48,7 @@ export default function CustomizedTimeline() {
   const classes = useStyles({ mobileSize });
 
   return (
-    <Timeline align={mobileSize ? "left" : "alternate"}>
+    <Timeline align={mobileSize ? "left" : "alternate"} className={classes.container}>
       <TimelineItem>
         <TimelineOppositeContent
           className={classes.oppositeContent}
@@ -111,7 +116,7 @@ export default function CustomizedTimeline() {
               <Link to="/contest" className={classes.underlined}>
                 <b>Photo Contest</b>
               </Link>{" "}
-              to win up to $500 in Visa gift cards.
+              to win up to $500 in Visa gift cards!
             </Typography>
           </Paper>
         </TimelineContent>
