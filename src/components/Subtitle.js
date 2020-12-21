@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '0',
     ['@media (max-width:768px)']: { // eslint-disable-line no-useless-computed-key
       maxWidth: '80%',
-      fontSize: '3em',
+      fontSize: '1.4em',
     },
   }
 }));

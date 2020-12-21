@@ -18,7 +18,6 @@ import AdminDashboardContainer from './containers/AdminDashboardContainer';
 import "./App.css";
 import "./Animations.css";
 
-
 const App = () => {
   const [loading, setLoading] = useState(true);
 

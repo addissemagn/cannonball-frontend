@@ -7,6 +7,7 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 // Handles all sign up and returns form
 const SignUpContainer = () => {
+  document.getElementById('html').className='purple-bg-extend';
   const userFieldsDefault = {
     firstName: '',
     lastName: '',
@@ -163,18 +164,18 @@ const SignUpContainer = () => {
     }
   }
 
-  // to add a prize, just need to add it to this list
+  // to add a prize, just need to add it to this list AND update in backend
   const rafflePrizes = [
-    { label: "$200 Donation to Your Choice of Charity", name: "donation" },
-    { label: "2 Tickets to the Illusionarium Exhibit", name: "illusionarium" },
-    { label: "Bike Share Toronto Annual Membership", name: "bikeshare" },
-    { label: "Engineering Stores Mystery Box of $140 value", name: "stores" },
-    { label: "$100 Steam Gift Card", name: "steam" },
-    { label: "$100 Amazon Gift Card", name: "etsy" },
-    { label: "$100 Etsy Gift Card", name: "amazon" },
-    { label: "$100 Indigo Gift Card", name: "indigo" },
-    { label: "$100 Tim Hortons Gift Card", name: "timhortons" },
-    { label: "$100 UofT Bookstore Gift Card", name: "bookstore" },
+      { label: "$200 Donation to Your Choice of Charity", name: "donation" },
+      { label: "2 Tickets to the Illusionarium Exhibit ($99+Tax)", name: "illusionarium" },
+      { label: "Bike Share Toronto Annual Membership ($99+Tax)", name: "bikeshare" },
+      { label: "Engineering Stores Mystery Box of $140 value", name: "stores" },
+      { label: "$100 Steam Gift Card", name: "steam" },
+      { label: "$100 Amazon Gift Card", name: "etsy" },
+      { label: "$100 Etsy Gift Card", name: "amazon" },
+      { label: "$100 Indigo Gift Card", name: "indigo" },
+      { label: "$100 Tim Hortons Gift Card", name: "timhortons" },
+      { label: "$100 UofT Bookstore Gift Card", name: "bookstore" },
   ];
 
   const raffleInitialState = {};

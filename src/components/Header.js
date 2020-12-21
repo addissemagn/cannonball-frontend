@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = ({ isLightTheme }) => {
   const classes = useStyles({ isLightTheme });
-  const mobileSize = window.matchMedia("(max-width: 512px)").matches
+  const mobileSize = window.matchMedia("(max-width: 620px)").matches
 
   return (
     <>
