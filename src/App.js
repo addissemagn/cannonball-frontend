@@ -9,7 +9,7 @@ import LogoCannonball from './assets/icons/LogoCannonball';
 
 import PageLayout from './containers/PageLayout';
 import SignUpContainer from './containers/SignUpContainer';
-import ComingSoonContainer from './containers/ComingSoonContainer';
+import FrontpageContainer from './containers/FrontpageContainer';
 import FaqContainer from './containers/FaqContainer';
 import PaymentSuccessContainer from './containers/PaymentSuccessContainer';
 import AdminDashboardContainer from './containers/AdminDashboardContainer';
@@ -17,7 +17,6 @@ import AdminDashboardContainer from './containers/AdminDashboardContainer';
 // TODO: migrate .css to use material ui makestyles
 import "./App.css";
 import "./Animations.css";
-
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -42,10 +41,10 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             <PageLayout step="landing" isLightTheme>
-              <ComingSoonContainer isLightTheme />
+              <FrontpageContainer isLightTheme />
             </PageLayout>
           </Route>
-          <Route exact path="/sign-up">
+          <Route exact path="/ticket">
             <PageLayout step="signUp">
               <SignUpContainer />
             </PageLayout>

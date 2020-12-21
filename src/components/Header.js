@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = ({ isLightTheme }) => {
   const classes = useStyles({ isLightTheme });
-  const mobileSize = window.matchMedia("(max-width: 512px)").matches
+  const mobileSize = window.matchMedia("(max-width: 620px)").matches
 
   return (
     <>
@@ -86,8 +86,8 @@ const Header = ({ isLightTheme }) => {
           )}
           {!mobileSize && (
             <>
-              <Link to="/sign-up">
-                <span>Sign Up</span>
+              <Link to="/ticket">
+                <span>Ticket</span>
               </Link>
               <Link to="/faq">
                 <span>FAQ</span>

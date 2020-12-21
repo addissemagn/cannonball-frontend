@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
   countdown: {
     display: 'flex',
     margin: '24px 0px',
+    marginBottom: '30px',
     color: (props) => props.isLightTheme ? style.colors.black : style.colors.white,
   },
   time: {
@@ -13,9 +14,10 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     padding: '0px 10px',
     '& div': {
-      fontSize: '40px',
+      fontSize: '35px',
     },
     ['@media (max-width:768px)']: { // eslint-disable-line no-useless-computed-key
+       padding: '0px 5px',
       '& div': {
         fontSize: '30px',
       },

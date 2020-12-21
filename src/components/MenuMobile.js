@@ -34,7 +34,11 @@ const useStyles = makeStyles({
     '& svg' :{
       height: '27px',
       margin: '10px',
-    }
+    },
+    '& a:visited' :{
+      color: (props) => props.isLightTheme ? style.colors.red : style.colors.white,
+      fill: (props) => props.isLightTheme ? style.colors.red : style.colors.white,
+    },
   },
   closeIcon: {
     fill: (props) => props.isLightTheme ? style.colors.red : style.colors.white,
@@ -70,8 +74,8 @@ const MenuMobile = ({ direction, menuIcon }) => {
       <Button onClick={toggleDrawer(direction, false)}>
         <CloseIcon className={classes.closeIcon} />
       </Button>
-      <Link to="/sign-up">
-        <span>Sign Up</span>
+      <Link to="/ticket">
+        <span>Ticket</span>
       </Link>
       <Link to="/faq">
         <span>FAQ</span>

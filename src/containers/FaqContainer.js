@@ -3,6 +3,7 @@ import Faq from '../components/Faq';
 
 const FaqContainer = () => {
   // to add a faq, just need to add it to this list
+  document.getElementById('html').className='grey-bg-extend';
   const faqList = [
     {
       q: "Wait, is this literally just free stuff?",
