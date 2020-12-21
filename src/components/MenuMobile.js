@@ -34,7 +34,11 @@ const useStyles = makeStyles({
     '& svg' :{
       height: '27px',
       margin: '10px',
-    }
+    },
+    '& a:visited' :{
+      color: (props) => props.isLightTheme ? style.colors.red : style.colors.white,
+      fill: (props) => props.isLightTheme ? style.colors.red : style.colors.white,
+    },
   },
   closeIcon: {
     fill: (props) => props.isLightTheme ? style.colors.red : style.colors.white,
