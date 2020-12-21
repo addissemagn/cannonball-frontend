@@ -77,10 +77,6 @@ a:visited {
   color: inherit;
 }
 
-a.underlined:hover {
-  border-bottom: 1px dotted #fff;
-}
-
 #root {
   height: 100vh;
   display: flex;

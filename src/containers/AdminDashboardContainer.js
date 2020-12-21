@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { Grid } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 // import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -17,9 +18,12 @@ import Paper from '@material-ui/core/Paper';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import CancelIcon from '@material-ui/icons/Cancel';
 
+import TextInput from "../components/TextInput";
+import Button from "../components/Button";
 
+import { getCookie, eraseCookie } from "../lib/utils";
 import style from '../styles/theme';
-import { Grid } from "@material-ui/core";
+
 
 const useStyles = makeStyles((theme) => ({
   grid: {
@@ -49,7 +53,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "30px",
     textAlign: 'center',
     color: style.colors.red,
-    margin: '20px 0',
+    margin: '0',
+    marginTop: '20px',
     // ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
     //   fontSize: "24px",
     // },
@@ -62,7 +67,21 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   header: {
-  }
+  },
+  form: {
+    width: "100%", // Fix IE 11 issue.
+    marginTop: theme.spacing(3),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+  button: {
+    textAlign: 'center',
+    paddingTop: '20px',
+  },
+  helperRed: {
+    color: style.colors.red, // TODO: check if contrast is okay
+  },
 }));
 
 const Table = withStyles((theme) => ({
@@ -114,7 +133,7 @@ const UserTable = ({ users }) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {users.map((user, index) => (
+          {users && users.map((user, index) => (
             <TableRow key={user._id}>
               <TableCell component="th" scope="row">
                 {index + 1}
@@ -153,39 +172,168 @@ const UserTable = ({ users }) => {
   );
 }
 
+
+const LoginForm = ({ params, handleInputChange, handleSubmit }) => {
+  const classes = useStyles();
+
+  return (
+    <form className={classes.form} noValidate name="login">
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={12}>
+          <TextInput
+            required
+            name="username"
+            label="Username"
+            value={params.username}
+            onChange={handleInputChange}
+          />
+        </Grid>
+        <Grid item xs={12} sm={12}>
+          <TextInput
+            required
+            name="password"
+            label="Password"
+            value={params.password}
+            onChange={handleInputChange}
+            isPassword
+          />
+        </Grid>
+      </Grid>
+      <Grid className={classes.button}>
+        <Button
+          text="Login"
+          onClick={handleSubmit}
+          fullWidth
+        />
+      </Grid>
+    </form>
+  );
+};
+
 const AdminDashboardContainer = () => {
   const classes = useStyles();
   const [users, setUsers] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [params, setParams] = useState({
+    username: '',
+    password: '',
+  })
 
-  // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    const fetchAllUsers = async () => {
-        try {
-            const res = await fetch(`${process.env.REACT_APP_API_URL}/users`, {
-                method: "GET",
-            });
+    if (!loggedIn) {
+      const checkLoggedIn = async () => {
+        const token = getCookie("token");
 
-            const users = await res.json();
-            setUsers(users);
-        } catch (err) {
-            console.log(err);
+        if (token) {
+          const res = await fetch(`${process.env.REACT_APP_API_URL}/admin`, {
+              method: "GET",
+              headers: {
+                "token": token,
+              },
+            }
+          );
+
+          const admin = await res.json();
+          console.log(admin);
+          if (admin.username === 'admin') setLoggedIn(true);
         }
+      }
+
+      checkLoggedIn();
     }
-    fetchAllUsers();
-  }, [setUsers]);
+
+    if (loggedIn) {
+      const fetchAllUsers = async () => {
+          try {
+              const res = await fetch(`${process.env.REACT_APP_API_URL}/users`, {
+                  method: "GET",
+                  headers: {
+                    "token": getCookie("token"),
+                  },
+              });
+
+              const users = await res.json();
+              setUsers(users);
+          } catch (err) {
+              console.log(err);
+          }
+      }
+      fetchAllUsers();
+    }
+  }, [setUsers, loggedIn]);
+
+  const handleInputChange = (event) => {
+    let { name, value } = event.target;
+
+    const updatedParams = { ...params, [name]: value };
+    setParams(updatedParams);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/login`, {
+        method: "POST",
+        body: JSON.stringify(params),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    const auth = await response.json();
+    console.log(auth);
+
+    if (auth.token) {
+      document.cookie = `token=${auth.token};max-age=604800;`
+      setLoggedIn(true);
+    }
+  }
+
+  const handleLogout = () => {
+    eraseCookie("token");
+    window.location.reload();
+    return false;
+  };
 
   return (
-    <Container component="main" maxWidth="xl">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Typography component="h1" variant="h5" className={classes.title}>
-            Admin Dashboard
-        </Typography>
-        <Grid container spacing={2} className={classes.grid}>
-            <UserTable users={users} />
-        </Grid>
-      </div>
-    </Container>
+    <>
+      {loggedIn && (
+        <Container component="main" maxWidth="xl">
+          <CssBaseline />
+          <div className={classes.paper}>
+            <>
+              <Typography component="h1" variant="h5" className={classes.title}>
+                Admin Dashboard
+              </Typography>
+              <Button text="Logout" onClick={() => handleLogout()} />
+              <Grid container spacing={2} className={classes.grid}>
+                <UserTable users={users} />
+              </Grid>
+            </>
+          </div>
+        </Container>
+      )}
+      {!loggedIn && (
+        <Container component="main" maxWidth="sm">
+          <CssBaseline />
+          <div className={classes.paper}>
+            <>
+              <Typography component="h1" variant="h5" className={classes.title}>
+                Admin Login
+              </Typography>
+              <Grid container spacing={2} className={classes.grid}>
+                <LoginForm
+                  params={params}
+                  handleInputChange={handleInputChange}
+                  handleSubmit={handleSubmit}
+                />
+              </Grid>
+            </>
+          </div>
+        </Container>
+      )}
+    </>
   );
 };
 
