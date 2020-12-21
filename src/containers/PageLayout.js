@@ -1,9 +1,19 @@
 import React from 'react';
 import Snowfall from 'react-snowfall'
+import { makeStyles } from '@material-ui/core/styles';
 import Header from '../components/Header';
+
+const useStyles = makeStyles((theme) => ({
+  underlined: {
+    '&:hover': {
+      borderBottom: (props) => `1px dotted ${props.isLightTheme ? '#000' : '#fff'}`,
+    }
+  }
+}));
 
 const PageLayout = ({ children, step, isLightTheme }) => {
   const mobileSize = window.matchMedia("(max-width: 512px)").matches;
+  const classes = useStyles({ isLightTheme });
 
   return (
     <div className={`card bg-${step}`}>
@@ -26,10 +36,10 @@ const PageLayout = ({ children, step, isLightTheme }) => {
       {/* TODO: fix footer for signUp page */}
       {step !== "signUp" && (
         <div className="footer">
-          <span className={step === "faq" ? "black" : ""}>
+          <span className={isLightTheme ? "black" : ""}>
             Questions? Well, we've got answers at{" "}
             <a
-              className="underlined"
+              className={classes.underlined}
               href="mailto:cannonball@skule.ca"
               target="_blank"
               rel="noopener noreferrer"
