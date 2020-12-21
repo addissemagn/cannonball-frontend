@@ -31,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
   },
   oppositeContent: {
     flex: (props) => props.mobileSize ? 0 : 1,
+  },
+  title: {
+    fontFamily: 'Aclonica',
   }
 }));
 
@@ -52,7 +55,7 @@ export default function CustomizedTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
-            <Typography variant="h6" component="h1">
+            <Typography variant="h6" component="h1" className={classes.title}>
               $25 Gift Card
             </Typography>
             <Typography>
@@ -74,7 +77,7 @@ export default function CustomizedTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
-            <Typography variant="h6" component="h1">
+            <Typography variant="h6" component="h1" className={classes.title}>
               Win Raffle Prizes
             </Typography>
             <Typography>
@@ -99,7 +102,7 @@ export default function CustomizedTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
-            <Typography variant="h6" component="h1">
+            <Typography variant="h6" component="h1" className={classes.title}>
               Win Cash Prizes
             </Typography>
             <Typography>
@@ -123,7 +126,7 @@ export default function CustomizedTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
-            <Typography variant="h6" component="h1">
+            <Typography variant="h6" component="h1" className={classes.title}>
               Choose Your Own Adventure
             </Typography>
             <Typography>
