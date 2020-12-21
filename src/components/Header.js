@@ -4,10 +4,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import { ReactComponent as IconFacebook } from '../assets/icons/facebook.svg';
 import { ReactComponent as IconInstagram } from '../assets/icons/instagram.svg';
+import { ReactComponent as IconEmail } from '../assets/icons/email.svg';
 import LogoCannonball from '../assets/icons/LogoCannonball';
 import MenuMobile from './MenuMobile';
 import style from '../styles/theme';
-import "../App.css";
 
 const useStyles = makeStyles((theme) => ({
   logo: {
@@ -52,6 +52,10 @@ const useStyles = makeStyles((theme) => ({
     },
     '& a:last-child' :{
       marginRight: '0px',
+    },
+    '& a:visited' :{
+      color: (props) => props.isLightTheme ? style.colors.red : style.colors.white,
+      fill: (props) => props.isLightTheme ? style.colors.red : style.colors.white,
     },
   },
   menuIcon: {
@@ -108,6 +112,13 @@ const Header = ({ isLightTheme }) => {
                 rel="noopener noreferrer"
               >
                 <IconFacebook />
+              </a>
+              <a
+                href={process.env.REACT_APP_EMAIL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconEmail />
               </a>
             </>
           )}
