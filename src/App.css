@@ -207,7 +207,8 @@ a:visited {
   .bg-signUp {
     background: url(./assets/background/night/mobile.svg);
     background-position: right bottom;
-    background-size: 100% 100%;
+    /* background-size: 100% 100%; */
+    background-size: cover;
   }
 
   .purple-bg-extend {
