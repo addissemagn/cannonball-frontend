@@ -20,11 +20,6 @@ import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
 import style from '../styles/theme';
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
-      marginTop: "40px",
-    },
-  },
   paper: {
     padding: '6px 16px',
     fontFamily: "IBM Plex Sans",
@@ -48,7 +43,7 @@ export default function CustomizedTimeline() {
   const classes = useStyles({ mobileSize });
 
   return (
-    <Timeline align={mobileSize ? "left" : "alternate"} className={classes.container}>
+    <Timeline align={mobileSize ? "left" : "alternate"}>
       <TimelineItem>
         <TimelineOppositeContent
           className={classes.oppositeContent}
