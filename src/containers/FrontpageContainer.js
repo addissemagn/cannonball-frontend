@@ -26,7 +26,7 @@ const FrontpageContainer = ({ isLightTheme }) => {
       <Timeline />
       <Link to="/ticket" className={classes.button}>
         <Button
-          text="Buy Ticket"
+          text="Get Ticket"
         />
       </Link>
     </div>

@@ -89,7 +89,7 @@ const SignUpForm = ({ user, raffleParams, rafflePrizes, handleInputChange, handl
         <CssBaseline />
         <div className={classes.paper}>
           <Typography component="h1" variant="h5" className={classes.title}>
-            Buy Ticket
+            Purchase Ticket
           </Typography>
           <form className={classes.form} noValidate name="users">
             <Grid container spacing={2}>

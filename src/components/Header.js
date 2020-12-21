@@ -87,7 +87,7 @@ const Header = ({ isLightTheme }) => {
           {!mobileSize && (
             <>
               <Link to="/ticket">
-                <span>Buy Ticket</span>
+                <span>Ticket</span>
               </Link>
               <Link to="/faq">
                 <span>FAQ</span>

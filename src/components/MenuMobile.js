@@ -75,7 +75,7 @@ const MenuMobile = ({ direction, menuIcon }) => {
         <CloseIcon className={classes.closeIcon} />
       </Button>
       <Link to="/ticket">
-        <span>Buy Ticket</span>
+        <span>Ticket</span>
       </Link>
       <Link to="/faq">
         <span>FAQ</span>
