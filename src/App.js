@@ -38,33 +38,47 @@ const App = () => {
 
   return (
     <Router>
-        <Switch>
-          <Route exact path="/">
-            <PageLayout step="landing" isLightTheme>
-              <FrontpageContainer isLightTheme />
-            </PageLayout>
-          </Route>
-          <Route exact path="/ticket">
-            <PageLayout step="signUp">
-              <SignUpContainer />
-            </PageLayout>
-          </Route>
-          <Route exact path="/faq">
-            <PageLayout step="faq" isLightTheme>
-              <FaqContainer />
-            </PageLayout>
-          </Route>
-          <Route exact path="/success">
-            <PageLayout step="success" isLightTheme>
-              <PaymentSuccessContainer />
-            </PageLayout>
-          </Route>
-          <Route exact path="/admin">
-            <PageLayout step="admin">
-              <AdminDashboardContainer />
-            </PageLayout>
-          </Route>
-        </Switch>
+      <Switch>
+        <Route exact path="/">
+          <PageLayout step="landing" isLightTheme>
+            <FrontpageContainer isLightTheme />
+          </PageLayout>
+        </Route>
+        <Route exact path="/ticket">
+          <PageLayout step="signUp">
+            <SignUpContainer />
+          </PageLayout>
+        </Route>
+        <Route exact path="/faq">
+          <PageLayout step="faq" isLightTheme>
+            <FaqContainer />
+          </PageLayout>
+        </Route>
+        <Route exact path="/success">
+          <PageLayout step="success" isLightTheme>
+            <PaymentSuccessContainer />
+          </PageLayout>
+        </Route>
+        <Route exact path="/admin">
+          <PageLayout step="admin">
+            <AdminDashboardContainer />
+          </PageLayout>
+        </Route>
+        <Route
+          path="/contest"
+          component={() => {
+            window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdtsiAhXpPuB6p59uOjJS2gbIk6ZXf3tAAV6OnGcF2KeWlhPw/closedform";
+            return null;
+          }}
+        />
+        <Route
+          path="/spotify"
+          component={() => {
+            window.location.href = "https://open.spotify.com/playlist/3kykGiLWKEiEcGCMxDbsVu?si=Rwe-Qm95Q8iwPj8TzkCcYg ";
+            return null;
+          }}
+        />
+      </Switch>
     </Router>
   );
 }
