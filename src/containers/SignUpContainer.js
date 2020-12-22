@@ -7,7 +7,7 @@ const STRIPE_KEY = process.env.REACT_APP_PROD === "true" ? process.env.REACT_APP
 const stripePromise = loadStripe(STRIPE_KEY);
 
 // Handles all sign up and returns form
-const SignUpContainer = () => {
+const SignUpContainer = ({ setRedirecting }) => {
   document.getElementById('html').className='purple-bg-extend';
   const userFieldsDefault = {
     firstName: '',
@@ -27,7 +27,6 @@ const SignUpContainer = () => {
 
   const isEmpty = (value) => value === '';
   const required = (value) => isEmpty(value) ? 'Required field.' : '';
-
 
   const emailFormatValidator = (type, email) => {
     const validators = {
@@ -122,11 +121,15 @@ const SignUpContainer = () => {
     await registrationHandler(userParams);
 
     // redirect user to checkout
+    setRedirecting(true);
+
     const result = await stripe.redirectToCheckout({
       sessionId: session.id,
     });
+
     if (result.error) {
       console.log(result.error.message);
+      setRedirecting(false);
     }
   }
 

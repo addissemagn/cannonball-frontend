@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import LogoCannonball from './assets/icons/LogoCannonball';
+import { ReactComponent as IconStripe } from './assets/icons/stripe.svg';
 
 import PageLayout from './containers/PageLayout';
 import SignUpContainer from './containers/SignUpContainer';
@@ -20,6 +21,7 @@ import "./Animations.css";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
+  const [redirectingStripe, setRedirectingStripe] = useState(false);
 
   // Simulates loading for 3s
   setTimeout(function(){
@@ -36,6 +38,16 @@ const App = () => {
     )
   }
 
+  if (redirectingStripe) {
+    return (
+      <div className="loading-card">
+        <div className="loading-logo">
+          <IconStripe width="100px"/>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <Router>
       <Switch>
@@ -46,7 +58,7 @@ const App = () => {
         </Route>
         <Route exact path="/ticket">
           <PageLayout step="signUp">
-            <SignUpContainer />
+            <SignUpContainer setRedirecting={setRedirectingStripe}/>
           </PageLayout>
         </Route>
         <Route exact path="/faq">
