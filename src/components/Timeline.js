@@ -132,7 +132,7 @@ export default function CustomizedTimeline() {
             </Typography>
             <Typography>
               Get dressed up with your roomates, snuggle up and watcha movie, or
-              hop on the <b>Cannonball 2T1 Discord</b> call (details to be
+              hop on the <b>Cannonball 2T1 Discord</b> event (details to be
               emailed)!
             </Typography>
           </Paper>
