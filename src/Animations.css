@@ -79,7 +79,7 @@
   .castle {
     margin: 0px auto;
     background: url(./assets/background/night/mobile.svg);
-    background-size: auto 100%;
+    background-size: cover;
     background-position: right bottom;
   }
 
