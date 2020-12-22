@@ -128,9 +128,9 @@ const UserTable = ({ users }) => {
             <TableCell>UofT Email</TableCell>
             <TableCell>Gift Card</TableCell>
             <TableCell>Raffles</TableCell>
+            <TableCell>Email Status</TableCell>
             <TableCell>Payment Status</TableCell>
             <TableCell>Payment Date</TableCell>
-            <TableCell>Email Status</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -160,13 +160,13 @@ const UserTable = ({ users }) => {
                 ))}
               </TableCell>
               <TableCell component="th" scope="row">
+                {user.emailSuccess ? <CheckCircleIcon style={{ color: style.colors.green }}/> : <CancelIcon style={{ color: style.colors.red }}/>}
+              </TableCell>
+              <TableCell component="th" scope="row">
                 {user.paymentSuccess ? <CheckCircleIcon style={{ color: style.colors.green }}/> : <CancelIcon style={{ color: style.colors.red }}/>}
               </TableCell>
               <TableCell component="th" scope="row">
                 {user.lastModified}
-              </TableCell>
-              <TableCell component="th" scope="row">
-                {user.emailSuccess ? <CheckCircleIcon style={{ color: style.colors.green }}/> : <CancelIcon style={{ color: style.colors.red }}/>}
               </TableCell>
             </TableRow>
           ))}
