@@ -207,6 +207,20 @@ const SignUpForm = ({ user, raffleParams, rafflePrizes, handleInputChange, handl
               />
             </Grid>
           </form>
+          <div className="footer">
+            <span>
+              Questions? Well, we've got answers at{" "}
+              <a
+                className="underlined"
+                href="mailto:cannonball@skule.ca"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                cannonball@skule.ca
+              </a>
+              .
+            </span>
+          </div>
         </div>
       </Container>
     </ThemeProvider>

@@ -82,7 +82,7 @@ export default function CustomizedTimeline() {
               Win Raffle Prizes
             </Typography>
             <Typography>
-              <b>10</b> prizes ranging from $100 gift cards and Bike Share memberships to $200 Charity Donations. <b>3</b> of each up for grabs, <b>$3,000</b> in total value! Check em out{" "}
+              <b>10</b> prizes ranging from $200 Charity Donations to Bike Share Memberships and $100 gift cards. <b>3</b> of each up for grabs, <b>$3,000</b> in total value! Check em out{" "}
               <Link to="/ticket" className={classes.underlined}>
                 here
               </Link>
@@ -109,9 +109,9 @@ export default function CustomizedTimeline() {
             <Typography>
               Show us what your Cannonball adventure looks like in the{" "}
               <Link to="/contest" className={classes.underlined}>
-                <b>Photo Contest</b>
+                Photo Contest
               </Link>{" "}
-              to win up to $500 in Visa gift cards!
+              to win up to <b>$500</b> in Visa gift cards!
             </Typography>
           </Paper>
         </TimelineContent>

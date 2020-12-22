@@ -20,7 +20,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
-      marginTop: "40px",
+      position: 'absolute',
+      top: 200,
+      left:0,
+      paddingBottom: '100px',
     },
   },
 }));
@@ -42,6 +45,20 @@ const FrontpageContainer = ({ isLightTheme }) => {
             text="Get Ticket"
           />
         </Link>
+        <div className="footer">
+          <span className="black">
+            Questions? Well, we've got answers at{" "}
+            <a
+              className={classes.underlined}
+              href="mailto:cannonball@skule.ca"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              cannonball@skule.ca
+            </a>
+            .
+          </span>
+        </div>
       </div>
     </Container>
   );
