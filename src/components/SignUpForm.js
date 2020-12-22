@@ -36,10 +36,15 @@ const useStyles = makeStyles((theme) => ({
     background: "rgba(41, 17, 37, 1)",
     borderRadius: "15px",
     // boxShadow: "0px 10px 40px 0px rgba(0, 0, 0, 0.1)",
+    // this is def getting hacky :(
     ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
       background: "rgba(41, 17, 37, 0.5)",
-      marginTop: "40px",
+      position: 'absolute',
+      top: 200,
+      left:0,
+      margin: '10px',
       padding: '30px',
+      paddingBottom: '100px',
       boxShadow: "none",
     },
   },
@@ -64,10 +69,15 @@ const useStyles = makeStyles((theme) => ({
   },
   helperRed: {
     color: style.colors.red, // TODO: check if contrast is okay
+  },
+  underlined: {
+    '&:hover': {
+      borderBottom: `1px dotted #fff`,
+    }
   }
 }));
 
-const SignUp = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaffleChange, handleSubmit, fieldErrors }) => {
+const SignUpForm = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaffleChange, handleSubmit, fieldErrors }) => {
   const classes = useStyles();
   const theme = createMuiTheme({
     palette: {
@@ -86,7 +96,7 @@ const SignUp = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaf
           <Typography component="h1" variant="h5" className={classes.title}>
             Purchase Ticket
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} noValidate name="users">
             <Grid container spacing={2}>
               <Grid item xs={12} sm={12}>
                 <TextInput
@@ -132,12 +142,12 @@ const SignUp = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaf
               </Grid>
               {/* GIFT CARD */}
               <Grid item xs={12}>
-                <InputLabel>Gift Card *</InputLabel>
+                <InputLabel>Select $25 Gift Card *</InputLabel>
                 <Select
                   variant="outlined"
                   required
                   fullWidth
-                  label="Gift Card"
+                  label="Choose $25 Gift Card"
                   name="gift"
                   value={user.gift}
                   onChange={handleInputChange}
@@ -166,7 +176,7 @@ const SignUp = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaf
                   className={classes.formControl}
                 >
                   <FormLabel component="legend">
-                    Choose 3 Raffle Items
+                    Select 3 Raffle Prizes to Enter
                   </FormLabel>
                   <FormGroup>
                     {rafflePrizes.map((prize) => (
@@ -192,25 +202,6 @@ const SignUp = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaf
                   )}
                 </FormControl>
               </Grid>
-              {/* RAFFLE ITEMS */}
-              <Grid item xs={12}>
-                <FormHelperText>
-                  If you want to participate in Instagram giveaways:
-                </FormHelperText>
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      value={user.agreeMedia}
-                      checked={user.agreeMedia}
-                      name="agreeMedia"
-                      onChange={handleInputChange}
-                      key="agreeMedia"
-                    />
-                  }
-                  // TODO: Is this really necessary if people would have to submit them anyway? Plus there could be other people in the photos
-                  label="I grant Cannonball permission to post my images/videos to social media."
-                />
-              </Grid>
             </Grid>
             <Grid className={classes.button}>
               <Button
@@ -221,10 +212,24 @@ const SignUp = ({ user, raffleParams, rafflePrizes, handleInputChange, handleRaf
               />
             </Grid>
           </form>
+          <div className="footer">
+            <span>
+              Questions? Well, we've got answers at{" "}
+              <a
+                className={classes.underlined}
+                href="mailto:cannonball@skule.ca"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                cannonball@skule.ca
+              </a>
+              .
+            </span>
+          </div>
         </div>
       </Container>
     </ThemeProvider>
   );
 };
 
-export default SignUp;
+export default SignUpForm;

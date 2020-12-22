@@ -49,13 +49,14 @@
   background-image:
     url(./assets/background/night/grass-foreground.svg),
     url(./assets/background/night/castle.svg),
-    url(./assets/background/night/grass-background.svg);
+    url(./assets/background/night/grass-background.svg),
+    url(./assets/background/night/moon.svg);
   background-size: auto 100%;
   background-position: left bottom;
 }
 
+/* TODO: remove */
 .moon {
-  background-image: url(./assets/background/night/moon.svg);
   background-size: auto 100%;
   background-position: left bottom;
 }
@@ -74,7 +75,9 @@
 }
 
 @media screen and (max-width: 512px) {
+  /* TODO: add moon? */
   .castle {
+    margin: 0px auto;
     background: url(./assets/background/night/mobile.svg);
     background-size: auto 100%;
     background-position: right bottom;

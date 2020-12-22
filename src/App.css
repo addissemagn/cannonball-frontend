@@ -6,6 +6,8 @@
   --color-white: #FFF;
   --color-beige: #F4E4BA;
   --color-black: #000;
+  --color-light-green: #85D6B3;
+  --color-light-grey: #F4F4F4;
   --color-medieval-blue: linear-gradient(180deg, #9ACFFF 0%, #CBE6FF 33.33%), #CBE6FF;
   --color-nighttime: linear-gradient(180deg, #322336 0%, #64406D 32.29%), #5B4065;
   --color-dark-purple: #291125;
@@ -51,10 +53,30 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
+}
 
+.purple-bg-extend {
   /* jheeeeez this was an effort, dont come for me css gods */
   background: var(--color-black);
-  background-image: url(./assets/background/night/dark-purple.svg);
+  background-image: url(./assets/background/solid/dark-purple.svg);
+  background-repeat: repeat-y;
+  background-size: 90% auto;
+  background-position: center;
+}
+
+.green-bg-extend {
+  /* jheeeeez this was an effort, dont come for me css gods */
+  background: var(--color-black);
+  background-image: url(./assets/background/solid/light-green.svg);
+  background-repeat: repeat-y;
+  background-size: 90% auto;
+  background-position: center;
+}
+
+.grey-bg-extend {
+  /* jheeeeez this was an effort, dont come for me css gods */
+  background: var(--color-black);
+  background-image: url(./assets/background/solid/light-grey.svg);
   background-repeat: repeat-y;
   background-size: 90% auto;
   background-position: center;
@@ -76,10 +98,6 @@ a:visited {
   color: inherit;
 }
 
-a.underlined:hover {
-  border-bottom: 1px dotted #fff;
-}
-
 #root {
   height: 100vh;
   display: flex;
@@ -95,6 +113,10 @@ a.underlined:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: var(--color-black);
+}
+
+.loading-logo {
   animation: blinker 1.5s linear infinite;
   opacity: 0;
 }
@@ -103,7 +125,7 @@ a.underlined:hover {
   50% {opacity: 1;}
 }
 
-.day {
+.bg-landing, .bg-success {
   background: var(--color-medieval-blue);
   /* fore -> back */
   background-image:
@@ -112,6 +134,15 @@ a.underlined:hover {
     url(./assets/background/day/grass-background.svg),
     url(./assets/background/day/trees.svg),
     url(./assets/background/day/clouds.svg);
+  background-size: auto 100%;
+  background-position: left bottom;
+}
+
+.bg-faq {
+  background: var(--color-medieval-blue);
+  /* fore -> back */
+  background-image:
+    url(./assets/background/snowy/scene.svg);
   background-size: auto 100%;
   background-position: left bottom;
 }
@@ -167,27 +198,49 @@ a.underlined:hover {
     box-shadow: none;
   }
 
-  .day {
+  .bg-landing, .bg-success {
     background: url(./assets/background/day/mobile.svg);
     background-size: cover;
     background-position: right bottom;
   }
 
-  .night {
+  .bg-signUp {
     background: url(./assets/background/night/mobile.svg);
-    background-size: cover;
     background-position: right bottom;
+    background-size: cover;
   }
 
-  html {
-    background-size: auto auto;
+  .purple-bg-extend {
+    background-size: 100% 100%;
+    background: var(--color-dark-purple);
+    background-image: none,
+  }
+
+  .green-bg-extend {
+    background-size: 100% 100%;
+    background: var(--color-light-green);
+    background-image: none,
+  }
+
+  .grey-bg-extend {
+    background-size: 100% 100%;
+    background: var(--color-light-gray);
+    background-image: none,
+  }
+
+  #root {
+    background: var(--color-dark-purple);
+  }
+
+  body {
+    background: var(--color-dark-purple);
   }
 }
 
 .content {
   font-family: "Aclonica";
   flex: 1 1 auto;
-  min-height: 256px;
+  /* min-height: 256px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -203,4 +256,5 @@ a.underlined:hover {
   font-size: 14px;
   font-weight: 500;
   text-align: center;
+  font-family: "IBM Plex Sans";
 }

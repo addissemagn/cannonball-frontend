@@ -6,16 +6,18 @@ const useStyles = makeStyles((theme) => ({
   countdown: {
     display: 'flex',
     margin: '24px 0px',
-    color: (props) => props.day ? style.colors.black : style.colors.white,
+    marginBottom: '30px',
+    color: (props) => props.isLightTheme ? style.colors.black : style.colors.white,
   },
   time: {
     display: 'block',
     textAlign: 'center',
     padding: '0px 10px',
     '& div': {
-      fontSize: '40px',
+      fontSize: '35px',
     },
     ['@media (max-width:768px)']: { // eslint-disable-line no-useless-computed-key
+       padding: '0px 5px',
       '& div': {
         fontSize: '30px',
       },
@@ -23,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Countdown = ({ finalDate, day }) => {
-  const classes = useStyles({ day });
+const Countdown = ({ isLightTheme, finalDate }) => {
+  const classes = useStyles({ isLightTheme });
 
   const [countdown, setCountdown] = useState({
     days: 0,
