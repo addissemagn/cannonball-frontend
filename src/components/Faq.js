@@ -16,6 +16,14 @@ const useStyles = makeStyles((theme) => ({
   grid: {
     paddingTop: '20px',
   },
+  outer: {
+    ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
+      position: 'absolute',
+      top: 200,
+      left:0,
+      paddingBottom: '100px',
+    },
+  },
   paper: {
     padding: "40px 60px",
     display: "flex",
@@ -24,10 +32,9 @@ const useStyles = makeStyles((theme) => ({
     // background: "rgba(41, 17, 37, 1)",
     background: 'white',
     borderRadius: "15px",
-    // boxShadow: "0px 10px 40px 0px rgba(0, 0, 0, 0.1)",
     ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
       background: "rgba(255, 255, 255, 0.5)",
-      marginTop: "40px",
+      margin: '10px',
       padding: '30px',
       boxShadow: "none",
     },
@@ -58,6 +65,11 @@ const useStyles = makeStyles((theme) => ({
     color: style.colors.black,
     fontSize: "15px",
     padding: 0,
+  },
+  underlined: {
+    '&:hover': {
+      borderBottom: `1px dotted '#000'`,
+    }
   }
 }));
 
@@ -85,15 +97,31 @@ const Faq = ({ faqList }) => {
   return (
     <Container component="main" maxWidth="sm">
       <CssBaseline />
-      <div className={classes.paper}>
-        <Typography component="h1" variant="h5" className={classes.title}>
-          Frequently Asked Questions
-        </Typography>
-        <Grid container spacing={2} className={classes.grid}>
-            {faqList.map((faq) => (
-                <Entry question={faq.q} answer={faq.a} />
-            ))}
-        </Grid>
+      <div className={classes.outer}>
+        <div className={classes.paper}>
+          <Typography component="h1" variant="h5" className={classes.title}>
+            Frequently Asked Questions
+          </Typography>
+          <Grid container spacing={2} className={classes.grid}>
+              {faqList.map((faq) => (
+                  <Entry question={faq.q} answer={faq.a} />
+              ))}
+          </Grid>
+        </div>
+        <div className="footer">
+          <span className="black">
+            Questions? Well, we've got answers at{" "}
+            <a
+              className={classes.underlined}
+              href="mailto:cannonball@skule.ca"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              cannonball@skule.ca
+            </a>
+            .
+          </span>
+        </div>
       </div>
     </Container>
   );

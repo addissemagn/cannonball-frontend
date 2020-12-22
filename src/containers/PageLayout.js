@@ -35,7 +35,7 @@ const PageLayout = ({ children, step, isLightTheme }) => {
 
       {/* TODO: fix footer for signUp page */}
       {/* this code is getting real wonky, sorry if ur reading this */}
-      {step !== "signUp" && step !== "landing" && (
+      {/* {step !== "signUp" && step !== "landing" && (
         <div className="footer">
           <span className={isLightTheme ? "black" : ""}>
             Questions? Well, we've got answers at{" "}
@@ -50,7 +50,7 @@ const PageLayout = ({ children, step, isLightTheme }) => {
             .
           </span>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
