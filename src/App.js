@@ -74,7 +74,14 @@ const App = () => {
         <Route
           path="/spotify"
           component={() => {
-            window.location.href = "https://open.spotify.com/playlist/3kykGiLWKEiEcGCMxDbsVu?si=Rwe-Qm95Q8iwPj8TzkCcYg ";
+            window.location.href = "https://open.spotify.com/playlist/3kykGiLWKEiEcGCMxDbsVu?si=Rwe-Qm95Q8iwPj8TzkCcYg";
+            return null;
+          }}
+        />
+        <Route
+          path="/discord"
+          component={() => {
+            window.location.href = "https://discord.gg/Dw5Q24KvwK";
             return null;
           }}
         />

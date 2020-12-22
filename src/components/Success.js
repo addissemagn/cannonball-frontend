@@ -68,7 +68,7 @@ const Success = () => {
         <Typography component="h1" variant="h5" className={classes.desc}>
           Thanks for embarking on this adventure with us! An automated receipt
           will be sent to your registered preferred email. Don't see it? Check
-          your spam folder or{" "}
+          your spam/junk folder or{" "}
           <a
             href="mailto:cannonball@skule.ca"
             rel="noopener noreferrer"
