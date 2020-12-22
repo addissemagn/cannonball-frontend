@@ -6,10 +6,12 @@ const PaymentSuccessContainer = ({ params }) => {
 
   useEffect(() => {
     const sendEmail = async (email) => {
-      await fetch(`${process.env.REACT_APP_API_URL}/send/${email}`, {
-          method: "POST",
-        }
-      );
+      if (email){
+        await fetch(`${process.env.REACT_APP_API_URL}/send/${email}`, {
+            method: "POST",
+          }
+        );
+      }
     }
     sendEmail(email);
   }, [email]);
@@ -22,7 +24,7 @@ const PaymentSuccessContainer = ({ params }) => {
   ]
 
   return (
-    <Success faqList={faqList} />
+    <Success faqList={faqList} email={email}/>
   );
 };
 
