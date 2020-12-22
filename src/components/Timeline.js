@@ -61,7 +61,7 @@ export default function CustomizedTimeline() {
             </Typography>
             <Typography>
               With your $25 ticket, you get your choice of a $25 Uber Eats,
-              Netflix, or Apple gift card as well as the chance to...
+              Netflix, or Apple gift card..but wait, there's more.
             </Typography>
           </Paper>
         </TimelineContent>

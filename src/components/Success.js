@@ -64,15 +64,23 @@ const Success = ({ email }) => {
           Your payment was successful!
         </Typography>
         <Typography component="h1" variant="h5" className={classes.desc}>
-          Thanks for embarking on this adventure with us! Your receipt
-          will be sent to {email ? email : 'your registered preferred email'} shortly. Don't see it? Check
-          your spam/junk folder or{" "}
+          Thanks for embarking on this adventure with us! Your receipt will be
+          sent to {email ? email : "your registered preferred email"} shortly.
+          Don't see it? Check your spam/junk folder or let us know at{" "}
           <a
             href="mailto:cannonball@skule.ca"
             rel="noopener noreferrer"
             className={classes.underlined}
           >
-            let us know
+            cannonball@skule.ca
+          </a>
+          . <br/><br/>For announcements, surprises, and more, follow us on Instagram{" "}
+          <a
+            href="https://instagram.com/cannonball2t1"
+            rel="noopener noreferrer"
+            className={classes.underlined}
+          >
+            @cannonball2t1
           </a>
           .
         </Typography>
