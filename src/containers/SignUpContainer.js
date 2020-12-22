@@ -3,7 +3,8 @@ import { loadStripe } from "@stripe/stripe-js";
 
 import SignUpForm from '../components/SignUpForm';
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
+const STRIPE_KEY = process.env.REACT_APP_PROD === "true" ? process.env.REACT_APP_PROD_STRIPE_KEY : process.env.REACT_APP_DEV_STRIPE_KEY;
+const stripePromise = loadStripe(STRIPE_KEY);
 
 // Handles all sign up and returns form
 const SignUpContainer = () => {

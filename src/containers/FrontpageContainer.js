@@ -11,11 +11,6 @@ import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 const useStyles = makeStyles((theme) => ({
-  marginTop: {
-    ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
-      marginTop: "40px",
-    },
-  },
   button: {
     marginTop: '20px',
   },
