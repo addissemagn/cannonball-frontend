@@ -65,7 +65,7 @@ const Success = ({ email }) => {
         </Typography>
         <Typography component="h1" variant="h5" className={classes.desc}>
           Thanks for embarking on this adventure with us! Your receipt
-          will be sent to {email ? email : 'your registered preferred email'} in a few mins. Don't see it? Check
+          will be sent to {email ? email : 'your registered preferred email'} shortly. Don't see it? Check
           your spam/junk folder or{" "}
           <a
             href="mailto:cannonball@skule.ca"
