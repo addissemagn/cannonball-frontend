@@ -22,6 +22,7 @@ const SignUpContainer = ({ setRedirecting }) => {
     ...userFieldsDefault,
     raffle: {},
     paymentSuccess: false,
+    emailSuccess: false,
   });
   const [fieldErrors, setFieldErrors] = useState(userFieldsDefault);
 
@@ -116,7 +117,7 @@ const SignUpContainer = ({ setRedirecting }) => {
       }
     );
     const session = await response.json();
-    console.log(session);
+    // console.log(session);
 
     await registrationHandler(userParams);
 
@@ -158,8 +159,6 @@ const SignUpContainer = ({ setRedirecting }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const errs = await validateUserParams(userParams);
-    console.log(userParams);
-    console.log(errs);
 
     if (errs) {
       setFieldErrors(errs);
