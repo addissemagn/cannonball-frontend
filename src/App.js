@@ -48,6 +48,12 @@ const App = () => {
     )
   }
 
+  const SuccessComponent = (props) => (
+    <PageLayout step="success" isLightTheme>
+      <PaymentSuccessContainer params={props.location.search} />
+    </PageLayout>
+  );
+
   return (
     <Router>
       <Switch>
@@ -66,10 +72,7 @@ const App = () => {
             <FaqContainer />
           </PageLayout>
         </Route>
-        <Route exact path="/success">
-          <PageLayout step="success" isLightTheme>
-            <PaymentSuccessContainer />
-          </PageLayout>
+        <Route exact path="/success" component={SuccessComponent}>
         </Route>
         <Route exact path="/admin">
           <PageLayout step="admin">

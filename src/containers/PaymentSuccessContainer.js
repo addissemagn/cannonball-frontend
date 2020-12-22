@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Success from '../components/Success';
 
-const PaymentSuccessContainer = () => {
-  // to add a faq, just need to add it to this list
+const PaymentSuccessContainer = ({ params }) => {
+  const email = new URLSearchParams(params).get("email")
+
+  useEffect(() => {
+    const sendEmail = async (email) => {
+      await fetch(`${process.env.REACT_APP_API_URL}/send/${email}`, {
+          method: "POST",
+        }
+      );
+    }
+    sendEmail(email);
+  }, [email]);
+
   const faqList = [
     {
       q: "What happens next?",
