@@ -26,6 +26,11 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: '100px',
     },
   },
+  underlined: {
+    '&:hover': {
+      borderBottom: `1px dotted #000`,
+    }
+  }
 }));
 
 const FrontpageContainer = ({ isLightTheme }) => {

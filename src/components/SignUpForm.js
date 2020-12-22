@@ -69,6 +69,11 @@ const useStyles = makeStyles((theme) => ({
   },
   helperRed: {
     color: style.colors.red, // TODO: check if contrast is okay
+  },
+  underlined: {
+    '&:hover': {
+      borderBottom: `1px dotted #fff`,
+    }
   }
 }));
 
@@ -211,7 +216,7 @@ const SignUpForm = ({ user, raffleParams, rafflePrizes, handleInputChange, handl
             <span>
               Questions? Well, we've got answers at{" "}
               <a
-                className="underlined"
+                className={classes.underlined}
                 href="mailto:cannonball@skule.ca"
                 target="_blank"
                 rel="noopener noreferrer"

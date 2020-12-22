@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
   },
   underlined: {
     '&:hover': {
-      borderBottom: `1px dotted '#000'`,
+      borderBottom: `1px dotted #000`,
     }
   }
 }));
