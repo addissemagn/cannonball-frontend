@@ -82,11 +82,16 @@ export default function CustomizedTimeline() {
               Win Raffle Prizes
             </Typography>
             <Typography>
-              <b>10</b> prizes ranging from $200 Charity Donations to Bike Share Memberships and $100 gift cards. <b>3</b> of each up for grabs, <b>$3,000</b> in total value! Check em out{" "}
+              Each ticket gives you 3 entries of your choice into a raffle of <b>10</b> different prizes, with a combined value of over <b>$3,000</b>.{" "}
+              Winners will be announced at 9PM EST on January 16th. Check out the raffle prizes{" "}
               <Link to="/ticket" className={classes.underlined}>
                 here
               </Link>
-              !
+              . Unsure of what to choose? Take our{" "}
+              <Link to="/quiz" className={classes.underlined}>
+                quiz
+              </Link>
+              {" "}to find out!
             </Typography>
           </Paper>
         </TimelineContent>

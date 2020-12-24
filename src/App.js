@@ -80,6 +80,13 @@ const App = () => {
           </PageLayout>
         </Route>
         <Route
+          path="/quiz"
+          component={() => {
+            window.location.href = process.env.REACT_APP_BUZZFEED;
+            return null;
+          }}
+        />
+        <Route
           path="/contest"
           component={() => {
             window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdtsiAhXpPuB6p59uOjJS2gbIk6ZXf3tAAV6OnGcF2KeWlhPw/closedform";
