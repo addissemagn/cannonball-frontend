@@ -153,7 +153,7 @@ const SignUpForm = ({ user, raffleParams, rafflePrizes, handleInputChange, handl
                   onChange={handleInputChange}
                 >
                   <MenuItem key="uberEats" value="uberEats">
-                    Uber Eats
+                    Uber Eats (Canada)
                   </MenuItem>
                   <MenuItem key="apple" value="apple">
                     Apple (App Store &amp; iTunes)
