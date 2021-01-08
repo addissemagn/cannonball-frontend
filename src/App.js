@@ -12,6 +12,7 @@ import PageLayout from './containers/PageLayout';
 import SignUpContainer from './containers/SignUpContainer';
 import FrontpageContainer from './containers/FrontpageContainer';
 import FaqContainer from './containers/FaqContainer';
+import AdventureContainer from './containers/AdventureContainer';
 import PaymentSuccessContainer from './containers/PaymentSuccessContainer';
 import AdminDashboardContainer from './containers/AdminDashboardContainer';
 
@@ -77,6 +78,11 @@ const App = () => {
         <Route exact path="/admin">
           <PageLayout step="admin">
             <AdminDashboardContainer />
+          </PageLayout>
+        </Route>
+        <Route exact path="/adventure">
+          <PageLayout step="adventure" isLightTheme>
+            <AdventureContainer />
           </PageLayout>
         </Route>
         <Route

@@ -1,0 +1,490 @@
+{
+    "0": {
+        "prompt": "Hello and welcome to the Cannonball 2T1 Choose your own adventure! Throughout the adventure you will be faced with many tough choices. Choose correctly and you shall be rewarded! Choose incorrectly and you shall….not be rewarded. Our story alludes to many facets of SkuleTM tradition and culture. <br /><br /> Want to learn more about the traditions, clubs, and people in the story? Simply click the <b>bolded</b> words to be taken to their website! Enjoy!"
+    },
+    "1": {
+        "prompt": "You awake to the sound of cannon fire. This troubles you at first but you quickly recall that it is to commemorate the ball that is occurring later this week, the Cannonball. You scratch your head and try to recall if you had purchased your ticket.",
+        "options": [
+            {
+                "text": "Ah yes, you did purchase the ticket off a local merchant",
+                "goTo": "30_1"
+            },
+            {
+                "text": "Alas! You have not yet purchased your ticket",
+                "goTo": "4"
+            }
+        ]
+    },
+    "2": {
+        "prompt": "Having already purchased your ticket, you meander over to <a href='https://skulepedia.ca/wiki/Suds'>Suds</a>, the local tavern. <a href='https://skulepedia.ca/wiki/Suds'>Suds</a> is known for playing the best bardcore music in the entire Kingdom, yet upon arrival, it is silent!",
+        "options": [
+            {
+                "text": "You immediately turn to leave. It was a little early for a drink anyways….",
+                "goTo": "8"
+            },
+            {
+                "text": "You take it upon yourself to liven the tavern up with your favourite Gregorian hymn",
+                "goTo": "5"
+            }
+        ]
+    },
+    "3": {
+        "prompt": "A wizard appears and says to you, “You fool! How could you not have purchased a ticket! Go purchase one now, lest I toss you into the thicket!”",
+        "options": [
+            {
+                "text": "You listen to the wizard and go purchase your ticket from cannonball.skule.ca",
+                "goTo": "2"
+            },
+            {
+                "text": "You ignore the wizard, how bad can the thicket be?",
+                "goTo": "4"
+            }
+        ]
+    },
+    "4": {
+        "prompt": "The thicket indeed is very terrible. You wander around for ages but cannot seem to escape the dense shrubbery. <br /> <br /> Please try again after you have purchased your ticket from <a href='/ticket'>cannonball.skule.ca/ticket</a>!",
+        "status": "failure"
+    },
+    "5": {
+        "prompt": "You start chanting the hymn of the Lady Godiva: <br />We are We are We are We are-- <br />We are the engineers-- <br />We can We can We can We can-- <br />Demolish forty beers-- <br />Drink rum Drink rum Drink rum Drink rum-- <br />and come along with us for-- <br />We don't give a damn for any damn man-- <br />Who don't give a damn for us--",
+        "options": [
+            {
+                "text": "That sure was fun, but you better get going...it really is too early to be in a tavern",
+                "goTo": "8"
+            },
+            {
+                "text": "You don’t ever want this fun to stop! You take the lead into the next verse",
+                "goTo": "6"
+            }
+        ]
+    },
+    "6": {
+        "prompt": "You continue on with the next verse of <a href='' target='_blank'>Godiva’s hymn</a>: <br /> Godiva was a lady who through Coventry did ride-- <br />To show to all the villagers her __________ <br/><br />Oh no! You’ve all forgotten the next line! Everyone’s looking at you so expectantly….what was it?",
+        "options": [
+            {
+                "text": "fine and lily-white hide",
+                "goTo": "7"
+            },
+            {
+                "text": "kind and brilliant mind",
+                "goTo": "6_1"
+            },
+            {
+                "text": "fine and little behind",
+                "goTo": "6_1"
+            }
+        ]
+    },
+    "6_1": {
+        "prompt": "No, that’s not quite right….let's try again",
+        "options": [
+            {
+                "text": "Go back and guess again",
+                "goTo": "6"
+            }
+        ]
+    },
+    "7": {
+        "prompt": "Ah, thank goodness you remembered the rest of the line! Having sufficiently cheered yourself out for now, you decide it's finally time to face the day. You leave the tavern and see that the merchant across the way is selling some unusual goods.",
+        "options": [
+            {
+                "text": "You go checkout what they’re selling, it sure looks odd",
+                "goTo": "8"
+            },
+            {
+                "text": "You feel that you contributed to the local economy <i>quite enough</i> in the tavern. Best not do any more shopping today",
+                "goTo": "11"
+            }
+        ]
+    },
+    "8": {
+        "prompt": "You make it to the <a href='' target='_blank'>Engineering Stores</a> and lean against the table of the merchant, as your ancestors have done for generations before you. The merchant says, “Welcome to Engineering Stores, what can I get ya?”",
+        "options": [
+            {
+                "text": "You inquire about the blue underpants that have been embroidered with gold thread",
+                "goTo": "9"
+            },
+            {
+                "text": "You ask for the local gossip (Engineering Stores in known throughout the Kingdom as having a wealth of knowledge)",
+                "goTo": "10"
+            }
+        ]
+    },
+    "9": {
+        "prompt": "You purchase the underpants and leave. As you leave, you accidentally drop the undergarment you just purchased. A strange feeling of deja vu sweeps over you...something about dropping….and this underwear….hmmm….",
+        "options": [
+            {
+                "text": "You return the underwear to the merchant….something about this underwear seems off….",
+                "goTo": "11"
+            },
+            {
+                "text": "Whatever it is, how bad can it be? You decide to keep the underwear",
+                "goTo": "15"
+            }
+        ]
+    },
+    "10": {
+        "prompt": "The merchant tells you they don’t have time for idle chat, so you leave empty handed.",
+        "options": [
+            {
+                "text": "Go back",
+                "goTo": "11"
+            }
+        ]
+    },
+    "11": {
+        "prompt": "You set off down the cobblestone path, not sure of which way to go.",
+        "options": [
+            {
+                "text": "You decide to visit your friend John at his turkey farm",
+                "goTo": "12"
+            },
+            {
+                "text": "You decide to wander around the Kingdom",
+                "goTo": "50"
+            }
+        ]
+    },
+    "12": {
+        "prompt": "You greet John and he tells you all about the <a href='' target='_blank'>library</a> he’s been working on. You think this is rather odd. Turkeys and libraries really shouldn’t mix… John ignores your doubtful look and explains how the Lord and Lady of the land are very impressed with his library. They’ve bestowed upon him the honor of reading the sacred text that marks the beginning of <a href='' target='_blank'>Godiva Week</a>. Unfortunately, John forgets where this text would be located! Is it:",
+        "options": [
+            {
+                "text": "Calculus for Scientists and Engineers",
+                "goTo": "13"
+            },
+            {
+                "text": "Fundamentals of Physics",
+                "goTo": "12_1"
+            },
+            {
+                "text": "The Bible",
+                "goTo": "12_1"
+            }
+        ]
+    },
+    "12_1": {
+        "prompt": "You search the book through several times, no sign of the <a href='' target='_blank'>sacred text</a>...maybe it was in one of the other novels?",
+        "options": [
+            {
+                "text": "Go back and pick again",
+                "goTo": "12"
+            }
+        ]
+    },
+    "13": {
+        "prompt": "Ah yes, of course! The sacred text is in Calculus for Scientists and Engineers! John says to you, “Thanks! I’m sure we’ll find the text very easily, how long could this book be?”. To your dismay, this book has over 1000 pages! You flip to the table of contents, which section would contain the sacred text?",
+        "options": [
+            {
+                "text": "The “Functions” Section",
+                "goTo": "13_1"
+            },
+            {
+                "text": "The “Derivatives” Section",
+                "goTo": "13_1"
+            },
+            {
+                "text": "The “Differential Equations” Section",
+                "goTo": "13_1"
+            },
+            {
+                "text": "The “Integration” Section",
+                "goTo": "14"
+            }
+        ]
+    },
+    "13_1": {
+        "prompt": "Hmmm, the sacred text isn’t in there…….maybe you should try a different section?",
+        "options": [
+            {
+                "text": "Go back and pick again",
+                "goTo": "13"
+            }
+        ]
+    },
+    "14": {
+        "prompt": "Of course! The sacred text, being the fundamental theorem of calculus, would be in the Integration section! John thanks you for your help and starts practising. You decide to get out of there before you fall asleep…",
+        "options": [
+            {
+                "text": "Next",
+                "goTo": "50"
+            }
+        ]
+    },
+    "15": {
+        "prompt": "You set off down the path with your new underpants. You hear the blaring of a trumpet; here comes the Crown’s personal ensemble, the <a href='' target='_blank'>LGMB</a>. The Leedur of the LGMB speaks: “By order of the Lord and Lady of the land, everyone is to be searched! Something sacred to <a href='' target='_blank'>Lord Blue and Gold</a> has been stolen, and the thief is to be caught and punished!”",
+        "options": [
+            {
+                "text": "You stay where you are, you haven’t done anything wrong, you don’t have anything to hide",
+                "goTo": "16"
+            },
+            {
+                "text": "You start to get a bad feeling about the underwear you just purchased. Could these be Lord Blue and Gold's beloved underpants?",
+                "goTo": "17"
+            }
+        ]
+    },
+    "16": {
+        "prompt": "You are searched by the <a href='' targe='_blank'>LGBM<a>. They take the underwear you just purchased. The Leedur says to you: “These are Lord Blue and Golds sacred underpants! You will now be punished by means of auditory torture!”. The <a href='' target='_blank'>LGMB</a> surrounds you and starts to play. You are being drummed upon, chanted at, and forced to listen while they play. It won’t end. They start telling jokes. You wish death would take you. Eventually, thankfully, you slip into unconsciousness….",
+        "options": [
+            {
+                "text": "You awaken to the abandoned street in the early hours of the morning. It seems that you have missed the entire Cannonball… Please try again",
+                "goTo": "1"
+            }
+        ]
+    },
+    "17": {
+        "prompt": "You yell to the Leedur: <br />You: “Hey Bnad Leedur”<br />Bnad Leedur: “Why yes, young squire?”<br />You: “What do you call a cow in an earthquake?”<br />Bnad Leedur: “I don’t know, what do you call a cow in an earthquake?”<br />",
+        "options": [
+            {
+                "text": "You: “I don’t know, you tell me!”",
+                "goTo": "18"
+            },
+            {
+                "text": "You: “A milkshake!”",
+                "goTo": "19"
+            }
+        ]
+    },
+    "18": {
+        "prompt": "The Bnad Leedur is not impressed.",
+        "options": [
+            {
+                "text": "Oh no",
+                "goTo": "16"
+            }
+        ]
+    },
+    "19": {
+        "prompt": "The whole Bnad erupts in laughter! You use this opportunity to escape. Phew, that was a close one. ",
+        "options": [
+            {
+                "text": "You drop the underpants outside the local newspaper stand, deciding that the Toike editors can take the fall for the underpants debacle. They’re used to being in trouble with the Crown.",
+                "goTo": "11"
+            },
+            {
+                "text": "You run down the path, keeping the underpants. You paid good money for them, why should you have to give them up?!",
+                "goTo": "20"
+            }
+        ]
+    },
+    "20": {
+        "prompt": "You’re on the run. You know it's a crime to keep Lord Blue and Gold’s underpants, yet you won’t give them up.",
+        "options": [
+            {
+                "text": "You decide to set off for a different Kingdom, perhaps the Kingdom of Ryerson will allow you to settle down",
+                "goTo": "20_1"
+            },
+            {
+                "text": "You decide to fight for your right to wear the underpants. You set off to the Cannonball, where you will confront Lord Blue and Gold!",
+                "goTo": "21"
+            }
+        ]
+    },
+    "20_1": {
+        "prompt": "You live out the rest of your days in the Kingdom of Ryerson, never again attending a Cannonball… Please try again",
+        "status": "failure"
+    },
+    "21": {
+        "prompt": "You make a pit stop at your home before going to the Cannonball to change and pick up some items that will help you in your duel against Lord Blue and Gold. ",
+        "options": [
+            {
+                "text": "You grab your very realistic replica of the Cannon",
+                "goTo": "22"
+            },
+            {
+                "text": "You grab your replica sword",
+                "goTo": "24"
+            },
+            {
+                "text": "You grab nothing",
+                "goTo": "28"
+            }
+        ]
+    },
+    "22": {
+        "prompt": "You make a very grand entrance into the Cannonball, brandishing your replica of the Cannon. You declare that not only have you stolen Lord Blue and Golds sacred underpants, you have also stolen the Cannon!<br /><br />As you finish your proclamation, you hear laughter coming from all around the room. Alas! The room is filled with the Cannon Guard, and the Chief Attiliator is sitting quite comfortably, holding the real cannon",
+        "options": [
+            {
+                "text": "You run away, feeling great shame. Maybe you should get something else…",
+                "goTo": "21"
+            },
+            {
+                "text": "You try to convince them that you indeed have the real cannon",
+                "goTo": "23"
+            }
+        ]
+    },
+    "23": {
+        "prompt": "You start making very bold claims that your cannon is indeed the real cannon. You make a boom noise with your mouth, but it is not convincing. You roll the Cannon across the floor, this seems to be the final straw for the Guard. They start heckling you, “Spinning wheels??? On OUR Cannon? You must be out of your mind”.  You finally leave, humiliated, and confused as to why the Cannon doesn’t have wheels that spin....",
+        "options": [
+            {
+                "text": "Next",
+                "goTo": "23_1"
+            }
+        ]
+    },
+    "23_1": {
+        "prompt": "Having been so humiliated, you leave the Kingdom forever. You never again attend a Cannonball.... Please try again",
+        "status": "failure"
+    },
+    "24": {
+        "prompt": "You charge into the Cannonball brandishing your sword. You have all the confidence to make it appear real. You spot Lord Blue and Gold, you set off to confront him, but your path is blocked! The Toike editor has stepped in front of you, holding their much larger (and much more real) sword.",
+        "options": [
+            {
+                "text": "You think twice about battling the Toike editor, maybe there’s a different way you can get past them?",
+                "goTo": "25"
+            },
+            {
+                "text": "Nothing can stop you! You prepare for battle",
+                "goTo": "26"
+            }
+        ]
+    },
+    "25": {
+        "prompt": "Instead of battling the Toike editor, you tell them about a dog you saw outside that was wearing a very funny hat. The editor sets out at once to go see it, as it might make for a good story. The path to Lord Blue and Gold has now cleared",
+        "options": [
+            {
+                "text": "You set off towards Lord Blue and Gold",
+                "goTo": "28"
+            },
+            {
+                "text": "Maybe a fake sword isn’t a good plan, maybe you should go home and pick something else?",
+                "goTo": "21"
+            }
+        ]
+    },
+    "26": {
+        "prompt": "Your swords collide, and your replica is cut clean in half! The Toike editor says to you, “What fool enters into a duel with a fake sword?! Where did you even find a fake sword?”",
+        "options": [
+            {
+                "text": "You turn to leave, maybe you should’ve brought something different…",
+                "goTo": "21"
+            },
+            {
+                "text": "You try and come up with another diversion",
+                "goTo": "27"
+            }
+        ]
+    },
+    "27": {
+        "prompt": "You tell the editor that you got the sword from your friend John, who has a highly amusing turkey farm. Intrigued, the editor sets off to learn more about John and his turkey farm, as this could make for a highly entertaining story.",
+        "options": [
+            {
+                "text": "You advance towards Lord Blue and Gold to confront him, even though you have nothing",
+                "goTo": "29"
+            },
+            {
+                "text": "You don’t feel ready to confront Lord Blue and Gold. Maybe you should run home and grab something to help you first.",
+                "goTo": "21"
+            }
+        ]
+    },
+    "28": {
+        "prompt": "As you approach Lord Blue and Gold you glimpse the Lady Godiva. She looks so lovely that you drop your sword and it breaks into many pieces!",
+        "options": [
+            {
+                "text": "You can’t confront Lord Blue and Gold empty handed, you head home to grab something else",
+                "goTo": "21"
+            },
+            {
+                "text": "The sword was a stupid idea anyway! You don’t need a prop, you’ll defeat him empty handed!",
+                "goTo": "29"
+            }
+        ]
+    },
+    "29": {
+        "prompt": "You finally make it to Lord Blue and Gold. Someone off in the distance yells, “Drop your pants”. Lord Blue and Gold turns very red and says, “Without my sacred underpants, I cannot perform this sacred duty!”",
+        "options": [
+            {
+                "text": "You feel bad for him, he doesn’t deserve this humiliation",
+                "goTo": "30"
+            },
+            {
+                "text": "He must suffer, you deserve the underpants!",
+                "goTo": "31"
+            }
+        ]
+    },
+    "30": {
+        "prompt": "You hand Lord Blue and Gold the underpants, and he is ecstatic! He thanks you and rewards you for returning them",
+        "options": [
+            {
+                "text": "What could the reward be?",
+                "goTo": "30_1"
+            }
+        ]
+    },
+    "30_1": {
+        "prompt": "Lord Blue and Gold has given you an extra entry into the Cannonball raffle!",
+        "status": "success"
+    },
+    "31": {
+        "prompt": "You look Lord Blue and Gold dead in the eyes as you pull down your pants, revealing his sacred trousers! Lord Blue and Gold is furious! The Lady Godiva sees what is going on and says, “Well, the only way we can determine who these truly belong to is to have a competition! Both of you shall put on a performance and whoevers is better shall win”",
+        "options": [
+            {
+                "text": "This seems fair to you, you agree to the terms of the competition",
+                "goTo": "33"
+            },
+            {
+                "text": "Nonsense! You bought these with your hard earned money and you’re gonna keep them. You refuse to compete for what is rightfully yours",
+                "goTo": "32"
+            }
+        ]
+    },
+    "32": {
+        "prompt": "The Lady Godiva sighs in frustration. She says, “I was truly hoping to not have to do this”. She snaps her fingers and the underpants vanish! You are very naked and embarrassed. You run out of the Cannonball, never to return",
+        "options": [
+            {
+                "text": "Next",
+                "goTo": "32_1"
+            }
+        ]
+    },
+    "32_1": {
+        "prompt": "You are banned from attending any future Cannonballs! This night really didn’t go the way you had planned….",
+        "status": "failure"
+    },
+    "33": {
+        "prompt": "It’s your turn to compete. For your performance, you:",
+        "options": [
+            {
+                "text": "Start singing “You Make My Dreams” by Hall & Oates",
+                "goTo": "34"
+            },
+            {
+                "text": "Decide to show off your cooking skills",
+                "goTo": "42"
+            }
+        ]
+    },
+    "34": {
+        "prompt": "As the first note plays, the Cannonball becomes overrun with highly spirited mail carriers. This is not how you expected this to go….",
+        "options": [
+            {
+                "text": "You may not win, but at least you’re having fun. You keep going with the song",
+                "goTo": "35"
+            },
+            {
+                "text": "Maybe there’s a way to distract these mail carriers. ",
+                "goTo": "39"
+            }
+        ]
+    },
+    "35": {
+        "prompt": "The party goes all night, with “You Make My Dreams” on repeat. You’d think these jolly mail carriers would get sick of this song, but their appetite for Hall & Oates cannot be satisfied. Exasperated, Lord Blue and Gold offers you a deal, “If you can make this dreadful racket stop, I shall give you the underpants”",
+        "options": [
+            {
+                "text": "You exclaim, “Vive la Hall & Oates!”, you shall not be silenced!",
+                "goTo": "36"
+            },
+            {
+                "text": "You agree, this has gone on long enough!",
+                "goTo": "37"
+            }
+        ]
+    },
+    "36": {
+        "prompt": "Through the power of Hall & Oates Lord Blue and Gold is forced to flee - leaving you with the sacred underpants! The mail carriers are so ecstatic they give you an extra entry into the Cannonball 2T1 raffle!",
+        "status": "success"
+    }
+}
