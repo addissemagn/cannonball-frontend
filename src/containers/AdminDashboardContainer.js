@@ -64,7 +64,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "20px",
     textAlign: 'center',
     color: style.colors.black,
-    margin: '30px 0 20px 0',
+    margin: '20px 0 20px 0',
+    width: '100%'
   },
   table: {
     fontFamily: "IBM Plex Sans",
@@ -119,6 +120,7 @@ const TableRow = withStyles((theme) => ({
     },
   },
 }))(MaterialRow);
+
 
 const UserTable = ({ users }) => {
   const classes = useStyles();
@@ -227,7 +229,7 @@ const RafflePrizeStatsTable = ({ rafflePrizeCount }) => {
         <TableHead>
           <TableRow className={classes.header}>
             <TableCell>Prize</TableCell>
-            <TableCell>Count (unique entries)</TableCell>
+            <TableCell>Count (paid users; excluding extra entry)</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -307,6 +309,7 @@ const AdminDashboardContainer = () => {
     timhortons: 0,
     bookstore: 0,
   });
+  const [numUsers, setNumUsers] = useState(0)
 
   useEffect(() => {
     if (!loggedIn) {
@@ -354,6 +357,7 @@ const AdminDashboardContainer = () => {
                 timhortons: 0,
                 bookstore: 0,
               };
+              let userCount = 0;
 
               for (var i = 0; i < users.length; i ++ ){
                 // check if user has extra raffle entry
@@ -369,15 +373,19 @@ const AdminDashboardContainer = () => {
                   hasExtraEntry
                 }
 
+                if(user.paymentSuccess) {
+                  userCount += 1;
+                }
+
                 for (var key in user.raffle) {
-                  console.log(key)
-                  if (user.raffle[key]) {
+                  if (user.paymentSuccess && user.raffle[key]) {
                     prizeCount[key] += 1
                   }
                 }
               }
 
               setRafflePrizeCount(prizeCount)
+              setNumUsers(userCount)
               setUsers(users);
           } catch (err) {
               console.log(err);
@@ -454,6 +462,9 @@ const AdminDashboardContainer = () => {
               <a href="#raffle-entries">→ Users with Extra Raffle Entries</a>
               <a href="#raffle-stats">→ Raffle Prizes Selected Stats</a>
               <Grid container spacing={2} className={classes.grid}>
+                <Typography component="h1" variant="h5" className={classes.subheading}>
+                  # Paid Users: {numUsers}
+                </Typography>
                 <Typography id="#all-users" component="h1" variant="h5" className={classes.subheading}>
                   All Users
                 </Typography>
