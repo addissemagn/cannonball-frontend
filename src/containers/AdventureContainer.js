@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import AdventurePrompt from '../components/adventure/AdventurePrompt';
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
+import AdventurePrompt from '../components/adventure/AdventurePrompt';
 import AdventureEndScreen from '../components/adventure/AdventureEndScreen';
+import AdventureError from '../components/adventure/AdventureError';
 import adventure from '../data/adventure.json';
 
 const AdventureContainer = () => {
@@ -13,6 +14,7 @@ const AdventureContainer = () => {
       curr: '0',
       all: ['0']
   })
+  const [error, setError] = useState({})
 
   const goBack = () => {
     if (steps.all.length > 1) {
@@ -28,13 +30,29 @@ const AdventureContainer = () => {
       curr: '0',
       all: ['0']
     })
+    setError({})
+  }
+
+  const goToSuccess = () => {
+    setSteps({
+      curr: 'success',
+      all: [...steps.all, 'success']
+    })
+    setError({})
   }
 
   const addStep = (step) => {
-    setSteps({
-        curr: step,
-        all: [...steps.all, step]
-    })
+    if(step in adventure){
+      setSteps({
+          curr: step,
+          all: [...steps.all, step]
+      })
+    } else {
+      setError({
+        prevStep: steps.all[steps.all.length - 1],
+        currStep: step,
+      })
+    }
   }
 
   const [completed, setCompleted] = useState(false)
@@ -118,6 +136,16 @@ const AdventureContainer = () => {
 
   if (completed) {
     return (<AdventureEndScreen email={user.emailuoft} />)
+  }
+
+  if (Object.keys(error).length !== 0) {
+    return (
+      <AdventureError
+        error={error}
+        goToStart={startOver}
+        goToSuccess={goToSuccess}
+      />
+    );
   }
 
   return (

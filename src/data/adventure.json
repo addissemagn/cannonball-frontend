@@ -1,4 +1,8 @@
 {
+    "success": {
+        "prompt": "You have been awarded an extra entry into the Cannonball 2T1 raffle! Congratulations!",
+        "status": "success"
+    },
     "0": {
         "prompt": "Hello and welcome to the Cannonball 2T1 Choose your own adventure! Throughout the adventure you will be faced with many tough choices. Choose correctly and you shall be rewarded! Choose incorrectly and you shall….not be rewarded. Our story alludes to many facets of SkuleTM tradition and culture. <br /><br /> Want to learn more about the traditions, clubs, and people in the story? Simply click the <b>bolded</b> words to be taken to their website! Enjoy!"
     },
@@ -20,6 +24,10 @@
             {
                 "text": "Test: Failure page",
                 "goTo": "4"
+            },
+            {
+                "text": "Test: Error page (in case I made a mistake)",
+                "goTo": "100"
             }
         ]
     },
@@ -213,7 +221,7 @@
         "prompt": "Of course! The sacred text, being the fundamental theorem of calculus, would be in the Integration section! John thanks you for your help and starts practising. You decide to get out of there before you fall asleep…",
         "options": [
             {
-                "text": "Next",
+                "text": "Continue",
                 "goTo": "50"
             }
         ]
@@ -326,7 +334,7 @@
         "prompt": "You start making very bold claims that your cannon is indeed the real cannon. You make a boom noise with your mouth, but it is not convincing. You roll the Cannon across the floor, this seems to be the final straw for the Guard. They start heckling you, “Spinning wheels??? On OUR Cannon? You must be out of your mind”.  You finally leave, humiliated, and confused as to why the Cannon doesn’t have wheels that spin....",
         "options": [
             {
-                "text": "Next",
+                "text": "Continue",
                 "goTo": "23_1"
             }
         ]
@@ -443,7 +451,7 @@
         "prompt": "The Lady Godiva sighs in frustration. She says, “I was truly hoping to not have to do this”. She snaps her fingers and the underpants vanish! You are very naked and embarrassed. You run out of the Cannonball, never to return",
         "options": [
             {
-                "text": "Next",
+                "text": "Continue",
                 "goTo": "32_1"
             }
         ]
@@ -494,5 +502,344 @@
     "36": {
         "prompt": "Through the power of Hall & Oates Lord Blue and Gold is forced to flee - leaving you with the sacred underpants! The mail carriers are so ecstatic they give you an extra entry into the Cannonball 2T1 raffle!",
         "status": "success"
+    },
+    "37": {
+        "prompt": "You stop the music and the mail carriers are outraged! ",
+        "options": [
+            {
+                "text": "Hmm, maybe you should restart the music. These mail carriers seem like a force to be reckoned with!",
+                "goTo": "36"
+            },
+            {
+                "text": "To heck with them! This was supposed to be your performance! You will not restart the music",
+                "goTo": "38"
+            }
+        ]
+    },
+    "38": {
+        "prompt": "The mail carriers are so mad, they run you right out of the Kingdom! Please try again",
+        "status": "failure"
+    },
+    "39": {
+        "prompt": "What shall you distract these mail carriers with?",
+        "options": [
+            {
+                "text": "File a complaint about an undelivered letter",
+                "goTo": "40"
+            },
+            {
+                "text": "Say you saw a blue hardhat float by, carrying a large toboggan made out of strange materials…",
+                "goTo": "41"
+            }
+        ]
+    },
+    "40": {
+        "prompt": "The mail carriers could not care less about this undelivered letter. They really are terrible at their job….Maybe you should use something else?",
+        "options": [
+            {
+                "text": "Go back",
+                "goTo": "39"
+            }
+        ]
+    },
+    "41": {
+        "prompt": "The mail carriers rush out of the Cannonball to see what has happened, they look very worried indeed. Strange, why should these mail carriers care so much about this strange toboggan? Doesn’t matter, it worked, now time to get back to the performance. ",
+        "options": [
+            {
+                "text": "You decide to show off your culinary skills",
+                "goTo": "42"
+            }
+        ]
+    },
+    "42": {
+        "prompt": "You pull out your trusty bag of salad ingredients and the crowd goes wild! You start with the lettuce. Now this is a very important choice….which lettuce should you use?",
+        "options": [
+            {
+                "text": "Spinach",
+                "goTo": "45"
+            },
+            {
+                "text": "Romaine",
+                "goTo": "44"
+            },
+            {
+                "text": "Kale",
+                "goTo": "43"
+            }
+        ]
+    },
+    "43": {
+        "prompt": "A riot breaks out among the crowd! Alas! How could you forget the lettuce census that had been conducted! Kale was one of the least favourite of the land!",
+        "options": [
+            {
+                "text": "“Haha just kidding” you say, “You’d have to kale me to eat that nonsense!”",
+                "goTo": "42"
+            }
+        ]
+    },
+    "44": {
+        "prompt": "A giant fight breaks out at this announcement! You did not mean to reopen the wounds caused by the lettuce census, you should’ve stayed away from such a controversial topic…",
+        "options": [
+            {
+                "text": "“Friends, friends, lettuce settle down and romaine civil! Of course I was joking about the romaine, we will of course be using the official lettuce of land”",
+                "goTo": "42"
+            }
+        ]
+    },
+    "45": {
+        "prompt": "A round of applause! It seems you have chosen correctly. Now comes the time to add a topping.",
+        "options": [
+            {
+                "text": "You add some nuts",
+                "goTo": "46"
+            },
+            {
+                "text": "You add some cool ranch doritos",
+                "goTo": "47"
+            }
+        ]
+    },
+    "46": {
+        "prompt": "Alas! You have forgotten that most everyone is allergic to nuts! The crowd rushes out to visit the apothecary. You are left alone with the sacred pants. You notice on the ground an extra entry into the Cannonball 2T1 raffle!",
+        "status": "success"
+    },
+    "47": {
+        "prompt": "A hush falls over the crowd. This is a bold choice, a bold choice indeed. Maybe, just maybe, you can pull it off. It will all come down to what dressing you choose…",
+        "options": [
+            {
+                "text": "You add some ranch dressing to the salad",
+                "goTo": "48"
+            },
+            {
+                "text": "You add some chipotle salad dressing to the salad",
+                "goTo": "49"
+            }
+        ]
+    },
+    "48": {
+        "prompt": "You fool! The cool ranchiness of the doritos clashes with the ranch dressing so badly that it releases a toxic gas that causes everyone to pass out! Please try again",
+        "options": [
+            {
+                "text": "Guess again",
+                "goTo": "49"
+            }
+        ]
+    },
+    "49": {
+        "prompt": "Your salad is a huge success! The Lady Godiva is so impressed that she crowns you the winner on the spot! A fellow villager is so impressed by your salad they give you an extra entry into the Cannonball 2T1 raffle!",
+        "status": "success"
+    },
+    "50": {
+        "prompt": "As you set off, you see a floating blue hardhat zip by, followed by someone yelling. John, the turkey farmer librarian, runs up to you. “You have to help me! They’ve stolen the sacred text! Without the Fundamental Theorem of Calculus, how can any of us enjoy the Cannonball?”",
+        "options": [
+            {
+                "text": "You say to John, “Do not worry! I shall catch them!”",
+                "goTo": "53"
+            },
+            {
+                "text": "You say to John, “Do not worry! We can just derive it from first principles!”",
+                "goTo": "51"
+            }
+        ]
+    },
+    "51": {
+        "prompt": "You and John sit there, scratching your heads. Maybe you don’t remember calculus as well as you’d hoped…",
+        "options": [
+            {
+                "text": "Maybe it isn’t too late to go after that floating hardhat…",
+                "goTo": "53"
+            },
+            {
+                "text": "You’ve heard of someone in these lands who may possess this skill….you shall go to see him and see if he will help",
+                "goTo": "52"
+            }
+        ]
+    },
+    "52": {
+        "prompt": "You and John walk up to the academy, and ask for the man named Kahn. The man emerges and says to you, “So, you wish for my help in rederiving the sacred text - the Fundamental Theorem of Calculus?”<br/><br/>You and John both nod.<br/><br/>“Well well well” Khan says. “I shall help you, but I must get something in return. In all my days of teaching at the Khan Academy, no one has ever invited me to the Cannonball. If you wish to have the sacred text restored, and relearn first year calculus, you must give me your ticket”<br/><br/>You think this over carefully. If you give Khan your ticket, you won’t be able to enjoy the Cannonball. But if you don’t give Khan your ticket, no one will be able to enjoy the Cannonball and your friend John, the turkey farming librarian, might get in trouble for losing the sacred text.<br/><br/>",
+        "options": [
+            {
+                "text": "Maybe it’s not too late to apprehend the floating hardhat that stole it?",
+                "goTo": "53"
+            },
+            {
+                "text": "Khan deserves to have a good time, after teaching so many students at his academy. You decide to give him your ticket",
+                "goTo": "52_1"
+            }
+        ]
+    },
+    "52_1": {
+        "prompt": "News of your good deed spreads across the land! You may have missed out on the Cannonball, but you have been awarded an extra entry into the Cannonball 2T1 raffle! Congratulations!",
+        "status": "success"
+    },
+    "53": {
+        "prompt": "You spot the floating hardhat and chase after it. You chase it all throughout the Kingdom, until eventually it goes into a bakery. You enter into the bakery and it smells unlike any bakery you’ve ever been in. Instead of being greeted with the smell of fresh bread, it smells of sawdust and cement. You start coughing and lose sight of the floating hardhat. You ask the Baker behind the counter if they saw a floating hardhat.  “A floatin hardhat? Yee must be outta yer mind.” Says the Baker.",
+        "options": [
+            {
+                "text": "Continue",
+                "goTo": "54"
+            }
+        ]
+    },
+    "54": {
+        "prompt": "You turn around to leave, and see the bakery is now filled with hardhats of all different colours! If only you could remember what colour the hardhat was….",
+        "options": [
+            {
+                "text": "Check the beige hardhat",
+                "goTo": "55"
+            },
+            {
+                "text": "Check the blue hardhat",
+                "goTo": "59"
+            },
+            {
+                "text": "Check the yellow hardhat",
+                "goTo": "57"
+            },
+            {
+                "text": "Check the orange hardhat",
+                "goTo": "58"
+            }
+        ]
+    },
+    "55": {
+        "prompt": "You lift the beige hardhat and find that it was filled with cider; cider that you have now spilt all over yourself. The Baker laughs at you, “Haha, Suds, the local tavern, won’t be too happy you spilled their stockpile of cider!",
+        "options": [
+            {
+                "text": "Annoyed, you try another colour",
+                "goTo": "54"
+            },
+            {
+                "text": "It seems really unwise to annoy the local tavern, maybe you should try and replace it",
+                "goTo": "56"
+            }
+        ]
+    },
+    "56": {
+        "prompt": "But where will you find an easy to read, tried and true recipe for cider? Ahah! The local brewer will have the information on their page:  Brewoft.skule.ca! It will surely have a recipe for some amazing cider that you can refill the hardhat with.",
+        "options": [
+            {
+                "text": "You go take a look at brewoft.skule.ca, learn all the necessary steps to make the cider and start fermenting it in the hardhat. That’ll keep the local tavern happy!",
+                "goTo": "54"
+            }
+        ]
+    },
+    "57": {
+        "prompt": "You lift up the yellow hardhat to find a sleeping frosh underneath it! They yell at you for awakening them and mutter something about an ESP project….",
+        "options": [
+            {
+                "text": "Maybe you better try another colour",
+                "goTo": "54"
+            }
+        ]
+    },
+    "58": {
+        "prompt": "You lift up the orange hardhat and a drumstick flies out and hits you in the face, ouch! As you put the hardhat down you think you hear some terrible single sticked drumming and some strange chanting…",
+        "options": [
+            {
+                "text": "Maybe you better try another colour",
+                "goTo": "54"
+            }
+        ]
+    },
+    "59": {
+        "prompt": "You lift up the blue hard hat and find the sacred text below it! Thank God you found it, John’s going to be so happy! You take the book and turn to leave - but you find your path blocked by that lousy baker! The Baker turns to you and says, “If yer wantin to make it out of my bakery with that book, yer gonna have ta earn it!”. You sit and ponder your options….what is the best way to defeat this crazy Baker?",
+        "options": [
+            {
+                "text": "A physical competition",
+                "goTo": "60"
+            },
+            {
+                "text": "A battle of wits",
+                "goTo": "65"
+            },
+            {
+                "text": "This has been far more trouble than it's worth...you leave empty handed",
+                "goTo": "59_1"
+            }
+        ]
+    },
+    "59_1": {
+        "prompt": "Without the sacred text, the Fundamental Theorem of Calculus, Cannonball cannot proceed. Everyone in the Kingdom is furious at John for losing it, and in turn he sets his turkey’s loose on you as revenge for not helping you.",
+        "status": "success"
+    },
+    "60": {
+        "prompt": "You turn to the Baker and challenge him to a pushup contest. They laugh and say, “Ok, first one to do 69 pushups wins”. You respond:",
+        "options": [
+            {
+                "text": "By dropping down and pumping those biceps - you aren’t afraid of a little challenge",
+                "goTo": "61"
+            },
+            {
+                "text": "You holler back, “69 pushups? Why not make it 420 pushups!”",
+                "goTo": "63"
+            }
+        ]
+    },
+    "61": {
+        "prompt": "The baker turns to you, shocked but determined. They also hits the ground and starts grinding out them reps.",
+        "options": [
+            {
+                "text": "You are determined to win this fair and square - you have nothing to fear. You eat fear for breakfast",
+                "goTo": "62"
+            },
+            {
+                "text": "You notice the baker is focused on the pushups - you jump up and steal the book!",
+                "goTo": "64"
+            }
+        ]
+    },
+    "62": {
+        "prompt": "You successfully beat the Baker to 69 pushups, you even throw in an extra one for good measure, which greatly upsets the Baker. “We agreed on 69!” they say, “Why’d yee have to go and do 70, yer no fun!”. But his complaints are irrelevant, they’re too weak to even get up. You waltz out, having acquired the sacred text and a sick workout.",
+        "options": [
+            {
+                "text": "Continue",
+                "goTo": "64"
+            }
+        ]
+    },
+    "63": {
+        "prompt": "The Baker bursts out laughing! It’s as if this is the funniest thing they've ever heard! You take this opportunity to grab the sacred text and sneak away. The Baker is laughing so hard they don’t even notice…",
+        "options": [
+            {
+                "text": "Continue",
+                "goTo": "64"
+            }
+        ]
+    },
+    "64": {
+        "prompt": "You meet up with John and give him the sacred text. He is delighted! Cannonball is saved! As a token of his gratitude, he awards you an extra entry into the Cannonball 2T1 raffle!",
+        "status": "success"
+    },
+    "65": {
+        "prompt": "The Baker laughs at your proposal to a challenge of witts. They say, “I have but one riddle for ye, answer it correctly and thou shall go free (with da book)”. The riddle is:<br/><br/> “As I was going to St. Ives, I met a man with seven wives. Every wife had seven sacks, every sack had seven cats, every cat had seven kitts. Kitts, cats, sacks, wives, how many were going to St. Ives?”",
+        "options": [
+            {
+                "text": "You say to the baker, “I dunno man, at least one I guess”",
+                "goTo": "67"
+            },
+            {
+                "text": "You ask the baker for a pencil and paper to work it out",
+                "goTo": "66"
+            }
+        ]
+    },
+    "66": {
+        "prompt": "You start doing Reimann sums and work tirelessly at the solution. After many long hours, you come to a solution! You tell the baker that the answer is 19,607. They laugh, “You fool, that is not correct!”. You give him a stern look and show him your work  but they are not impressed. “I never said they were going to St Ives!”.",
+        "options": [
+            {
+                "text": "You take another crack at the riddle…",
+                "goTo": "65"
+            }
+        ]
+    },
+    "67": {
+        "prompt": " “Yes, dats it! Today the lazy answer is da right answer!” says the Baker. They hand you the sacred text and send you on your way.",
+        "options": [
+            {
+                "text": "Continue",
+                "goTo": "64"
+            }
+        ]
     }
 }
