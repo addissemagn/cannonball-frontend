@@ -450,16 +450,19 @@ const AdminDashboardContainer = () => {
                 Admin Dashboard
               </Typography>
               <Button text="Logout" onClick={() => handleLogout()} />
+              <a href="#all-users">→ All Users</a>
+              <a href="#raffle-entries">→ Users with Extra Raffle Entries</a>
+              <a href="#raffle-stats">→ Raffle Prizes Selected Stats</a>
               <Grid container spacing={2} className={classes.grid}>
-                <Typography component="h1" variant="h5" className={classes.subheading}>
+                <Typography id="#all-users" component="h1" variant="h5" className={classes.subheading}>
                   All Users
                 </Typography>
                 <UserTable users={users} />
-                <Typography component="h1" variant="h5" className={classes.subheading}>
+                <Typography id="raffle-entries" component="h1" variant="h5" className={classes.subheading}>
                   Users with Extra Raffle Entries
                 </Typography>
                 <ExtraRaffleEntryTable usersWithExtraEntry={usersWithExtraEntry} />
-                <Typography component="h1" variant="h5" className={classes.subheading}>
+                <Typography id="raffle-stats" component="h1" variant="h5" className={classes.subheading}>
                   Raffle Stats
                 </Typography>
                 <RafflePrizeStatsTable rafflePrizeCount={rafflePrizeCount} />
