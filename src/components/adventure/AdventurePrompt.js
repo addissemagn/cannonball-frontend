@@ -43,10 +43,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontFamily: "Aclonica",
-    fontSize: "23px",
+    fontSize: "25px",
     textAlign: 'center',
-    color: style.colors.black,
-    marginBottom: '10px',
+    color: style.colors.red,
+    marginBottom: '15px',
     // ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
     //   fontSize: "24px",
     // },

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import AdventurePrompt from '../components/adventure/AdventurePrompt';
+import useWindowSize from 'react-use/lib/useWindowSize'
+import Confetti from 'react-confetti'
 import AdventureEndScreen from '../components/adventure/AdventureEndScreen';
 import adventure from '../data/adventure.json';
 
 const AdventureContainer = () => {
   document.getElementById('html').className='green-bg-extend'
+  const { width, height } = useWindowSize()
 
   const [steps, setSteps] = useState({
       curr: '0',
@@ -22,8 +25,8 @@ const AdventureContainer = () => {
 
   const startOver = () => {
     setSteps({
-      curr: '1',
-      all: ['1']
+      curr: '0',
+      all: ['0']
     })
   }
 
@@ -118,17 +121,22 @@ const AdventureContainer = () => {
   }
 
   return (
-    <AdventurePrompt
-      adventureList={adventure}
-      step={steps.curr}
-      changeStep={addStep}
-      goBack={goBack}
-      user={user}
-      fieldErrors={fieldErrors}
-      handleInputChange={handleInputChange}
-      handleSubmit={handleSubmit}
-      handleStartOver={startOver}
-    />
+    <>
+      {adventure[steps.curr].status === "success" && (
+        <Confetti width={width} height={height} recycle={false} numberOfPieces={500} />
+      )}
+      <AdventurePrompt
+        adventureList={adventure}
+        step={steps.curr}
+        changeStep={addStep}
+        goBack={goBack}
+        user={user}
+        fieldErrors={fieldErrors}
+        handleInputChange={handleInputChange}
+        handleSubmit={handleSubmit}
+        handleStartOver={startOver}
+      />
+    </>
   );
 };
 
