@@ -7,6 +7,7 @@ const style = {
       darkPurple: '#291125',
       lightPurple: '#5B4065',
       green: '#5FAF8D',
+      lightBlue: '#E2F1FF',
       // not used
       beige: '#FDF9ED',
       blue: '#323D7B',

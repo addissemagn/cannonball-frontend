@@ -32,25 +32,6 @@ const PageLayout = ({ children, step, isLightTheme }) => {
       <Header step={step} isLightTheme={isLightTheme} />
 
       {children}
-
-      {/* TODO: fix footer for signUp page */}
-      {/* this code is getting real wonky, sorry if ur reading this */}
-      {/* {step !== "signUp" && step !== "landing" && (
-        <div className="footer">
-          <span className={isLightTheme ? "black" : ""}>
-            Questions? Well, we've got answers at{" "}
-            <a
-              className={classes.underlined}
-              href="mailto:cannonball@skule.ca"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              cannonball@skule.ca
-            </a>
-            .
-          </span>
-        </div>
-      )} */}
     </div>
   );
 };

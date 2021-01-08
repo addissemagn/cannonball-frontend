@@ -138,6 +138,18 @@ a:visited {
   background-position: left bottom;
 }
 
+.bg-adventure {
+  background: var(--color-medieval-blue);
+  /* fore -> back */
+  background-image:
+    url(./assets/background/day/grass-foreground.svg),
+    url(./assets/background/day/grass-background.svg),
+    url(./assets/background/day/trees.svg),
+    url(./assets/background/day/clouds.svg);
+  background-size: auto 100%;
+  background-position: left bottom;
+}
+
 .bg-faq {
   background: var(--color-medieval-blue);
   /* fore -> back */
