@@ -1,11 +1,14 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { withStyles } from '@material-ui/core/styles';
 import Typography from "@material-ui/core/Typography";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
 
 import TextInput from "../../components/TextInput";
 import Button from "../../components/Button";
@@ -14,6 +17,16 @@ import style from '../../styles/theme';
 const useStyles = makeStyles((theme) => ({
   grid: {
     paddingTop: '20px',
+  },
+  flexEnd: {
+    width: '100%',
+    marginBottom: '10px',
+  },
+  gridRightAlign: {
+    margin: 0,
+    width: '100%',
+    marginBottom: '15px',
+    float:'right',
   },
   optionContainer: {
     marginTop: '20px',
@@ -80,8 +93,7 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     textAlign: 'left',
-    width: '100%',
-    marginLeft: '-28px', // don't come for me css gods
+    marginLeft: '-13px', // don't come for me css gods
     marginBottom: '5px',
     cursor: 'pointer',
   },
@@ -95,7 +107,71 @@ const useStyles = makeStyles((theme) => ({
   helperRed: {
     color: style.colors.red, // TODO: check if contrast is okay
   },
+  switch: {
+    marginTop: '20px',
+    marginBottom: '0px',
+  },
+  switchRight: {
+    marginBottom: '0px',
+    float: 'right',
+    // todo: at this point im just surrendering
+    marginRight:'-10px',
+    marginTop: '-10px',
+  }
 }));
+
+const IOSSwitch = withStyles((theme) => ({
+  root: {
+    width: 42,
+    height: 26,
+    padding: 0,
+    margin: theme.spacing(1),
+  },
+  switchBase: {
+    padding: 1,
+    '&$checked': {
+      transform: 'translateX(16px)',
+      color: theme.palette.common.white,
+      '& + $track': {
+        backgroundColor: '#52d869',
+        opacity: 1,
+        border: 'none',
+      },
+    },
+    '&$focusVisible $thumb': {
+      color: '#52d869',
+      border: '6px solid #fff',
+    },
+  },
+  thumb: {
+    width: 24,
+    height: 24,
+  },
+  track: {
+    borderRadius: 26 / 2,
+    border: `1px solid ${theme.palette.grey[400]}`,
+    backgroundColor: theme.palette.grey[50],
+    opacity: 1,
+    transition: theme.transitions.create(['background-color', 'border']),
+  },
+  checked: {},
+  focusVisible: {},
+}))(({ classes, ...props }) => {
+  return (
+    <Switch
+      focusVisibleClassName={classes.focusVisible}
+      disableRipple
+      classes={{
+        root: classes.root,
+        switchBase: classes.switchBase,
+        thumb: classes.thumb,
+        track: classes.track,
+        checked: classes.checked,
+      }}
+      {...props}
+    />
+  );
+});
 
 const Option = ({ text, icon, onClick }) => {
     const classes = useStyles({ icon: icon === undefined});
@@ -122,6 +198,8 @@ const AdventurePrompt = ({
   handleInputChange,
   handleSubmit,
   handleStartOver,
+  soundOn,
+  handleSoundToggle,
 }) => {
   const classes = useStyles();
 
@@ -136,8 +214,21 @@ const AdventurePrompt = ({
             </Typography>
           )}
           {step !== "0" && (
-            <div onClick={() => goBack()} className={classes.icon}>
-              <ArrowBackIcon fontSize="small" />
+            <div className={classes.flexEnd}>
+              <span onClick={() => goBack()} className={classes.icon}>
+                <ArrowBackIcon fontSize="small" />
+              </span>
+              <FormControlLabel
+                control={
+                  <IOSSwitch
+                    checked={soundOn}
+                    onChange={handleSoundToggle}
+                    name="checkedB"
+                  />
+                }
+                label="Music"
+                className={classes.switchRight}
+              />
             </div>
           )}
           <Grid container spacing={3} className={classes.grid}>
@@ -158,8 +249,26 @@ const AdventurePrompt = ({
                 />
               ))}
           </Grid>
+          {step === "0" && (
+            <FormControlLabel
+              control={
+                <IOSSwitch
+                  checked={soundOn}
+                  onChange={handleSoundToggle}
+                  name="checkedB"
+                />
+              }
+              label="Mood Music (The Real Slim Shady, Medieval Remix)"
+              className={classes.switch}
+            />
+          )}
           {adventureList[step].status === "success" && (
-            <form className={classes.form} noValidate name="raffleEntry" onSubmit={handleSubmit}>
+            <form
+              className={classes.form}
+              noValidate
+              name="raffleEntry"
+              onSubmit={handleSubmit}
+            >
               <Grid container spacing={3}>
                 <Grid item xs={12} className={classes.prompt}>
                   {adventureList[step].prompt}
@@ -193,12 +302,19 @@ const AdventurePrompt = ({
             </form>
           )}
           {adventureList[step].status === "failure" && (
-            <form className={classes.form} noValidate name="startOver" onSubmit={handleStartOver}>
+            <form
+              className={classes.form}
+              noValidate
+              name="startOver"
+              onSubmit={handleStartOver}
+            >
               <Grid container spacing={3}>
                 <Grid item xs={12} className={classes.prompt}>
                   <span
                     className={classes.prompt}
-                    dangerouslySetInnerHTML={{ __html: adventureList[step].prompt }}
+                    dangerouslySetInnerHTML={{
+                      __html: adventureList[step].prompt,
+                    }}
                   />
                 </Grid>
               </Grid>
@@ -207,7 +323,7 @@ const AdventurePrompt = ({
               </Grid>
             </form>
           )}
-          { step === "0" && (
+          {step === "0" && (
             <Grid className={classes.button}>
               <Button text="Enter" onClick={() => changeStep("1")} fullWidth />
             </Grid>

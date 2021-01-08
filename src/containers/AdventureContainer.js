@@ -1,14 +1,33 @@
 import React, { useState } from 'react';
+import useSound from 'use-sound';
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 import AdventurePrompt from '../components/adventure/AdventurePrompt';
 import AdventureEndScreen from '../components/adventure/AdventureEndScreen';
 import AdventureError from '../components/adventure/AdventureError';
 import adventure from '../data/adventure.json';
+import music from '../assets/audio/music.mp3';
 
 const AdventureContainer = () => {
   document.getElementById('html').className='green-bg-extend'
   const { width, height } = useWindowSize()
+  const [soundOn, setSoundOn] = useState(false)
+
+  const [play, { stop }] = useSound(
+    music,
+    { volume: 0.2 }
+  );
+
+  const handleSoundToggle = (event) => {
+    const state = event.target.checked;
+    setSoundOn(state);
+
+    if(state === true) {
+      play()
+    } else {
+      stop()
+    }
+  }
 
   const [steps, setSteps] = useState({
       curr: '0',
@@ -163,6 +182,8 @@ const AdventureContainer = () => {
         handleInputChange={handleInputChange}
         handleSubmit={handleSubmit}
         handleStartOver={startOver}
+        soundOn={soundOn}
+        handleSoundToggle={handleSoundToggle}
       />
     </>
   );
