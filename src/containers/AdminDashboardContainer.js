@@ -59,6 +59,13 @@ const useStyles = makeStyles((theme) => ({
     //   fontSize: "24px",
     // },
   },
+  subheading: {
+    fontFamily: "Aclonica",
+    fontSize: "20px",
+    textAlign: 'center',
+    color: style.colors.black,
+    margin: '30px 0 20px 0',
+  },
   table: {
     fontFamily: "IBM Plex Sans",
     '& svg' :{
@@ -131,6 +138,7 @@ const UserTable = ({ users }) => {
             <TableCell>Email Status</TableCell>
             <TableCell>Payment Status</TableCell>
             <TableCell>Payment Date</TableCell>
+            <TableCell>Extra Entry</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -167,6 +175,69 @@ const UserTable = ({ users }) => {
               </TableCell>
               <TableCell component="th" scope="row">
                 {user.lastModified}
+              </TableCell>
+              <TableCell component="th" scope="row">
+                {user.hasExtraEntry ? <CheckCircleIcon style={{ color: style.colors.green }}/> : <CancelIcon style={{ color: style.colors.red }}/>}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+}
+
+
+const ExtraRaffleEntryTable = ({ usersWithExtraEntry }) => {
+  const classes = useStyles();
+
+  return (
+    <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="simple table" >
+        <TableHead>
+          <TableRow className={classes.header}>
+            <TableCell>#</TableCell>
+            <TableCell>UofT Email</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {usersWithExtraEntry && usersWithExtraEntry.map((user, index) => (
+            <TableRow key={user._id}>
+              <TableCell component="th" scope="row">
+                {index + 1}
+              </TableCell>
+              <TableCell component="th" scope="row">
+                {user.emailuoft}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+}
+
+
+const RafflePrizeStatsTable = ({ rafflePrizeCount }) => {
+  const classes = useStyles();
+
+  return (
+    <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="simple table" >
+        <TableHead>
+          <TableRow className={classes.header}>
+            <TableCell>Prize</TableCell>
+            <TableCell>Count (unique entries)</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rafflePrizeCount && Object.keys(rafflePrizeCount).map((key, index) => (
+            <TableRow key={key}>
+              <TableCell component="th" scope="row">
+                { key }
+              </TableCell>
+              <TableCell component="th" scope="row">
+                { rafflePrizeCount[key] }
               </TableCell>
             </TableRow>
           ))}
@@ -217,11 +288,25 @@ const LoginForm = ({ params, handleInputChange, handleSubmit }) => {
 const AdminDashboardContainer = () => {
   const classes = useStyles();
   const [users, setUsers] = useState([]);
+  const [usersWithExtraEntry, setUsersWithExtraEntry] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [params, setParams] = useState({
     username: '',
     password: '',
   })
+
+  const [rafflePrizeCount, setRafflePrizeCount] = useState({
+    donation: 0,
+    illusionarium: 0,
+    bikeshare: 0,
+    stores: 0,
+    steam: 0,
+    etsy: 0,
+    amazon: 0,
+    indigo: 0,
+    timhortons: 0,
+    bookstore: 0,
+  });
 
   useEffect(() => {
     if (!loggedIn) {
@@ -238,7 +323,6 @@ const AdminDashboardContainer = () => {
           );
 
           const admin = await res.json();
-          console.log(admin);
           if (admin.username === 'admin') setLoggedIn(true);
         }
       }
@@ -257,14 +341,69 @@ const AdminDashboardContainer = () => {
               });
 
               const users = await res.json();
+
+              const prizeCount = {
+                donation: 0,
+                illusionarium: 0,
+                bikeshare: 0,
+                stores: 0,
+                steam: 0,
+                etsy: 0,
+                amazon: 0,
+                indigo: 0,
+                timhortons: 0,
+                bookstore: 0,
+              };
+
+              for (var i = 0; i < users.length; i ++ ){
+                // check if user has extra raffle entry
+                const res2 = await fetch(`${process.env.REACT_APP_API_URL}/raffle/email/${users[i].emailuoft}`, {
+                  method: "GET",
+                });
+                const hasExtraEntry = (await res2.json()).exists;
+
+                const user = users[i];
+
+                users[i] = {
+                  ...user,
+                  hasExtraEntry
+                }
+
+                for (var key in user.raffle) {
+                  console.log(key)
+                  if (user.raffle[key]) {
+                    prizeCount[key] += 1
+                  }
+                }
+              }
+
+              setRafflePrizeCount(prizeCount)
               setUsers(users);
           } catch (err) {
               console.log(err);
           }
       }
+      const fetchUsersWithExtraEntry = async () => {
+          try {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/users/raffle`, {
+              method: "GET",
+              headers: {
+                token: getCookie("token"),
+              },
+            });
+
+            const users = await res.json();
+            setUsersWithExtraEntry(users);
+          } catch (err) {
+            console.log(err);
+          }
+
+      }
       fetchAllUsers();
+      fetchUsersWithExtraEntry();
     }
-  }, [setUsers, loggedIn]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [setUsers, setUsersWithExtraEntry, loggedIn]);
 
   const handleInputChange = (event) => {
     let { name, value } = event.target;
@@ -312,7 +451,18 @@ const AdminDashboardContainer = () => {
               </Typography>
               <Button text="Logout" onClick={() => handleLogout()} />
               <Grid container spacing={2} className={classes.grid}>
+                <Typography component="h1" variant="h5" className={classes.subheading}>
+                  All Users
+                </Typography>
                 <UserTable users={users} />
+                <Typography component="h1" variant="h5" className={classes.subheading}>
+                  Users with Extra Raffle Entries
+                </Typography>
+                <ExtraRaffleEntryTable usersWithExtraEntry={usersWithExtraEntry} />
+                <Typography component="h1" variant="h5" className={classes.subheading}>
+                  Raffle Stats
+                </Typography>
+                <RafflePrizeStatsTable rafflePrizeCount={rafflePrizeCount} />
               </Grid>
             </>
           </div>
