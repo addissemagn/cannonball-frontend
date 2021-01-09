@@ -16,18 +16,6 @@
             {
                 "text": "Alas! You have not yet purchased your ticket",
                 "goTo": "3"
-            },
-            {
-                "text": "Test: Success page",
-                "goTo": "30_1"
-            },
-            {
-                "text": "Test: Failure page",
-                "goTo": "4"
-            },
-            {
-                "text": "Test: Error page (just in case)",
-                "goTo": "100"
             }
         ]
     },

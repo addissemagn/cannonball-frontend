@@ -53,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "23px",
     textAlign: 'center',
     color: style.colors.black,
+    marginTop: '15px',
     marginBottom: '10px',
     // ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
     //   fontSize: "24px",

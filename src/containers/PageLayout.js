@@ -1,19 +1,9 @@
 import React from 'react';
 import Snowfall from 'react-snowfall'
-import { makeStyles } from '@material-ui/core/styles';
 import Header from '../components/Header';
-
-const useStyles = makeStyles((theme) => ({
-  underlined: {
-    '&:hover': {
-      borderBottom: (props) => `1px dotted ${props.isLightTheme ? '#000' : '#fff'}`,
-    }
-  }
-}));
 
 const PageLayout = ({ children, step, isLightTheme }) => {
   const mobileSize = window.matchMedia("(max-width: 512px)").matches;
-  const classes = useStyles({ isLightTheme });
 
   return (
     <div className={`card bg-${step}`}>
