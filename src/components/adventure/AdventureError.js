@@ -33,7 +33,8 @@ const useStyles = makeStyles((theme) => ({
     background: 'white',
     borderRadius: "15px",
     ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
-      background: "rgba(255, 255, 255, 0.8)",
+      // background: "rgba(255, 255, 255, 0.8)",
+      background: "rgba(255, 255, 255, 1)",
       margin: '10px',
       padding: '30px',
       boxShadow: "none",
