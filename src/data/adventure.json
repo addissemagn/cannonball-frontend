@@ -4,7 +4,7 @@
         "status": "success"
     },
     "0": {
-        "prompt": "Hello and welcome to the Cannonball 2T1 Choose your own adventure! Throughout the adventure you will be faced with many tough choices. Choose correctly and you shall be rewarded! Choose incorrectly and you shall….not be rewarded. Our story alludes to many facets of SkuleTM tradition and culture. <br /><br /> Want to learn more about the traditions, clubs, and people in the story? Simply click the <b>bolded</b> words to be taken to their website! Enjoy!"
+        "prompt": "Hello and welcome to the Cannonball 2T1 Choose your own adventure! Throughout the adventure you will be faced with many tough choices. Choose correctly and you shall be rewarded! Choose incorrectly and you shall….not be rewarded. <br/><br/>Our story alludes to many facets of SkuleTM tradition and culture. Want to learn more about the traditions, clubs, and people in the story? Simply click the <b>bolded</b> words to be taken to their website! Enjoy!"
     },
     "1": {
         "prompt": "You awake to the sound of cannon fire. This troubles you at first but you quickly recall that it is to commemorate the ball that is occurring later this week, the Cannonball. You scratch your head and try to recall if you had purchased your ticket.",
@@ -32,7 +32,7 @@
         ]
     },
     "2": {
-        "prompt": "Having already purchased your ticket, you meander over to <a href='https://skulepedia.ca/wiki/Suds'>Suds</a>, the local tavern. <a href='https://skulepedia.ca/wiki/Suds'>Suds</a> is known for playing the best bardcore music in the entire Kingdom, yet upon arrival, it is silent!",
+        "prompt": "Having already purchased your ticket, you meander over to <a href='https://skulepedia.ca/wiki/Suds' target='_blank'>Suds</a>, the local tavern. <a href='https://skulepedia.ca/wiki/Suds' target='_blank'>Suds</a> is known for playing the best bardcore music in the entire Kingdom, yet upon arrival, it is silent!",
         "options": [
             {
                 "text": "You immediately turn to leave. It was a little early for a drink anyways….",
@@ -62,7 +62,7 @@
         "status": "failure"
     },
     "5": {
-        "prompt": "You start chanting the hymn of the Lady Godiva: <br />We are We are We are We are-- <br />We are the engineers-- <br />We can We can We can We can-- <br />Demolish forty beers-- <br />Drink rum Drink rum Drink rum Drink rum-- <br />and come along with us for-- <br />We don't give a damn for any damn man-- <br />Who don't give a damn for us--",
+        "prompt": "You start chanting the <a href='http://bit.ly/2KS796u' target='_blank'>hymn of the Lady Godiva</a>: <br />We are We are We are We are-- <br />We are the engineers-- <br />We can We can We can We can-- <br />Demolish forty beers-- <br />Drink rum Drink rum Drink rum Drink rum-- <br />and come along with us for-- <br />We don't give a damn for any damn man-- <br />Who don't give a damn for us--",
         "options": [
             {
                 "text": "That sure was fun, but you better get going...it really is too early to be in a tavern",
@@ -75,7 +75,7 @@
         ]
     },
     "6": {
-        "prompt": "You continue on with the next verse of <a href='' target='_blank'>Godiva’s hymn</a>: <br /> Godiva was a lady who through Coventry did ride-- <br />To show to all the villagers her __________ <br/><br />Oh no! You’ve all forgotten the next line! Everyone’s looking at you so expectantly….what was it?",
+        "prompt": "You continue on with the next verse of <a href='http://bit.ly/2KS796u' target='_blank'>Godiva’s hymn</a>: <br /> Godiva was a lady who through Coventry did ride-- <br />To show to all the villagers her __________ <br/><br />Oh no! You’ve all forgotten the next line! Everyone’s looking at you so expectantly….what was it?",
         "options": [
             {
                 "text": "fine and lily-white hide",
@@ -92,7 +92,7 @@
         ]
     },
     "6_1": {
-        "prompt": "No, that’s not quite right….let's try again",
+        "prompt": "No, that’s not <a href='http://bit.ly/2KS796u' target='_blank'>quite right</a>….let's try again",
         "options": [
             {
                 "text": "Go back and guess again",
@@ -114,7 +114,7 @@
         ]
     },
     "8": {
-        "prompt": "You make it to the <a href='' target='_blank'>Engineering Stores</a> and lean against the table of the merchant, as your ancestors have done for generations before you. The merchant says, “Welcome to Engineering Stores, what can I get ya?”",
+        "prompt": "You make it to the <a href='https://stores.skule.ca/' target='_blank'>Engineering Stores</a> and lean against the table of the merchant, as your ancestors have done for generations before you. The merchant says, “Welcome to Engineering Stores, what can I get ya?”",
         "options": [
             {
                 "text": "You inquire about the blue underpants that have been embroidered with gold thread",
@@ -162,7 +162,7 @@
         ]
     },
     "12": {
-        "prompt": "You greet John and he tells you all about the <a href='' target='_blank'>library</a> he’s been working on. You think this is rather odd. Turkeys and libraries really shouldn’t mix… John ignores your doubtful look and explains how the Lord and Lady of the land are very impressed with his library. They’ve bestowed upon him the honor of reading the sacred text that marks the beginning of <a href='' target='_blank'>Godiva Week</a>. Unfortunately, John forgets where this text would be located! Is it:",
+        "prompt": "You greet John and he tells you all about the <a href='https://en.wikipedia.org/wiki/Robarts_Library' target='_blank'>library</a> he’s been working on. You think this is rather odd. Turkeys and libraries really shouldn’t mix… John ignores your doubtful look and explains how the Lord and Lady of the land are very impressed with his library. They’ve bestowed upon him the honor of reading the sacred text that marks the beginning of <a href='https://godivaweek.skule.ca/' target='_blank'>Godiva Week</a>. Unfortunately, John forgets where this text would be located! Is it:",
         "options": [
             {
                 "text": "Calculus for Scientists and Engineers",
@@ -179,7 +179,7 @@
         ]
     },
     "12_1": {
-        "prompt": "You search the book through several times, no sign of the <a href='' target='_blank'>sacred text</a>...maybe it was in one of the other novels?",
+        "prompt": "You search the book through several times, no sign of the <a href='http://bit.ly/3hajXkZ' target='_blank'>sacred text</a>...maybe it was in one of the other novels?",
         "options": [
             {
                 "text": "Go back and pick again",
@@ -209,7 +209,7 @@
         ]
     },
     "13_1": {
-        "prompt": "Hmmm, the sacred text isn’t in there…….maybe you should try a different section?",
+        "prompt": "Hmmm, the <a href='http://bit.ly/3hajXkZ' target='_blank'>sacred text</a> isn’t in there…….maybe you should try a different section?",
         "options": [
             {
                 "text": "Go back and pick again",
@@ -227,7 +227,7 @@
         ]
     },
     "15": {
-        "prompt": "You set off down the path with your new underpants. You hear the blaring of a trumpet; here comes the Crown’s personal ensemble, the <a href='' target='_blank'>LGMB</a>. The Leedur of the LGMB speaks: “By order of the Lord and Lady of the land, everyone is to be searched! Something sacred to <a href='' target='_blank'>Lord Blue and Gold</a> has been stolen, and the thief is to be caught and punished!”",
+        "prompt": "You set off down the path with your new underpants. You hear the blaring of a trumpet; here comes the Crown’s personal ensemble, the <a href='https://lgmb.skule.ca/' target='_blank'>LGMB</a>. The Leedur of the LGMB speaks: “By order of the Lord and Lady of the land, everyone is to be searched! Something sacred to <a href='https://skulepedia.ca/wiki/Mr._Blue_%26_Gold' target='_blank'>Lord Blue and Gold</a> has been stolen, and the thief is to be caught and punished!”",
         "options": [
             {
                 "text": "You stay where you are, you haven’t done anything wrong, you don’t have anything to hide",
@@ -240,7 +240,7 @@
         ]
     },
     "16": {
-        "prompt": "You are searched by the <a href='' targe='_blank'>LGBM<a>. They take the underwear you just purchased. The Leedur says to you: “These are Lord Blue and Golds sacred underpants! You will now be punished by means of auditory torture!”. The <a href='' target='_blank'>LGMB</a> surrounds you and starts to play. You are being drummed upon, chanted at, and forced to listen while they play. It won’t end. They start telling jokes. You wish death would take you. Eventually, thankfully, you slip into unconsciousness….",
+        "prompt": "You are searched by the <a href='https://lgmb.skule.ca/' target='_blank'>LGBM</a>. They take the underwear you just purchased. The Leedur says to you: “These are Lord Blue and Golds sacred underpants! You will now be punished by means of auditory torture!”. The <a href='https://lgmb.skule.ca/' target='_blank'>LGMB</a> surrounds you and starts to play. You are being drummed upon, chanted at, and forced to listen while they play. It won’t end. They start telling jokes. You wish death would take you. Eventually, thankfully, you slip into unconsciousness….",
         "options": [
             {
                 "text": "You awaken to the abandoned street in the early hours of the morning. It seems that you have missed the entire Cannonball… Please try again",
@@ -274,7 +274,7 @@
         "prompt": "The whole Bnad erupts in laughter! You use this opportunity to escape. Phew, that was a close one. ",
         "options": [
             {
-                "text": "You drop the underpants outside the local newspaper stand, deciding that the Toike editors can take the fall for the underpants debacle. They’re used to being in trouble with the Crown.",
+                "text": "You drop the underpants outside the local newspaper stand, deciding that the <a href='http://toike.skule.ca/' target='_blank'>Toike</a> editors can take the fall for the underpants debacle. They’re used to being in trouble with the Crown.",
                 "goTo": "11"
             },
             {
@@ -301,10 +301,10 @@
         "status": "failure"
     },
     "21": {
-        "prompt": "You make a pit stop at your home before going to the Cannonball to change and pick up some items that will help you in your duel against Lord Blue and Gold. ",
+        "prompt": "You make a pit stop at your home before going to the Cannonball to change and pick up some items that will help you in your duel against <a href='https://skulepedia.ca/wiki/Mr._Blue_%26_Gold' target='_blank'>Lord Blue and Gold</a>. ",
         "options": [
             {
-                "text": "You grab your very realistic replica of the Cannon",
+                "text": "You grab your very realistic replica of the <a href='https://skulepedia.ca/wiki/Skule_Cannon' target='_blank'>Cannon</a>",
                 "goTo": "22"
             },
             {
@@ -318,7 +318,7 @@
         ]
     },
     "22": {
-        "prompt": "You make a very grand entrance into the Cannonball, brandishing your replica of the Cannon. You declare that not only have you stolen Lord Blue and Golds sacred underpants, you have also stolen the Cannon!<br /><br />As you finish your proclamation, you hear laughter coming from all around the room. Alas! The room is filled with the Cannon Guard, and the Chief Attiliator is sitting quite comfortably, holding the real cannon",
+        "prompt": "You make a very grand entrance into the Cannonball, brandishing your replica of the <a href='https://skulepedia.ca/wiki/Skule_Cannon' target='_blank'>Cannon</a>. You declare that not only have you stolen Lord Blue and Golds sacred underpants, you have also stolen the Cannon!<br /><br />As you finish your proclamation, you hear laughter coming from all around the room. Alas! The room is filled with the Cannon Guard, and the Chief Attiliator is sitting quite comfortably, holding the real cannon",
         "options": [
             {
                 "text": "You run away, feeling great shame. Maybe you should get something else…",
@@ -344,7 +344,7 @@
         "status": "failure"
     },
     "24": {
-        "prompt": "You charge into the Cannonball brandishing your sword. You have all the confidence to make it appear real. You spot Lord Blue and Gold, you set off to confront him, but your path is blocked! The Toike editor has stepped in front of you, holding their much larger (and much more real) sword.",
+        "prompt": "You charge into the Cannonball brandishing your sword. You have all the confidence to make it appear real. You spot Lord Blue and Gold, you set off to confront him, but your path is blocked! The <a href='http://toike.skule.ca/' target='_blank'>Toike editor</a> has stepped in front of you, holding their much larger (and much more real) sword.",
         "options": [
             {
                 "text": "You think twice about battling the Toike editor, maybe there’s a different way you can get past them?",
@@ -357,7 +357,7 @@
         ]
     },
     "25": {
-        "prompt": "Instead of battling the Toike editor, you tell them about a dog you saw outside that was wearing a very funny hat. The editor sets out at once to go see it, as it might make for a good story. The path to Lord Blue and Gold has now cleared",
+        "prompt": "Instead of battling the <a href='http://toike.skule.ca/' target='_blank'>Toike editor</a>, you tell them about a dog you saw outside that was wearing a very funny hat. The editor sets out at once to go see it, as it might make for a good story. The path to Lord Blue and Gold has now cleared",
         "options": [
             {
                 "text": "You set off towards Lord Blue and Gold",
@@ -396,7 +396,7 @@
         ]
     },
     "28": {
-        "prompt": "As you approach Lord Blue and Gold you glimpse the Lady Godiva. She looks so lovely that you drop your sword and it breaks into many pieces!",
+        "prompt": "As you approach <a href='https://skulepedia.ca/wiki/Mr._Blue_%26_Gold' target='_blank'>Lord Blue and Gold</a> you glimpse the <a href='https://skulepedia.ca/wiki/Godiva%27s_Crown' target='_blank'>Lady Godiva</a>. She looks so lovely that you drop your sword and it breaks into many pieces!",
         "options": [
             {
                 "text": "You can’t confront Lord Blue and Gold empty handed, you head home to grab something else",
@@ -409,7 +409,7 @@
         ]
     },
     "29": {
-        "prompt": "You finally make it to Lord Blue and Gold. Someone off in the distance yells, “Drop your pants”. Lord Blue and Gold turns very red and says, “Without my sacred underpants, I cannot perform this sacred duty!”",
+        "prompt": "You finally make it to <a href='https://skulepedia.ca/wiki/Mr._Blue_%26_Gold' target='_blank'>Lord Blue and Gold</a>. Someone off in the distance yells, “Drop your pants”. Lord Blue and Gold turns very red and says, “Without my sacred underpants, I cannot perform this sacred duty!”",
         "options": [
             {
                 "text": "You feel bad for him, he doesn’t deserve this humiliation",
@@ -422,7 +422,7 @@
         ]
     },
     "30": {
-        "prompt": "You hand Lord Blue and Gold the underpants, and he is ecstatic! He thanks you and rewards you for returning them",
+        "prompt": "You hand <a href='https://skulepedia.ca/wiki/Mr._Blue_%26_Gold' target='_blank'>Lord Blue and Gold</a> the underpants, and he is ecstatic! He thanks you and rewards you for returning them",
         "options": [
             {
                 "text": "What could the reward be?",
@@ -435,7 +435,7 @@
         "status": "success"
     },
     "31": {
-        "prompt": "You look Lord Blue and Gold dead in the eyes as you pull down your pants, revealing his sacred trousers! Lord Blue and Gold is furious! The Lady Godiva sees what is going on and says, “Well, the only way we can determine who these truly belong to is to have a competition! Both of you shall put on a performance and whoevers is better shall win”",
+        "prompt": "You look <a href='https://skulepedia.ca/wiki/Mr._Blue_%26_Gold' target='_blank'>Lord Blue and Gold</a> dead in the eyes as you pull down your pants, revealing his sacred trousers! Lord Blue and Gold is furious! The <a href='https://skulepedia.ca/wiki/Godiva%27s_Crown' target='_blank'>Lady Godiva</a> sees what is going on and says, “Well, the only way we can determine who these truly belong to is to have a competition! Both of you shall put on a performance and whoevers is better shall win”",
         "options": [
             {
                 "text": "This seems fair to you, you agree to the terms of the competition",
@@ -448,7 +448,7 @@
         ]
     },
     "32": {
-        "prompt": "The Lady Godiva sighs in frustration. She says, “I was truly hoping to not have to do this”. She snaps her fingers and the underpants vanish! You are very naked and embarrassed. You run out of the Cannonball, never to return",
+        "prompt": "The <a href='https://skulepedia.ca/wiki/Godiva%27s_Crown' target='_blank'>Lady Godiva</a> sighs in frustration. She says, “I was truly hoping to not have to do this”. She snaps her fingers and the underpants vanish! You are very naked and embarrassed. You run out of the Cannonball, never to return",
         "options": [
             {
                 "text": "Continue",
@@ -474,7 +474,7 @@
         ]
     },
     "34": {
-        "prompt": "As the first note plays, the Cannonball becomes overrun with highly spirited mail carriers. This is not how you expected this to go….",
+        "prompt": "As the first note plays, the Cannonball becomes overrun with highly spirited <a href='https://www.toboggan.skule.ca/past-teams/' target='_blank'>mail carriers</a>. This is not how you expected this to go….",
         "options": [
             {
                 "text": "You may not win, but at least you’re having fun. You keep going with the song",
@@ -487,7 +487,7 @@
         ]
     },
     "35": {
-        "prompt": "The party goes all night, with “You Make My Dreams” on repeat. You’d think these jolly mail carriers would get sick of this song, but their appetite for Hall & Oates cannot be satisfied. Exasperated, Lord Blue and Gold offers you a deal, “If you can make this dreadful racket stop, I shall give you the underpants”",
+        "prompt": "The party goes all night, with “You Make My Dreams” on repeat. You’d think these jolly <a href='https://www.toboggan.skule.ca/past-teams/' target='_blank'>mail carriers</a> would get sick of this song, but their appetite for Hall & Oates cannot be satisfied. Exasperated, Lord Blue and Gold offers you a deal, “If you can make this dreadful racket stop, I shall give you the underpants”",
         "options": [
             {
                 "text": "You exclaim, “Vive la Hall & Oates!”, you shall not be silenced!",
@@ -500,11 +500,11 @@
         ]
     },
     "36": {
-        "prompt": "Through the power of Hall & Oates Lord Blue and Gold is forced to flee - leaving you with the sacred underpants! The mail carriers are so ecstatic they give you an extra entry into the Cannonball 2T1 raffle!",
+        "prompt": "Through the power of Hall & Oates Lord Blue and Gold is forced to flee - leaving you with the sacred underpants! The <a href='https://www.toboggan.skule.ca/past-teams/' target='_blank'>mail carriers,/a> are so ecstatic they give you an extra entry into the Cannonball 2T1 raffle!",
         "status": "success"
     },
     "37": {
-        "prompt": "You stop the music and the mail carriers are outraged! ",
+        "prompt": "You stop the music and the <a href='https://www.toboggan.skule.ca/past-teams/' target='_blank'>mail carriers</a> are outraged! ",
         "options": [
             {
                 "text": "Hmm, maybe you should restart the music. These mail carriers seem like a force to be reckoned with!",
@@ -534,7 +534,7 @@
         ]
     },
     "40": {
-        "prompt": "The mail carriers could not care less about this undelivered letter. They really are terrible at their job….Maybe you should use something else?",
+        "prompt": "The <a href='https://www.toboggan.skule.ca/past-teams/' target='_blank'>mail carriers</a> could not care less about this undelivered letter. They really are terrible at their job….Maybe you should use something else?",
         "options": [
             {
                 "text": "Go back",
@@ -543,7 +543,7 @@
         ]
     },
     "41": {
-        "prompt": "The mail carriers rush out of the Cannonball to see what has happened, they look very worried indeed. Strange, why should these mail carriers care so much about this strange toboggan? Doesn’t matter, it worked, now time to get back to the performance. ",
+        "prompt": "The <a href='https://www.toboggan.skule.ca/past-teams/' target='_blank'>mail carriers</a> rush out of the Cannonball to see what has happened, they look very worried indeed. Strange, why should these mail carriers care so much about this strange toboggan? Doesn’t matter, it worked, now time to get back to the performance. ",
         "options": [
             {
                 "text": "You decide to show off your culinary skills",
@@ -569,7 +569,7 @@
         ]
     },
     "43": {
-        "prompt": "A riot breaks out among the crowd! Alas! How could you forget the lettuce census that had been conducted! Kale was one of the least favourite of the land!",
+        "prompt": "A riot breaks out among the crowd! Alas! How could you forget the <a href='https://www.facebook.com/EngLettuceClub' target='_blank'>lettuce census</a> that had been conducted! Kale was one of the least favourite of the land!",
         "options": [
             {
                 "text": "“Haha just kidding” you say, “You’d have to kale me to eat that nonsense!”",
@@ -578,7 +578,7 @@
         ]
     },
     "44": {
-        "prompt": "A giant fight breaks out at this announcement! You did not mean to reopen the wounds caused by the lettuce census, you should’ve stayed away from such a controversial topic…",
+        "prompt": "A giant fight breaks out at this announcement! You did not mean to reopen the wounds caused by the <a href='https://www.facebook.com/EngLettuceClub' target='_blank'>lettuce census</a>, you should’ve stayed away from such a controversial topic…",
         "options": [
             {
                 "text": "“Friends, friends, lettuce settle down and romaine civil! Of course I was joking about the romaine, we will of course be using the official lettuce of land”",
@@ -630,7 +630,7 @@
         "status": "success"
     },
     "50": {
-        "prompt": "As you set off, you see a floating blue hardhat zip by, followed by someone yelling. John, the turkey farmer librarian, runs up to you. “You have to help me! They’ve stolen the sacred text! Without the Fundamental Theorem of Calculus, how can any of us enjoy the Cannonball?”",
+        "prompt": "As you set off, you see a floating blue hardhat zip by, followed by someone yelling. John, the turkey farmer librarian, runs up to you. “You have to help me! They’ve stolen the <a href='http://bit.ly/3hajXkZ' target='_blank'>sacred text</a>! Without the Fundamental Theorem of Calculus, how can any of us enjoy the Cannonball?”",
         "options": [
             {
                 "text": "You say to John, “Do not worry! I shall catch them!”",
@@ -673,7 +673,7 @@
         "status": "success"
     },
     "53": {
-        "prompt": "You spot the floating hardhat and chase after it. You chase it all throughout the Kingdom, until eventually it goes into a bakery. You enter into the bakery and it smells unlike any bakery you’ve ever been in. Instead of being greeted with the smell of fresh bread, it smells of sawdust and cement. You start coughing and lose sight of the floating hardhat. You ask the Baker behind the counter if they saw a floating hardhat.  “A floatin hardhat? Yee must be outta yer mind.” Says the Baker.",
+        "prompt": "You spot the floating hardhat and chase after it. You chase it all throughout the Kingdom, until eventually it goes into a bakery. You enter into the <a href='https://www.mariosbakery.ca/' target='_blank'>bakery</a> and it smells unlike any <a href='https://www.mariosbakery.ca/' target='_blank'>bakery</a> you’ve ever been in. Instead of being greeted with the smell of fresh bread, it smells of sawdust and cement. You start coughing and lose sight of the floating hardhat. You ask the Baker behind the counter if they saw a floating hardhat.  “A floatin hardhat? Yee must be outta yer mind.” Says the Baker.",
         "options": [
             {
                 "text": "Continue",
@@ -682,7 +682,7 @@
         ]
     },
     "54": {
-        "prompt": "You turn around to leave, and see the bakery is now filled with hardhats of all different colours! If only you could remember what colour the hardhat was….",
+        "prompt": "You turn around to leave, and see the bakery is now filled with <a href='https://skulepedia.ca/wiki/Hardhats' target='_blank'>hardhats of all different colours</a>! If only you could remember what colour the hardhat was….",
         "options": [
             {
                 "text": "Check the beige hardhat",
@@ -716,7 +716,7 @@
         ]
     },
     "56": {
-        "prompt": "But where will you find an easy to read, tried and true recipe for cider? Ahah! The local brewer will have the information on their page:  Brewoft.skule.ca! It will surely have a recipe for some amazing cider that you can refill the hardhat with.",
+        "prompt": "But where will you find an easy to read, tried and true recipe for cider? Ahah! The local brewer will have the information on their page: <a href='http://brewoft.skule.ca/' target='_blank'> Brewoft.skule.ca</a>! It will surely have a recipe for some amazing cider that you can refill the hardhat with.",
         "options": [
             {
                 "text": "You go take a look at brewoft.skule.ca, learn all the necessary steps to make the cider and start fermenting it in the hardhat. That’ll keep the local tavern happy!",
@@ -825,7 +825,7 @@
         ]
     },
     "66": {
-        "prompt": "You start doing Reimann sums and work tirelessly at the solution. After many long hours, you come to a solution! You tell the baker that the answer is 19,607. They laugh, “You fool, that is not correct!”. You give him a stern look and show him your work  but they are not impressed. “I never said they were going to St Ives!”.",
+        "prompt": "You start doing Reimann sums and work tirelessly at the solution. After many long hours, you come to a solution! You tell the baker that the answer is <a href='http://bit.ly/34zEOcc' target='_blank'>19,607</a>. They laugh, “You fool, that is not correct!”. You give him a stern look and show him your work  but they are not impressed. “I never said they were going to St Ives!”.",
         "options": [
             {
                 "text": "You take another crack at the riddle…",
