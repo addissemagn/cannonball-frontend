@@ -117,13 +117,17 @@ const useStyles = makeStyles((theme) => ({
     // todo: at this point im just surrendering
     marginRight:'-10px',
     marginTop: '-10px',
+  },
+  formControlLabel: {
+    fontFamily: "IBM Plex Sans",
+    fontSize: '17px',
   }
 }));
 
 const IOSSwitch = withStyles((theme) => ({
   root: {
-    width: 42,
-    height: 26,
+    width: 38,
+    height: 22,
     padding: 0,
     margin: theme.spacing(1),
   },
@@ -144,11 +148,11 @@ const IOSSwitch = withStyles((theme) => ({
     },
   },
   thumb: {
-    width: 24,
-    height: 24,
+    width: 22,
+    height: 22,
   },
   track: {
-    borderRadius: 26 / 2,
+    borderRadius: 22 / 2,
     border: `1px solid ${theme.palette.grey[400]}`,
     backgroundColor: theme.palette.grey[50],
     opacity: 1,
@@ -258,7 +262,12 @@ const AdventurePrompt = ({
                   name="checkedB"
                 />
               }
-              label="Mood Music (The Real Slim Shady, Medieval Remix)"
+              label={
+                // eslint-disable-next-line jsx-a11y/accessible-emoji
+                <Typography className={classes.formControlLabel}>
+                  Mood Music ✨
+                </Typography>
+              }
               className={classes.switch}
             />
           )}
