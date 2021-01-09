@@ -89,10 +89,10 @@ const AdventureError = ({ error, goToSuccess, goToStart }) => {
               Here's your next choice: <br /><br />
             </span>
             <Grid className={classes.button}>
-                <Button text="Get your extra entry on us" onClick={() => goToSuccess()} />
+                <Button text="Get your extra entry on us!" onClick={() => goToSuccess()} fullWidth />
             </Grid>
             <Grid className={classes.button}>
-                <Button text="Retry adventure with different choices" onClick={() => goToStart()} />
+                <Button text="Re-embark on the adventure!" onClick={() => goToStart()} fullWidth/>
             </Grid>
             <span className={classes.prompt}>
               <br/>

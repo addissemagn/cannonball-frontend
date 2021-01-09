@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     float:'right',
   },
   optionContainer: {
-    marginTop: '20px',
+    marginTop: '30px',
   },
   outer: {
     ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
@@ -50,13 +50,13 @@ const useStyles = makeStyles((theme) => ({
     ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
       background: "rgba(255, 255, 255, 0.8)",
       margin: '10px',
-      padding: '30px',
+      padding: '40px',
       boxShadow: "none",
     },
   },
   title: {
     fontFamily: "Aclonica",
-    fontSize: "25px",
+    fontSize: "28px",
     textAlign: 'center',
     color: style.colors.red,
     marginBottom: '15px',
@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
   },
   prompt: {
     fontFamily: "IBM Plex Sans",
-    fontSize: '17px',
+    fontSize: '18px',
     '& a': {
       borderBottom: '1px dotted #000',
       fontWeight: 'bold',
@@ -81,9 +81,9 @@ const useStyles = makeStyles((theme) => ({
     // background: style.colors.red,
     // fontFamily: "Aclonica",
     fontFamily: "IBM Plex Sans",
-    background: (props) => props.icon ? style.colors.lightBlue : style.colors.white,
+    background: (props) => props.icon ? style.colors.green : style.colors.white,
     // border: (props) => props.border ? '1px solid black' : '',
-    color: style.colors.black,
+    color: style.colors.white,
     cursor: 'pointer',
     margin: '5px 0px',
     borderRadius: "10px",
@@ -104,11 +104,16 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     paddingTop: '20px',
   },
+  buttonConatiner: {
+    padding: 0,
+    margin: 0,
+    marginTop: '20px',
+  },
   helperRed: {
     color: style.colors.red, // TODO: check if contrast is okay
   },
   switch: {
-    marginTop: '20px',
+    marginTop: '10px',
     marginBottom: '0px',
   },
   switchRight: {
@@ -132,27 +137,27 @@ const IOSSwitch = withStyles((theme) => ({
     margin: theme.spacing(1),
   },
   switchBase: {
-    padding: 1,
+    padding: 0,
     '&$checked': {
       transform: 'translateX(16px)',
       color: theme.palette.common.white,
       '& + $track': {
-        backgroundColor: '#52d869',
+        backgroundColor: style.colors.green,
         opacity: 1,
         border: 'none',
       },
     },
     '&$focusVisible $thumb': {
-      color: '#52d869',
+      color: style.colors.green,
       border: '6px solid #fff',
     },
   },
   thumb: {
-    width: 22,
-    height: 22,
+    width: 23,
+    height: 23,
   },
   track: {
-    borderRadius: 22 / 2,
+    borderRadius: 23 / 2,
     border: `1px solid ${theme.palette.grey[400]}`,
     backgroundColor: theme.palette.grey[50],
     opacity: 1,
@@ -333,9 +338,15 @@ const AdventurePrompt = ({
             </form>
           )}
           {step === "0" && (
-            <Grid className={classes.button}>
-              <Button text="Enter" onClick={() => changeStep("1")} fullWidth />
-            </Grid>
+            // <Grid container>
+              <Grid item xs={12} className={classes.buttonConatiner}>
+                <Button
+                  text="Enter"
+                  onClick={() => changeStep("1")}
+                  fullWidth
+                />
+              </Grid>
+            // </Grid>
           )}
         </div>
         <div className="footer">

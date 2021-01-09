@@ -1,14 +1,9 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
-import FormHelperText from "@material-ui/core/FormHelperText";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-
-import TextInput from "../TextInput";
-import Button from "../Button";
 import style from '../../styles/theme';
 
 const useStyles = makeStyles((theme) => ({
