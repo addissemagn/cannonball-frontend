@@ -12,11 +12,13 @@ import Switch from '@material-ui/core/Switch';
 
 import TextInput from "../../components/TextInput";
 import Button from "../../components/Button";
+import CannonKaboomImg from'../../assets/cannon/cannon-kaboom.png';
 import style from '../../styles/theme';
 
 const useStyles = makeStyles((theme) => ({
   grid: {
     paddingTop: '20px',
+    color: (props) => props.failure ? 'white' : 'black',
   },
   flexEnd: {
     width: '100%',
@@ -45,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     // background: "rgba(41, 17, 37, 1)",
-    background: 'white',
+    background: (props) => props.failure ? style.colors.lightPurple : 'white',
     borderRadius: "15px",
     ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
       background: "rgba(255, 255, 255, 0.8)",
@@ -59,10 +61,19 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "28px",
     textAlign: 'center',
     color: style.colors.red,
+    marginTop: '15px',
     marginBottom: '15px',
-    // ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
-    //   fontSize: "24px",
-    // },
+    ["@media (max-width:512px)"]: { // eslint-disable-line no-useless-computed-key
+      fontSize: "26px",
+    },
+  },
+  titleStatus: {
+    fontFamily: "Aclonica",
+    fontSize: "24px",
+    textAlign: 'center',
+    color: (props) => props.failure ? style.colors.white : style.colors.black,
+    margin: '10px 0',
+    width: '100%',
   },
   underlined: {
     '&:hover': {
@@ -72,6 +83,7 @@ const useStyles = makeStyles((theme) => ({
   prompt: {
     fontFamily: "IBM Plex Sans",
     fontSize: '18px',
+    color: (props) => props.failure ? 'white' : 'black',
     '& a': {
       borderBottom: '1px dotted #000',
       fontWeight: 'bold',
@@ -96,6 +108,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '-13px', // don't come for me css gods
     marginBottom: '5px',
     cursor: 'pointer',
+    color: (props) => props.failure ? 'white' : 'black',
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -126,6 +139,11 @@ const useStyles = makeStyles((theme) => ({
   formControlLabel: {
     fontFamily: "IBM Plex Sans",
     fontSize: '17px',
+    color: (props) => props.failure ? 'white' : 'black',
+  },
+  img: {
+    textAlign: 'center',
+    alignItems: 'center',
   }
 }));
 
@@ -210,7 +228,7 @@ const AdventurePrompt = ({
   soundOn,
   handleSoundToggle,
 }) => {
-  const classes = useStyles();
+  const classes = useStyles({ failure: adventureList[step].status === "failure"});
 
   return (
     <Container component="main" maxWidth="sm">
@@ -235,7 +253,11 @@ const AdventurePrompt = ({
                     name="checkedB"
                   />
                 }
-                label="Music"
+                label={
+                  <Typography className={classes.formControlLabel}>
+                    Music
+                  </Typography>
+                }
                 className={classes.switchRight}
               />
             </div>
@@ -284,8 +306,14 @@ const AdventurePrompt = ({
               onSubmit={handleSubmit}
             >
               <Grid container spacing={3}>
+                <Typography component="h1" variant="h5" className={classes.titleStatus}>
+                  Congratulations!
+                </Typography>
                 <Grid item xs={12} className={classes.prompt}>
                   {adventureList[step].prompt}
+                </Grid>
+                <Grid item xs={12} className={classes.img}>
+                  <img src={CannonKaboomImg} width="200px" alt="Cannon" />
                 </Grid>
                 <Grid item xs={12} className={classes.prompt}>
                   Please enter the utoronto email associated with your ticket to
@@ -323,6 +351,9 @@ const AdventurePrompt = ({
               onSubmit={handleStartOver}
             >
               <Grid container spacing={3}>
+                <Typography component="h1" variant="h5" className={classes.titleStatus}>
+                  What's this...
+                </Typography>
                 <Grid item xs={12} className={classes.prompt}>
                   <span
                     className={classes.prompt}
@@ -339,13 +370,9 @@ const AdventurePrompt = ({
           )}
           {step === "0" && (
             // <Grid container>
-              <Grid item xs={12} className={classes.buttonConatiner}>
-                <Button
-                  text="Enter"
-                  onClick={() => changeStep("1")}
-                  fullWidth
-                />
-              </Grid>
+            <Grid item xs={12} className={classes.buttonConatiner}>
+              <Button text="Enter" onClick={() => changeStep("1")} fullWidth />
+            </Grid>
             // </Grid>
           )}
         </div>

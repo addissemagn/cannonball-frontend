@@ -3,7 +3,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import CannonImg from'../assets/cannon.png';
+import CannonImg from'../assets/cannon/cannon.png';
 
 
 import style from '../styles/theme';

@@ -170,7 +170,7 @@ const AdventureContainer = () => {
   return (
     <>
       {adventure[steps.curr].status === "success" && (
-        <Confetti width={width} height={height} recycle={false} numberOfPieces={500} />
+        <Confetti width={width} height={height} recycle={false} numberOfPieces={600} />
       )}
       <AdventurePrompt
         adventureList={adventure}
