@@ -61,7 +61,7 @@ export default function CustomizedTimeline() {
             </Typography>
             <Typography>
               With your $25 ticket, you get your choice of a $25 Uber Eats,
-              Netflix, or Apple (App Store &amp; iTunes) gift card issued on January 16th..but wait, there's more.
+              Netflix, or Apple (App Store &amp; iTunes) gift card issued on Jan 16th..but wait, there's more.
             </Typography>
           </Paper>
         </TimelineContent>
@@ -79,19 +79,11 @@ export default function CustomizedTimeline() {
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
             <Typography variant="h6" component="h1" className={classes.title}>
-              Win Raffle Prizes
+              $3,000 Worth of Raffle Prizes
             </Typography>
             <Typography>
-              Each ticket gives you 3 entries of your choice into a raffle of <b>10</b> different prizes, with a combined value of over <b>$3,000</b>.{" "}
-              Winners will be announced at 9PM EST on January 16th. Check out the raffle prizes{" "}
-              <Link to="/ticket" className={classes.underlined}>
-                here
-              </Link>
-              . Unsure of what to choose? Take our{" "}
-              <Link to="/quiz" className={classes.underlined}>
-                quiz
-              </Link>
-              {" "}to find out!
+              Each ticket gives you 3 entries of your choice into a raffle of <b>10</b> different prizes valued at <b>$100+ each</b>!
+              Winners announced at 9PM EST on Jan 16th.
             </Typography>
           </Paper>
         </TimelineContent>
@@ -109,14 +101,13 @@ export default function CustomizedTimeline() {
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
             <Typography variant="h6" component="h1" className={classes.title}>
-              Win Cash Prizes
+              Win Up to $500 Cash Prizes
             </Typography>
             <Typography>
-              Show us what your Cannonball adventure looks like in the{" "}
+              Win up to <b>$500</b> in Visa gift cards by entering the{" "}
               <Link to="/contest" className={classes.underlined}>
                 Photo Contest
-              </Link>{" "}
-              to win up to <b>$500</b> in Visa gift cards!
+              </Link>!
             </Typography>
           </Paper>
         </TimelineContent>
@@ -133,12 +124,10 @@ export default function CustomizedTimeline() {
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
             <Typography variant="h6" component="h1" className={classes.title}>
-              Choose Your Own Adventure
+              Double Your Chances
             </Typography>
             <Typography>
-              Get dressed up with your roomates, snuggle up and watcha movie, or
-              hop on the <b>Cannonball 2T1 Discord</b> event (details to be
-              emailed)!
+              Play our <Link to="/adventure" className={classes.underlined}>Choose Your Adventure</Link> game to double your raffle entries!
             </Typography>
           </Paper>
         </TimelineContent>

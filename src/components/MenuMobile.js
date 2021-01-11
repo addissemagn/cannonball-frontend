@@ -77,6 +77,9 @@ const MenuMobile = ({ direction, menuIcon }) => {
       <Link to="/ticket">
         <span>Ticket</span>
       </Link>
+      <Link to="/adventure">
+        <span>Adventure</span>
+      </Link>
       <Link to="/faq">
         <span>FAQ</span>
       </Link>

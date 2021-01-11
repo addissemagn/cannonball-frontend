@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = ({ isLightTheme }) => {
   const classes = useStyles({ isLightTheme });
-  const mobileSize = window.matchMedia("(max-width: 620px)").matches
+  const mobileSize = window.matchMedia("(max-width: 770px)").matches
 
   return (
     <>
@@ -89,6 +89,9 @@ const Header = ({ isLightTheme }) => {
               <Link to="/ticket">
                 <span>Ticket</span>
               </Link>
+              <Link to="/adventure">
+                <span>Adventure</span>
+              </Link>
               <Link to="/faq">
                 <span>FAQ</span>
               </Link>
@@ -97,7 +100,7 @@ const Header = ({ isLightTheme }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span>Buzzfeed Quiz</span>
+                <span>Quiz</span>
               </a>
               <a
                 href={process.env.REACT_APP_INSTAGRAM}
