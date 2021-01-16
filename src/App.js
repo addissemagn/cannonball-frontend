@@ -95,7 +95,7 @@ const App = () => {
         <Route
           path="/contest"
           component={() => {
-            window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdtsiAhXpPuB6p59uOjJS2gbIk6ZXf3tAAV6OnGcF2KeWlhPw/closedform";
+            window.location.href = "https://forms.gle/ZFutMoNgUC2J3T3s9";
             return null;
           }}
         />
