@@ -197,7 +197,7 @@ const SignUpContainer = ({ setRedirecting }) => {
 
   return (
     <>
-      <SignUpForm
+      {/* <SignUpForm
         user={userParams}
         raffleParams={raffleParams}
         rafflePrizes={rafflePrizes}
@@ -205,7 +205,7 @@ const SignUpContainer = ({ setRedirecting }) => {
         handleInputChange={handleInputChange}
         handleRaffleChange={handleRaffleChange}
         handleSubmit={handleSubmit}
-      />
+      /> */}
     </>
   );
 };

@@ -43,11 +43,12 @@ const FrontpageContainer = ({ isLightTheme }) => {
       <div className={classes.paper}>
         <Title text="Cannonball 2T1" isLightTheme={isLightTheme} />
         <Subtitle text="January 16, 2021" isLightTheme={isLightTheme} />
-        <Countdown finalDate="2021-01-17" isLightTheme={isLightTheme} />
+        {/* <Subtitle text="Ticket sales are closed" isLightTheme={isLightTheme} /> */}
+        {/* <Countdown finalDate="2021-01-17" isLightTheme={isLightTheme} /> */}
         <Timeline />
         <Link to="/ticket" className={classes.button}>
           <Button
-            text="Get Ticket"
+            text="Ticket sales are closed!"
           />
         </Link>
         <div className="footer">
