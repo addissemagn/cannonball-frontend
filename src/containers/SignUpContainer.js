@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { loadStripe } from "@stripe/stripe-js";
 
 import SignUpForm from '../components/SignUpForm';
+import TicketSalesClosed from '../components/TicketSalesClosed';
 
 const STRIPE_KEY = process.env.REACT_APP_PROD === "true" ? process.env.REACT_APP_PROD_STRIPE_KEY : process.env.REACT_APP_DEV_STRIPE_KEY;
 const stripePromise = loadStripe(STRIPE_KEY);
@@ -206,6 +207,7 @@ const SignUpContainer = ({ setRedirecting }) => {
         handleRaffleChange={handleRaffleChange}
         handleSubmit={handleSubmit}
       /> */}
+      <TicketSalesClosed />
     </>
   );
 };
